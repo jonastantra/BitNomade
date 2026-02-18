@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Hub -->
+  <url>
+    <loc>https://bitnomade.org/</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Ultimate PDF Storefront -->
+  <url>
+    <loc>https://bitnomade.org/Pdf-all-in-one/index.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bitnomade.org/Pdf-all-in-one/features.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bitnomade.org/Pdf-all-in-one/privacy.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- VoiceScribe AI Storefront -->
+  <url>
+    <loc>https://bitnomade.org/Voice-Scribe-ia/index.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </priority>
+  <url>
+    <loc>https://bitnomade.org/Voice-Scribe-ia/welcome.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
