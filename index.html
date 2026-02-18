@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Force HTTPS -->
-    <script>if (location.protocol !== 'https:' && location.hostname !== 'localhost') { location.replace('https:' + location.href.substring(location.protocol.length)); }</script>
+    <script>if (location.protocol === 'http:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') { location.replace('https:' + location.href.substring(location.protocol.length)); }</script>
     <link rel="canonical" href="https://bitnomade.org/">
     <title data-i18n="meta.title">BitNomade | High-Impact Software for Digital Businesses</title>
     <meta name="description"

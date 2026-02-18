@@ -1,5 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ===== Component Rendering =====
+    function renderHeader() {
+        const headerContainer = document.getElementById('header-container');
+        if (!headerContainer) return;
+
+        headerContainer.innerHTML = `
+    <header class="glass-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo hover:opacity-80 transition"
+                style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="ri-mic-ai-line"></i> VoiceScribe
+            </a>
+            <div class="nav-right">
+                <button class="theme-toggle" id="theme-toggle" title="Switch theme" type="button">
+                    <i class="ri-moon-line"></i>
+                </button>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="es" title="Español">🇪🇸</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇺🇸</button>
+                    <button class="lang-btn" data-lang="zh" title="中文">🇨🇳</button>
+                </div>
+                <a href="https://chromewebstore.google.com/detail/voice-transcription-+-ai/pcklabcphhbkoghekdbpcplmjbdkfnbi"
+                    target="_blank" class="btn-primary-sm" data-i18n="nav.cta">Install — It's Free</a>
+            </div>
+        </div>
+    </header>
+        `;
+    }
+
+    // Render components immediately
+    renderHeader();
+
     // ===== i18n (Internationalization) System =====
     const translations = {
         es: {
@@ -92,6 +124,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 "copy": "© 2026 VoiceScribe. Productividad Inteligente.",
                 "privacy": "Privacidad",
                 "contact": "Contacto"
+            },
+            "help": {
+                "title": "Guía de Uso y Solución de Problemas - Voice Scribe",
+                "subtitle": "Esta guía te ayudará a entender el funcionamiento actual de Voice Scribe y cómo solucionar los problemas más comunes.",
+                "aboutTitle": "¿De qué trata esta extensión?",
+                "aboutText1": "<strong>Voice Scribe</strong> es una herramienta simplificada y potente diseñada para <strong>transcribir tu voz a texto en tiempo real</strong> directamente desde la barra lateral de tu navegador.",
+                "aboutText2": "En nuestras últimas actualizaciones, hemos eliminado funciones innecesarias para centrarnos en lo esencial: <strong>rapidez, privacidad y facilidad de uso</strong>. La extensión utiliza la tecnología de reconocimiento de voz integrada en tu navegador para ofrecer una experiencia fluida sin necesidad de configuraciones complejas de servidores externos para la transcripción básica.",
+                "useTitle": "¿Para qué sirve?",
+                "useText": "Su uso principal es <strong>aumentar tu productividad</strong> permitiéndote dictar en lugar de escribir. Es ideal para:",
+                "useList1": "<strong>Tomar notas rápidas</strong> mientras navegas por internet.",
+                "useList2": "<strong>Redactar borradores</strong> de correos o mensajes usando tu voz.",
+                "useList3": "<strong>Capturar ideas</strong> al vuelo sin tener que teclear.",
+                "useList4": "<strong>Accesibilidad</strong>: Ayudar a quienes prefieren hablar en lugar de escribir.",
+                "troubleTitle": "Problemas Comunes y Soluciones",
+                "troubleDesc": "El problema más frecuente que enfrentan los usuarios con herramientas de voz es el acceso al micrófono.",
+                "p1Title": "🔴 Problema 1: \"No me escucha\" o \"No inicia la grabación\"",
+                "p1Desc": "Esto suele ocurrir porque el navegador o el sistema operativo ha bloqueado el acceso al micrófono por privacidad.",
+                "solTitle": "Soluciones:",
+                "p1s1Title": "Verificar Permisos del Sitio (Lo más común):",
+                "p1s1l1": "Mira a la izquierda de la barra de direcciones (URL). Verás un <strong>icono de candado</strong> 🔒 o de configuración.",
+                "p1s1l2": "Haz clic ahí y busca <strong>\"Micrófono\"</strong>.",
+                "p1s1l3": "Asegúrate de que el interruptor esté en <strong>Actívalo</strong> o <strong>Permitir</strong>.",
+                "p1s1l4": "<strong>IMPORTANTE:</strong> Recarga la página o cierra y vuelve a abrir la extensión para que el cambio surta efecto.",
+                "p1s2Title": "Verificar Permisos del Sistema Operativo:",
+                "p1s2l1": "<strong>Windows:</strong> Ve a <em>Configuración > Privacidad > Micrófono</em>. Asegúrate de que \"Permitir que las aplicaciones accedan al micrófono\" esté ACTIVADO y que tu navegador (Chrome/Edge) tenga permiso en la lista.",
+                "p1s2l2": "<strong>macOS:</strong> Ve a <em>Preferencias del Sistema > Seguridad y Privacidad > Micrófono</em>. Asegúrate de que tu navegador tenga el recuadro marcado.",
+                "p1s3Title": "Otro programa está usando el micrófono:",
+                "p1s3Desc": "Si tienes Zoom, Teams o Skype abiertos, a veces \"secuestran\" el micrófono. Ciérralos e intenta de nuevo.",
+                "p2Title": "🔇 Problema 2: \"Escribe cosas sin sentido o en otro idioma\"",
+                "p2Cause": "<strong>Causa:</strong> La extensión está configurada para escuchar un idioma diferente al que estás hablando.",
+                "p2Sol": "<strong>Solución:</strong>",
+                "p2l1": "En la interfaz de Voice Scribe, busca el <strong>selector de idioma</strong> (generalmente un icono de bandera o un menú desplegable).",
+                "p2l2": "Asegúrate de que coincida con el idioma en el que estás hablando (ej. Español vs Inglés). El reconocimiento de voz necesita saber qué esperar para ser preciso.",
+                "p3Title": "📂 Problema 3: Uso en archivos locales (file://)",
+                "p3Desc": "Si intentas usar la extensión sobre un PDF o archivo local abierto en el navegador:",
+                "p3Cause": "<strong>Causa:</strong> Los navegadores bloquean extensiones en archivos locales por seguridad por defecto.",
+                "p3Sol": "<strong>Solución:</strong>",
+                "p3l1": "Ve a <code>chrome://extensions</code>.",
+                "p3l2": "Busca <strong>Voice Scribe</strong>.",
+                "p3l3": "Haz clic en <strong>Detalles</strong>.",
+                "p3l4": "Activa la opción <strong>\"Permitir acceso a URL de archivo\"</strong>.",
+                "tipsTitle": "Consejos Finales",
+                "tip1": "<strong>Habla claro y a un ritmo normal.</strong> No necesitas gritar.",
+                "tip2": "<strong>Usa un buen micrófono.</strong> Si usas el micrófono integrado de una laptop antigua, el ruido ambiental puede afectar la calidad. Unos auriculares sencillos mejoran mucho el resultado.",
+                "tip3": "<strong>Si se detiene solo:</strong> El navegador a veces detiene la escucha si hay mucho silencio para ahorrar recursos. Solo vuelve a pulsar el botón de grabar."
             }
         },
         en: {
@@ -184,6 +261,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 "copy": "© 2026 VoiceScribe. Smart Productivity.",
                 "privacy": "Privacy",
                 "contact": "Contact"
+            },
+            "help": {
+                "title": "Usage Guide & Troubleshooting - Voice Scribe",
+                "subtitle": "This guide will help you understand how Voice Scribe works and how to solve common problems.",
+                "aboutTitle": "What is this extension?",
+                "aboutText1": "<strong>Voice Scribe</strong> is a simplified and powerful tool designed to <strong>transcribe your voice to text in real-time</strong> directly from your browser sidebar.",
+                "aboutText2": "In our latest updates, we have removed unnecessary features to focus on the essentials: <strong>speed, privacy, and ease of use</strong>. The extension uses the speech recognition technology built into your browser to offer a smooth experience without complex external server configurations for basic transcription.",
+                "useTitle": "What is it for?",
+                "useText": "Its main use is to <strong>increase your productivity</strong> by allowing you to dictate instead of type. It is ideal for:",
+                "useList1": "<strong>Taking quick notes</strong> while browsing the internet.",
+                "useList2": "<strong>Drafting emails</strong> or messages using your voice.",
+                "useList3": "<strong>Capturing ideas</strong> on the fly without having to type.",
+                "useList4": "<strong>Accessibility</strong>: Helping those who prefer speaking over writing.",
+                "troubleTitle": "Common Problems & Solutions",
+                "troubleDesc": "The most common problem users face with voice tools is microphone access.",
+                "p1Title": "🔴 Problem 1: \"It doesn't hear me\" or \"Recording doesn't start\"",
+                "p1Desc": "This usually happens because the browser or operating system has blocked microphone access for privacy.",
+                "solTitle": "Solutions:",
+                "p1s1Title": "Verify Site Permissions (Most Common):",
+                "p1s1l1": "Look to the left of the address bar (URL). You will see a <strong>lock icon</strong> 🔒 or settings.",
+                "p1s1l2": "Click there and look for <strong>\"Microphone\"</strong>.",
+                "p1s1l3": "Make sure the switch is set to <strong>On</strong> or <strong>Allow</strong>.",
+                "p1s1l4": "<strong>IMPORTANT:</strong> Reload the page or close and reopen the extension for the change to take effect.",
+                "p1s2Title": "Verify Operating System Permissions:",
+                "p1s2l1": "<strong>Windows:</strong> Go to <em>Settings > Privacy > Microphone</em>. Make sure \"Allow apps to access your microphone\" is ON and that your browser (Chrome/Edge) has permission in the list.",
+                "p1s2l2": "<strong>macOS:</strong> Go to <em>System Preferences > Security & Privacy > Microphone</em>. Make sure your browser has the box checked.",
+                "p1s3Title": "Another program is using the microphone:",
+                "p1s3Desc": "If you have Zoom, Teams, or Skype open, they sometimes \"hijack\" the microphone. Close them and try again.",
+                "p2Title": "🔇 Problem 2: \"It writes nonsense or in another language\"",
+                "p2Cause": "<strong>Cause:</strong> The extension is configured to listen to a different language than the one you are speaking.",
+                "p2Sol": "<strong>Solution:</strong>",
+                "p2l1": "In the Voice Scribe interface, look for the <strong>language selector</strong> (usually a flag icon or drop-down menu).",
+                "p2l2": "Make sure it matches the language you are speaking (e.g., Spanish vs English). Speech recognition needs to know what to expect to be accurate.",
+                "p3Title": "📂 Problem 3: Use on local files (file://)",
+                "p3Desc": "If you try to use the extension on a PDF or local file open in the browser:",
+                "p3Cause": "<strong>Cause:</strong> Browsers block extensions on local files by default for security.",
+                "p3Sol": "<strong>Solution:</strong>",
+                "p3l1": "Go to <code>chrome://extensions</code>.",
+                "p3l2": "Search for <strong>Voice Scribe</strong>.",
+                "p3l3": "Click on <strong>Details</strong>.",
+                "p3l4": "Enable the option <strong>\"Allow access to file URLs\"</strong>.",
+                "tipsTitle": "Final Tips",
+                "tip1": "<strong>Speak clearly and at a normal pace.</strong> You don't need to shout.",
+                "tip2": "<strong>Use a good microphone.</strong> If you use the built-in microphone of an old laptop, ambient noise can affect quality. Simple headphones improve the result significantly.",
+                "tip3": "<strong>If it stops alone:</strong> The browser sometimes stops listening if there is a lot of silence to save resources. Just press the record button again."
             }
         },
         zh: {
@@ -276,6 +398,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 "copy": "© 2026 VoiceScribe. 智能生产力。",
                 "privacy": "隐私",
                 "contact": "联系"
+            },
+            "help": {
+                "title": "Voice Scribe 使用指南和故障排除",
+                "subtitle": "本指南将帮助您了解 Voice Scribe 的工作原理以及如何解决常见问题。",
+                "aboutTitle": "这是什么扩展？",
+                "aboutText1": "<strong>Voice Scribe</strong> 是一款简洁而强大的工具，专为在浏览器侧边栏<strong>实时将语音转录为文本</strong>而设计。",
+                "aboutText2": "在最新更新中，我们删除了不必要的功能，专注于核心：<strong>速度、隐私和易用性</strong>。该扩展使用浏览器内置的语音识别技术，无需为基础转录配置复杂的外部服务器，即可提供流畅体验。",
+                "useTitle": "它有什么用？",
+                "useText": "其主要用途是通过允许您口述而非打字来<strong>提高生产力</strong>。适用于：",
+                "useList1": "上网时<strong>快速记笔记</strong>。",
+                "useList2": "用声音<strong>起草邮件</strong>或信息。",
+                "useList3": "无需打字<strong>即时捕捉灵感</strong>。",
+                "useList4": "<strong>无障碍辅助</strong>：帮助那些喜欢说话而不是打字的人。",
+                "troubleTitle": "常见问题与解决方案",
+                "troubleDesc": "用户在使用语音工具时最常遇到的问题是麦克风权限。",
+                "p1Title": "🔴 问题 1：“它听不到我说话”或“无法开始录音”",
+                "p1Desc": "这通常是因为浏览器或操作系统为了隐私而阻止了麦克风访问。",
+                "solTitle": "解决方案：",
+                "p1s1Title": "检查网站权限（最常见）：",
+                "p1s1l1": "查看地址栏 (URL) 左侧。您会看到一个<strong>锁形图标</strong> 🔒 或设置。",
+                "p1s1l2": "点击它并找到<strong>“麦克风”</strong>。",
+                "p1s1l3": "确保开关处于<strong>开启</strong>或<strong>允许</strong>状态。",
+                "p1s1l4": "<strong>重要提示：</strong> 刷新页面或关闭并重新打开扩展程序以使更改生效。",
+                "p1s2Title": "检查操作系统权限：",
+                "p1s2l1": "<strong>Windows：</strong> 转到 <em>设置 > 隐私 > 麦克风</em>。确保“允许应用访问您的麦克风”已开启，并且列表中包含您的浏览器（Chrome/Edge）。",
+                "p1s2l2": "<strong>macOS：</strong> 转到 <em>系统偏好设置 > 安全性与隐私 > 麦克风</em>。确保您的浏览器已被勾选。",
+                "p1s3Title": "其他程序正在使用麦克风：",
+                "p1s3Desc": "如果您打开了 Zoom、Teams 或 Skype，它们有时会“劫持”麦克风。关闭它们并重试。",
+                "p2Title": "🔇 问题 2：“它写出的内容没有意义或变成其他语言”",
+                "p2Cause": "<strong>原因：</strong> 扩展程序配置的听写语言与您所说的语言不同。",
+                "p2Sol": "<strong>解决方案：</strong>",
+                "p2l1": "在 Voice Scribe 界面中，找到<strong>语言选择器</strong>（通常是一个旗帜图标或下拉菜单）。",
+                "p2l2": "确保它与您所说的语言匹配（例如，中文 vs 英语）。语音识别需要知道预期的语言才能准确识别。",
+                "p3Title": "📂 问题 3：在本地文件 (file://) 上使用",
+                "p3Desc": "如果您尝试在浏览器中打开的 PDF 或本地文件上使用该扩展：",
+                "p3Cause": "<strong>原因：</strong> 浏览器默认出于安全考虑阻止扩展程序访问本地文件。",
+                "p3Sol": "<strong>解决方案：</strong>",
+                "p3l1": "转到 <code>chrome://extensions</code>。",
+                "p3l2": "搜索 <strong>Voice Scribe</strong>。",
+                "p3l3": "点击 <strong>详细信息</strong>。",
+                "p3l4": "启用<strong>“允许访问文件网址”</strong>选项。",
+                "tipsTitle": "最终建议",
+                "tip1": "<strong>说话清晰，语速正常。</strong> 不需要大喊大叫。",
+                "tip2": "<strong>使用好的麦克风。</strong> 如果您使用旧笔记本电脑的内置麦克风，环境噪音可能会影响质量。简单的耳机可以显著改善结果。",
+                "tip3": "<strong>如果它自动停止：</strong> 如果长时间静音，浏览器有时会停止监听以节省资源。只需再次按下录音按钮即可。"
             }
         }
     };

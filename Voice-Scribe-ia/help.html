@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="help.title">Guía de Uso y Solución de Problemas - Voice Scribe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        /* Custom styles for help page to match the premium theme */
+        .help-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .help-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--heading-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .help-content-section {
+            padding: 40px 0;
+        }
+
+        .help-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .help-card:hover {
+            border-color: var(--glass-border-hover);
+        }
+
+        .help-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .help-card h3 {
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+            color: var(--text-color);
+        }
+
+        .help-card p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .help-card ul,
+        .help-card ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        .help-card li {
+            margin-bottom: 10px;
+            list-style-type: disc;
+        }
+
+        .help-card ol li {
+            list-style-type: decimal;
+        }
+
+        .tip-box {
+            background: rgba(37, 117, 252, 0.05);
+            border-left: 4px solid #2575fc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .highlight-red {
+            color: #ff4757;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Nav (Modular) -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="help-hero">
+            <div class="container">
+                <div class="hero-bg-glow"></div>
+                <h1 data-i18n="help.title">Guía de Uso y Solución de Problemas</h1>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: var(--text-secondary);"
+                    data-i18n="help.subtitle">
+                    Esta guía te ayudará a entender el funcionamiento actual de Voice Scribe y cómo solucionar los
+                    problemas más comunes.
+                </p>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <!-- About Section -->
+            <section class="help-content-section">
+                <div class="help-card">
+                    <h2 class="text-gradient"><i class="ri-information-line"></i> <span data-i18n="help.aboutTitle">¿De
+                            qué trata esta extensión?</span></h2>
+                    <p data-i18n-html="help.aboutText1"><strong>Voice Scribe</strong> es una herramienta simplificada y
+                        potente...</p>
+                    <p data-i18n-html="help.aboutText2">En nuestras últimas actualizaciones...</p>
+                </div>
+
+                <div class="help-card">
+                    <h2 class="text-gradient"><i class="ri-rocket-line"></i> <span data-i18n="help.useTitle">¿Para qué
+                            sirve?</span></h2>
+                    <p data-i18n-html="help.useText">Su uso principal es <strong>aumentar tu productividad</strong>...
+                    </p>
+                    <ul>
+                        <li data-i18n-html="help.useList1">Tomar notas rápidas...</li>
+                        <li data-i18n-html="help.useList2">Redactar borradores...</li>
+                        <li data-i18n-html="help.useList3">Capturar ideas...</li>
+                        <li data-i18n-html="help.useList4">Accesibilidad...</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Troubleshooting Section -->
+            <section class="section-faq" id="troubleshooting">
+                <h2 class="text-center" style="margin-bottom: 40px;" data-i18n="help.troubleTitle">🔧 Problemas Comunes
+                    y Soluciones</h2>
+                <p class="text-center" style="margin-bottom: 30px; color: var(--text-secondary);"
+                    data-i18n="help.troubleDesc">El problema más frecuente...</p>
+
+                <div class="faq-grid">
+
+                    <!-- Problem 1 -->
+                    <div class="faq-item glass-card active">
+                        <button class="faq-question">
+                            <span data-i18n="help.p1Title">🔴 Problema 1: "No me escucha" o "No inicia la
+                                grabación"</span>
+                            <i class="ri-add-line"></i>
+                        </button>
+                        <div class="faq-answer" style="max-height: 1000px;">
+                            <div style="padding: 20px; color: var(--faq-text);">
+                                <p data-i18n="help.p1Desc">Esto suele ocurrir...</p>
+                                <br>
+                                <strong data-i18n="help.solTitle">Soluciones:</strong>
+                                <ol style="margin-left: 20px; margin-top: 10px;">
+                                    <li style="margin-bottom: 10px;">
+                                        <strong data-i18n="help.p1s1Title">Verificar Permisos del Sitio...</strong>
+                                        <ul style="list-style-type: circle; margin-left: 20px; margin-top: 5px;">
+                                            <li data-i18n-html="help.p1s1l1">Mira a la izquierda...</li>
+                                            <li data-i18n-html="help.p1s1l2">Haz clic ahí...</li>
+                                            <li data-i18n-html="help.p1s1l3">Asegúrate de que...</li>
+                                            <li data-i18n-html="help.p1s1l4">IMPORTANTE...</li>
+                                        </ul>
+                                    </li>
+                                    <li style="margin-bottom: 10px;">
+                                        <strong data-i18n="help.p1s2Title">Verificar Permisos del Sistema...</strong>
+                                        <ul style="list-style-type: circle; margin-left: 20px; margin-top: 5px;">
+                                            <li data-i18n-html="help.p1s2l1">Windows...</li>
+                                            <li data-i18n-html="help.p1s2l2">macOS...</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong data-i18n="help.p1s3Title">Otro programa está usando...</strong>
+                                        <br><span data-i18n="help.p1s3Desc">Si tienes Zoom...</span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem 2 -->
+                    <div class="faq-item glass-card">
+                        <button class="faq-question">
+                            <span data-i18n="help.p2Title">🔇 Problema 2: "Escribe cosas sin sentido..."</span>
+                            <i class="ri-add-line"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div style="padding: 20px; color: var(--faq-text);">
+                                <p data-i18n-html="help.p2Cause">Causa: ...</p>
+                                <br>
+                                <strong data-i18n-html="help.p2Sol">Solución:</strong>
+                                <ul style="margin-left: 20px; margin-top: 10px; list-style-type: disc;">
+                                    <li data-i18n-html="help.p2l1">En la interfaz...</li>
+                                    <li data-i18n-html="help.p2l2">Asegúrate de que...</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem 3 -->
+                    <div class="faq-item glass-card">
+                        <button class="faq-question">
+                            <span data-i18n="help.p3Title">📂 Problema 3: Uso en archivos locales...</span>
+                            <i class="ri-add-line"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div style="padding: 20px; color: var(--faq-text);">
+                                <p data-i18n="help.p3Desc">Si intentas usar...</p>
+                                <p data-i18n-html="help.p3Cause">Causa: ...</p>
+                                <br>
+                                <strong data-i18n-html="help.p3Sol">Solución:</strong>
+                                <ol style="margin-left: 20px; margin-top: 10px; list-style-type: decimal;">
+                                    <li data-i18n-html="help.p3l1">Ve a chrome://extensions...</li>
+                                    <li data-i18n-html="help.p3l2">Busca Voice Scribe...</li>
+                                    <li data-i18n-html="help.p3l3">Haz clic en Detalles...</li>
+                                    <li data-i18n-html="help.p3l4">Activa la opción...</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Final Tips Section -->
+            <section class="help-content-section">
+                <div class="glass-card-glow">
+                    <h2 class="text-center" style="margin-bottom: 30px;" data-i18n="help.tipsTitle">💡 Consejos Finales
+                    </h2>
+                    <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 20px; font-size: 1.1rem; display: flex; gap: 10px;">
+                                <i class="ri-chat-voice-line text-gradient" style="font-size: 1.5rem;"></i>
+                                <span data-i18n-html="help.tip1">Habla claro...</span>
+                            </li>
+                            <li style="margin-bottom: 20px; font-size: 1.1rem; display: flex; gap: 10px;">
+                                <i class="ri-mic-line text-gradient" style="font-size: 1.5rem;"></i>
+                                <span data-i18n-html="help.tip2">Usa un buen micrófono...</span>
+                            </li>
+                            <li style="margin-bottom: 20px; font-size: 1.1rem; display: flex; gap: 10px;">
+                                <i class="ri-pause-circle-line text-gradient" style="font-size: 1.5rem;"></i>
+                                <span data-i18n-html="help.tip3">Si se detiene solo...</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer (Modular - reused from index.html manually for now or redundant? The request was specifically about the Menu (up top). 
+         The footer was also copied in script.js? No, script.js only has renderHeader.
+         I will keep footer as is, since the user only emphasized the "menu at the top".
+    -->
+    <footer>
+        <div class="container footer-content">
+            <p data-i18n="footer.copy">&copy; 2026 VoiceScribe. Productividad Inteligente.</p>
+            <div class="footer-links">
+                <a href="#" data-i18n="footer.privacy">Privacidad</a>
+                <a href="#" data-i18n="footer.contact">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for FAQ and Theme -->
+    <script src="script.js?v=1.4.2"></script>
+</body>
+
+</html>
