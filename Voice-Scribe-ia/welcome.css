@@ -1,0 +1,289 @@
+/* welcome.css */
+
+/* Variables (Consistent with landing page but simplified) */
+:root {
+    --bg-color: #050507;
+    --text-color: #ededed;
+    --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --accent-color: #2575fc;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Subtle noise texture or gradient */
+    background-image:
+        radial-gradient(circle at 50% 0%, rgba(37, 117, 252, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(106, 17, 203, 0.1) 0%, transparent 40%);
+}
+
+.welcome-container {
+    max-width: 900px;
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Header */
+header {
+    margin-bottom: 50px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #888;
+    font-weight: 300;
+}
+
+/* Hero */
+.hero-welcome h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero-welcome p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Steps Grid */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.step-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px 20px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(37, 117, 252, 0.4);
+}
+
+.step-card h3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.step-card p {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-bottom: 25px;
+    min-height: 48px;
+    /* Align heights */
+}
+
+/* Image Placeholders */
+.image-placeholder {
+    width: 100%;
+    height: 160px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border: 1px dashed var(--glass-border);
+}
+
+.placeholder-overlay {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.tutorial-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    /* Placeholder opacity */
+}
+
+/* Motivation / Benefits */
+.motivation-box {
+    margin-bottom: 60px;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+}
+
+.motivation-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.benefits-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    max-width: 250px;
+}
+
+.benefit i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.benefit span {
+    font-size: 0.95rem;
+    color: #bbb;
+}
+
+/* Footer / CTA */
+.action-area {
+    margin-bottom: 40px;
+}
+
+.cta-box {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(37, 117, 252, 0.1);
+    padding: 20px 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(37, 117, 252, 0.3);
+    margin: 20px 0;
+}
+
+.cta-box span {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.command {
+    font-size: 1.4rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.link-subtle {
+    display: block;
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.link-subtle:hover {
+    color: #aaa;
+}
+
+footer {
+    border-top: 1px solid var(--glass-border);
+    padding-top: 30px;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "VoiceScribe - Transcripción IA para Reuniones y Clases | Voz a Texto Gratis",
+    "description": "VoiceScribe: La mejor extensión de Chrome para Transcripción de Voz a Texto con IA. Transcribe reuniones de Zoom, Google Meet y clases en tiempo real. Resúmenes automáticos gratis.",
+    "keywords": "transcripción de voz, speech to text, resumen con IA, notas de reuniones, chrome extension, transcribir zoom, transcribir clases, dictado por voz, gratis"
+  },
+  "nav": {
+    "cta": "Añadir a Chrome — Gratis"
+  },
+  "hero": {
+    "badge": "✨ Nueva Versión 1.4: La IA más rápida para Chrome",
+    "title": "Pierdes el 80% de tus ideas. ",
+    "titleGradient": "Transcríbelas con IA.",
+    "subtitle": "Captura cada reunión de <strong>Zoom</strong>, clase o conferencia al instante. <strong>Transcripción en tiempo real</strong> en 12 idiomas y generación de <strong>resúmenes inteligentes</strong> sin límites.",
+    "cta": "Instalar Transcriptor Gratis",
+    "subCta": "Compatible con Google Meet, YouTube y Micrófono.",
+    "socialProof": "Elegido por <strong>+10,000 estudiantes y profesionales</strong>.",
+    "imgAlt": "Interfaz de VoiceScribe mostrando transcripción en vivo y resumen IA"
+  },
+  "problem": {
+    "title": "🚀 Toma notas automáticas sin interrupciones",
+    "text": "¿Harto de perder detalles en tus videollamadas? Con nuestro <strong>Modo Sidebar fijo</strong>, VoiceScribe transcribe tus reuniones de trabajo o clases online mientras tú sigues navegando.",
+    "link": "Ver función de Notas Flotantes",
+    "cardTitle": "Sidebar Multitarea",
+    "cardText": "Tu asistente de notas personal, siempre visible."
+  },
+  "features": {
+    "f1Title": "12 Idiomas Soportados",
+    "f1Text": "Transcribe audio a texto en Español, Inglés, Francés, Japonés y más. Precisión nativa del 99%.",
+    "f2Title": "Resúmenes con Chat GPT-4o",
+    "f2Text": "Convierte 1 hora de grabación en un resumen de 5 minutos. Ideal para estudiantes y actas de reuniones.",
+    "f3Title": "100% Privado y Seguro",
+    "f3Text": "Tus datos se guardan localmente. Sin envíos a servidores externos. Tu privacidad es nuestra prioridad."
+  },
+  "testimonials": {
+    "title": "Lo que dicen nuestros usuarios",
+    "t1Quote": "\"Pensé que sería complicado, pero el Modo Sidebar es lo que siempre necesité. Ya no pierdo el hilo en mis reuniones.\"",
+    "t1Name": "Ana M.",
+    "t1Role": "Project Manager",
+    "t2Quote": "\"La mejor extensión para tomar apuntes de mis clases online. El resumen automático es magia.\"",
+    "t2Name": "Carlos R.",
+    "t2Role": "Estudiante de Medicina"
+  },
+  "pricing": {
+    "title": "¡Oferta de Lanzamiento!",
+    "badge": "GRATIS POR TIEMPO LIMITADO",
+    "planName": "Acceso Total",
+    "price": "$0",
+    "pricePeriod": "/mes",
+    "planDesc": "Disfruta de todas las funciones PRO sin coste.",
+    "item1": "Transcripción Ilimitada",
+    "item2": "12 Idiomas Nativos",
+    "item3": "Modos Popup y Sidebar",
+    "item4": "Resúmenes IA Ilimitados",
+    "item5": "Exportación y Privacidad Total",
+    "cta": "Obtener Todo Gratis Ahora"
+  },
+  "finalCta": {
+    "title": "Aprovecha el Acceso Gratuito Hoy",
+    "text": "No sabemos por cuánto tiempo mantendremos esta oferta. Asegura tu acceso ahora.",
+    "cta": "Instalar Extensión Gratis",
+    "note": "Compatible con Chrome, Brave y Edge."
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes sobre Transcripción de Voz",
+    "q1": "¿Cuánto cuesta VoiceScribe?",
+    "a1": "Actualmente, <strong>VoiceScribe es 100% GRATUITO</strong> por tiempo limitado. Queremos que pruebes la herramienta sin barreras. Eventualmente introduciremos planes de pago, pero si te unes ahora, podrás disfrutar de todo sin costo.",
+    "q2": "¿Qué tan precisa es la transcripción?",
+    "a2": "Utilizamos la tecnología Web Speech API avanzada, logrando una precisión superior al <strong>95%</strong> en condiciones de audio claras. Funciona mejor con un buen micrófono y ruido de fondo moderado.",
+    "q3": "¿Funciona con Zoom, Google Meet o YouTube?",
+    "a3": "Sí. VoiceScribe captura el audio de tu micrófono. Si usas altavoces, capturará el audio de tus reuniones o videos. Para mejores resultados en reuniones, usa el modo \"Stereo Mix\" de tu sistema si está disponible.",
+    "q4": "¿Mis datos están seguros?",
+    "a4": "Absolutamente. <strong>La privacidad es nuestra prioridad.</strong> Las transcripciones se procesan localmente en tu navegador. Solo enviamos texto a OpenAI cuando solicitas un resumen explícitamente, y no se guardan en nuestros servidores.",
+    "q5": "¿Necesito mi propia clave de OpenAI?",
+    "a5": "No. Al ser gratuito, puedes usar nuestra IA directamente. Si prefieres usar tu propia clave API para mayor control, ofrecemos esa opción en la configuración."
+  },
+  "support": {
+    "title": "Soporte y Ayuda",
+    "quickFixTitle": "Soluciones Rápidas",
+    "fix1Label": "Permisos de Micrófono:",
+    "fix1Text": "Asegúrate de permitir el acceso en",
+    "fix2Label": "Sin conexión:",
+    "fix2Text": "Verifica tu internet. La transcripción requiere conexión para la máxima precisión.",
+    "contactTitle": "Contacto Directo",
+    "contactText": "¿Tienes algún problema específico o sugerencia?"
+  },
+  "footer": {
+    "copy": "© 2026 VoiceScribe. Todos los derechos reservados.",
+    "privacy": "Privacidad",
+    "contact": "Contacto"
+  }
+}

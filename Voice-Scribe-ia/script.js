@@ -1,0 +1,503 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+    // ===== i18n (Internationalization) System =====
+    const translations = {
+        es: {
+            "meta": {
+                "title": "VoiceScribe - Transcripción IA para Reuniones y Clases | Voz a Texto Gratis",
+                "description": "VoiceScribe: La mejor extensión de Chrome para Transcripción de Voz a Texto con IA. Transcribe reuniones de Zoom, Google Meet y clases en tiempo real. Resúmenes automáticos gratis.",
+                "keywords": "transcripción de voz, speech to text, resumen con IA, notas de reuniones, chrome extension, transcribir zoom, transcribir clases, dictado por voz, gratis"
+            },
+            "nav": {
+                "cta": "Instalar — Es Gratis"
+            },
+            "hero": {
+                "badge": "✨ Nueva Versión 1.4: La IA más rápida para Chrome",
+                "title": "Pierdes el 80% de tus ideas. ",
+                "titleGradient": "Transcríbelas con IA.",
+                "subtitle": "Tu memoria no es infalible. <strong>VoiceScribe</strong> captura cada palabra de tus reuniones de <strong>Zoom</strong> y clases. <strong>Transcripción ilimitada</strong> y <strong>resúmenes inteligentes</strong> sin coste.",
+                "cta": "Instalar Transcriptor Gratis",
+                "subCta": "Funciona en Google Meet, YouTube y Micrófono.",
+                "socialProof": "Más de <strong>10,000 profesionales</strong> ya no toman notas manuales.",
+                "imgAlt": "Interfaz de VoiceScribe mostrando transcripción en vivo y resumen IA"
+            },
+            "problem": {
+                "title": "🛑 Tu cerebro borra ideas cada 10 segundos",
+                "text": "Escribir a mano es lento. Teclear rompe tu flujo. Con el <strong>Modo Sidebar</strong>, VoiceScribe es tu red de seguridad cognitiva: captura todo sin que tengas que dejar de prestar atención.",
+                "link": "Ver cómo funciona el Modo Sidebar",
+                "cardTitle": "Segundo Cerebro",
+                "cardText": "Tu asistente personal, siempre activo."
+            },
+            "features": {
+                "f1Title": "Escucha y Traduce (12 Idiomas)",
+                "f1Text": "Rompe la barrera del idioma. Transcripción precisa en Español, Inglés, Francés, Japonés y más. Como un traductor 24/7.",
+                "f2Title": "Resume con IA (GPT-4o)",
+                "f2Text": "Convierte 1 hora de charla en 5 minutos de lectura. La IA destila lo vital para que tú te enfoques en lo importante.",
+                "f3Title": "Privacidad No Negociable",
+                "f3Text": "A diferencia de otros, procesamos todo localmente en tu navegador. Tus reuniones secretas siguen siendo secretas."
+            },
+            "testimonials": {
+                "title": "El impacto en productividad",
+                "t1Quote": "\"Antes perdía la mitad de la reunión tomando notas. Ahora VoiceScribe lo hace por mí y yo participo. Es mi ventaja competitiva.\"",
+                "t1Name": "Ana M.",
+                "t1Role": "Product Manager",
+                "t2Quote": "\"La capacidad de resumir una clase de 2 horas en puntos clave es lo que me salvó el semestre. Debería cobrar por esto.\"",
+                "t2Name": "Carlos R.",
+                "t2Role": "Estudiante de Medicina"
+            },
+            "pricing": {
+                "title": "Oferta de Lanzamiento v1.4",
+                "badge": "GRATIS POR TIEMPO LIMITADO",
+                "planName": "Acceso Total",
+                "price": "$0",
+                "pricePeriod": "/mes",
+                "planDesc": "Sin tarjetas de crédito. Sin trucos.",
+                "item1": "Transcripción Ilimitada",
+                "item2": "12 Idiomas Nativos",
+                "item3": "Modos Popup y Sidebar",
+                "item4": "Resúmenes IA Ilimitados",
+                "item5": "Privacidad Total (Local)",
+                "cta": "Asegurar Mi Acceso Gratis"
+            },
+            "finalCta": {
+                "title": "No dejes escapar otra idea brillante",
+                "text": "Esta oferta gratuita es limitada para los primeros usuarios de la versión 1.4. Instálalo hoy y garantiza tu acceso de por vida.",
+                "cta": "Instalar VoiceScribe Ahora",
+                "note": "Compatible con Chrome, Brave y Edge."
+            },
+            "faq": {
+                "title": "Preguntas Frecuentes",
+                "q1": "¿Realmente es gratis?",
+                "a1": "Sí, al 100%. Estamos en fase de crecimiento y queremos que todo el mundo pruebe VoiceScribe. Disfruta de todas las funciones PRO sin coste hoy.",
+                "q2": "¿Qué tan precisa es la transcripción?",
+                "a2": "Usamos la misma tecnología que Google (Web Speech API), logrando una precisión superior al <strong>95%</strong> en condiciones normales.",
+                "q3": "¿Funciona con Zoom/Meet?",
+                "a3": "Sí. VoiceScribe captura el audio de tu sistema o micrófono. Es perfecto para registrar videollamadas sin necesidad de bots intrusivos.",
+                "q4": "¿Dónde van mis datos?",
+                "a4": "A ninguna parte. <strong>Se quedan en tu dispositivo.</strong> Solo si pides un resumen a la IA, el texto se envía anonimizado para procesarlo y se borra al instante.",
+                "q5": "¿Necesito pagar OpenAI?",
+                "a5": "No. Nosotros cubrimos los costes de la IA en esta versión gratuita."
+            },
+            "support": {
+                "title": "Soporte",
+                "quickFixTitle": "Ayuda Rápida",
+                "fix1Label": "Permisos:",
+                "fix1Text": "Permite el acceso al micrófono en el navegador.",
+                "fix2Label": "Internet:",
+                "fix2Text": "Necesitas conexión para la máxima precisión.",
+                "contactTitle": "Contacto",
+                "contactText": "¿Dudas? Escríbenos directamente."
+            },
+            "footer": {
+                "copy": "© 2026 VoiceScribe. Productividad Inteligente.",
+                "privacy": "Privacidad",
+                "contact": "Contacto"
+            }
+        },
+        en: {
+            "meta": {
+                "title": "VoiceScribe - AI Transcription for Meetings & Lectures | Free Speech to Text",
+                "description": "VoiceScribe: The best Chrome extension for AI-powered Speech to Text. Transcribe Zoom, Google Meet calls and lectures in real time. Free AI summaries.",
+                "keywords": "voice transcription, speech to text, AI summary, meeting notes, chrome extension, transcribe zoom, transcribe lectures, voice typing, free"
+            },
+            "nav": {
+                "cta": "Install — It's Free"
+            },
+            "hero": {
+                "badge": "✨ New Version 1.4: The Fastest AI for Chrome",
+                "title": "You lose 80% of your best ideas. ",
+                "titleGradient": "Transcribe them with AI.",
+                "subtitle": "Your memory isn't perfect. <strong>VoiceScribe</strong> captures every word of your <strong>Zoom</strong> meetings and lectures. <strong>Unlimited transcription</strong> and <strong>smart summaries</strong> at zero cost.",
+                "cta": "Install Free Transcriber",
+                "subCta": "Works with Google Meet, YouTube & Microphone.",
+                "socialProof": "Over <strong>10,000 professionals</strong> have stopped taking manual notes.",
+                "imgAlt": "VoiceScribe interface showing live transcription and AI summary"
+            },
+            "problem": {
+                "title": "🛑 Your brain deletes ideas every 10 seconds",
+                "text": "Handwriting is slow. Typing breaks your flow. With <strong>Sidebar Mode</strong>, VoiceScribe is your cognitive safety net: capturing everything while you stay focused on the conversation.",
+                "link": "See Sidebar Mode in Action",
+                "cardTitle": "Second Brain",
+                "cardText": "Your personal assistant, always active."
+            },
+            "features": {
+                "f1Title": "Listen & Translate (12 Langs)",
+                "f1Text": "Break the language barrier. Accurate transcription in English, Spanish, French, Japanese, and more. Like a 24/7 personal translator.",
+                "f2Title": "Summarize with AI (GPT-4o)",
+                "f2Text": "Turn a 1-hour talk into a 5-minute read. AI distills the vital info so you can focus on what matters.",
+                "f3Title": "Non-Negotiable Privacy",
+                "f3Text": "Unlike others, we process everything locally in your browser. Your secret meetings stay secret."
+            },
+            "testimonials": {
+                "title": "Productivity Impact",
+                "t1Quote": "\"I used to lose half the meeting taking notes. Now VoiceScribe does it for me and I actually participate. It's my competitive advantage.\"",
+                "t1Name": "Ana M.",
+                "t1Role": "Product Manager",
+                "t2Quote": "\"Being able to summarize a 2-hour lecture into key points saved my semester. I should be charging for this tool.\"",
+                "t2Name": "Carlos R.",
+                "t2Role": "Medical Student"
+            },
+            "pricing": {
+                "title": "v1.4 Launch Offer",
+                "badge": "FREE FOR A LIMITED TIME",
+                "planName": "Full Access",
+                "price": "$0",
+                "pricePeriod": "/mo",
+                "planDesc": "No credit cards. No tricks.",
+                "item1": "Unlimited Transcription",
+                "item2": "12 Native Languages",
+                "item3": "Popup & Sidebar Modes",
+                "item4": "Unlimited AI Summaries",
+                "item5": "Total Privacy (Local)",
+                "cta": "Secure My Free Access"
+            },
+            "finalCta": {
+                "title": "Don't let another brilliant idea escape",
+                "text": "This free offer is limited to early v1.4 adopters. Install today and guarantee your access for life.",
+                "cta": "Install VoiceScribe Now",
+                "note": "Compatible with Chrome, Brave and Edge."
+            },
+            "faq": {
+                "title": "FAQ",
+                "q1": "Is it really free?",
+                "a1": "Yes, 100%. We are in a growth phase and want everyone to try VoiceScribe. Enjoy all PRO features at no cost today.",
+                "q2": "How accurate is it?",
+                "a2": "We use the same technology as Google (Web Speech API), achieving over <strong>95% accuracy</strong> in normal conditions.",
+                "q3": "Does it work with Zoom/Meet?",
+                "a3": "Yes. It captures your system audio or microphone. Perfect for recording video calls without intrusive bots.",
+                "q4": "Where does my data go?",
+                "a4": "Nowhere. <strong>It stays on your device.</strong> Only if you request an AI summary is text anonymously processed and immediately deleted.",
+                "q5": "Do I need to pay OpenAI?",
+                "a5": "No. We cover the AI costs in this free version."
+            },
+            "support": {
+                "title": "Support",
+                "quickFixTitle": "Quick Help",
+                "fix1Label": "Permissions:",
+                "fix1Text": "Allow microphone access in browser.",
+                "fix2Label": "Internet:",
+                "fix2Text": "Connection required for max accuracy.",
+                "contactTitle": "Contact",
+                "contactText": "Questions? Email us directly."
+            },
+            "footer": {
+                "copy": "© 2026 VoiceScribe. Smart Productivity.",
+                "privacy": "Privacy",
+                "contact": "Contact"
+            }
+        },
+        zh: {
+            "meta": {
+                "title": "VoiceScribe - AI语音转文字 | 免费会议转录与智能摘要",
+                "description": "VoiceScribe：最好用的Chrome语音转文字扩展。实时转录Zoom、Google Meet会议和课堂内容，AI自动生成摘要，完全免费。",
+                "keywords": "语音转文字, 实时转录, AI摘要, 会议记录, Chrome扩展, 转录Zoom, 课堂笔记, 语音输入, 免费"
+            },
+            "nav": {
+                "cta": "安装 — 完全免费"
+            },
+            "hero": {
+                "badge": "✨ 全新1.4版：Chrome上最快的AI转录工具",
+                "title": "你正在流失80%的灵感。",
+                "titleGradient": "用AI记录下来。",
+                "subtitle": "你的记忆力并非完美无缺。<strong>VoiceScribe</strong> 能够捕捉 <strong>Zoom</strong> 会议和课堂的每一个字。<strong>无限转录</strong>和<strong>智能摘要</strong>，零成本。",
+                "cta": "免费安装转录工具",
+                "subCta": "兼容 Google Meet、YouTube 和麦克风。",
+                "socialProof": "超过 <strong>10,000名专业人士</strong> 已停止手动记笔记。",
+                "imgAlt": "VoiceScribe界面展示实时转录和AI摘要功能"
+            },
+            "problem": {
+                "title": "🛑 你的大脑每10秒就在删除想法",
+                "text": "手写太慢。打字打断思路。使用<strong>侧边栏模式</strong>，VoiceScribe是你的认知安全网：在你专注于对话时，自动捕捉一切。",
+                "link": "查看侧边栏模式",
+                "cardTitle": "第二大脑",
+                "cardText": "你的私人助手，始终在线。"
+            },
+            "features": {
+                "f1Title": "聆听并翻译（12种语言）",
+                "f1Text": "打破语言障碍。支持中文、英语、法语、日语等精准转录。就像拥有24/7的私人翻译。",
+                "f2Title": "GPT-4o智能摘要",
+                "f2Text": "将1小时的谈话转化为5分钟的阅读材料。AI提炼精华，让你专注于重要事项。",
+                "f3Title": "隐私不可妥协",
+                "f3Text": "与众不同的是，我们在你的浏览器本地处理一切。你的秘密会议依然是秘密。"
+            },
+            "testimonials": {
+                "title": "生产力飞跃",
+                "t1Quote": "\"以前我开会有一半时间在记笔记。现在VoiceScribe帮我做了，我专注于参与。这是我的竞争优势。\"",
+                "t1Name": "Ana M.",
+                "t1Role": "产品经理",
+                "t2Quote": "\"能够把2小时的课程总结成关键点，拯救了我的学期。这个工具应该收费才对。\"",
+                "t2Name": "Carlos R.",
+                "t2Role": "医学生"
+            },
+            "pricing": {
+                "title": "1.4版上线特惠",
+                "badge": "限时完全免费",
+                "planName": "全部功能",
+                "price": "$0",
+                "pricePeriod": "/月",
+                "planDesc": "无信用卡。无套路。",
+                "item1": "无限转录",
+                "item2": "12种语言支持",
+                "item3": "弹窗和侧边栏模式",
+                "item4": "无限AI摘要",
+                "item5": "完全隐私（本地）",
+                "cta": "锁定我的免费权限"
+            },
+            "finalCta": {
+                "title": "别让另一个绝妙点子溜走",
+                "text": "此免费优惠仅限1.4版早期用户。今天安装，终身免费使用。",
+                "cta": "立即安装 VoiceScribe",
+                "note": "兼容 Chrome、Brave 和 Edge 浏览器。"
+            },
+            "faq": {
+                "title": "常见问题",
+                "q1": "真的免费吗？",
+                "a1": "是的，100%。我们处于增长阶段，希望每个人都能体验VoiceScribe。今天即可零成本享受所有PRO功能。",
+                "q2": "转录有多准确？",
+                "a2": "我们使用与Google相同的技术（Web Speech API），在正常条件下准确率超过 <strong>95%</strong>。",
+                "q3": "支持Zoom/Meet吗？",
+                "a3": "支持。它捕获系统音频或麦克风。非常适合记录视频通话，无需繁琐的机器人。",
+                "q4": "我的数据去哪了？",
+                "a4": "哪也没去。<strong>它留在你的设备上。</strong>只有在你请求AI摘要时，文本才会被匿名处理并立即删除。",
+                "q5": "需要付钱给OpenAI吗？",
+                "a5": "不需要。在这个免费版本中，我们承担AI成本。"
+            },
+            "support": {
+                "title": "支持",
+                "quickFixTitle": "快速帮助",
+                "fix1Label": "权限：",
+                "fix1Text": "允许浏览器访问麦克风。",
+                "fix2Label": "网络：",
+                "fix2Text": "需要连接以获得最高精度。",
+                "contactTitle": "联系",
+                "contactText": "有问题？直接发邮件给我们。"
+            },
+            "footer": {
+                "copy": "© 2026 VoiceScribe. 智能生产力。",
+                "privacy": "隐私",
+                "contact": "联系"
+            }
+        }
+    };
+
+    let currentLang = 'en';
+
+    function detectBrowserLanguage() {
+        const saved = localStorage.getItem('voicescribe-lang');
+        if (saved && ['es', 'en', 'zh'].includes(saved)) return saved;
+
+        return 'en';
+    }
+
+    function getNestedValue(obj, path) {
+        return path.split('.').reduce((acc, key) => acc && acc[key], obj);
+    }
+
+    function applyTranslations(data) {
+        // textContent translations
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            const value = getNestedValue(data, key);
+            if (value) {
+                // Check if it's a meta tag with data-i18n-attr
+                if (el.hasAttribute('data-i18n-attr')) {
+                    const attr = el.getAttribute('data-i18n-attr');
+                    el.setAttribute(attr, value);
+                } else if (el.tagName === 'TITLE') {
+                    document.title = value;
+                } else {
+                    el.textContent = value;
+                }
+            }
+        });
+
+        // innerHTML translations (for elements with bold/strong tags)
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            const value = getNestedValue(data, key);
+            if (value) {
+                el.innerHTML = value;
+            }
+        });
+
+        // Alt attribute translations
+        document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+            const key = el.getAttribute('data-i18n-alt');
+            const value = getNestedValue(data, key);
+            if (value) {
+                el.setAttribute('alt', value);
+            }
+        });
+
+        // Update html lang attribute
+        document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : currentLang;
+
+        // Add/remove CJK class for font handling
+        if (currentLang === 'zh') {
+            document.body.classList.add('lang-zh');
+        } else {
+            document.body.classList.remove('lang-zh');
+        }
+    }
+
+    function setActiveLangButton(lang) {
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+
+    function switchLanguage(lang) {
+        const data = translations[lang];
+        if (data) {
+            currentLang = lang;
+            applyTranslations(data);
+            setActiveLangButton(lang);
+            localStorage.setItem('voicescribe-lang', lang);
+        } else {
+            console.error('Translation not found for:', lang);
+        }
+    }
+
+    // Language switcher event listeners
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.dataset.lang;
+            if (lang !== currentLang) {
+                switchLanguage(lang);
+            }
+        });
+    });
+
+    // Auto-detect and apply language on first load
+    const detectedLang = detectBrowserLanguage();
+    switchLanguage(detectedLang);
+
+    // ===== Intersection Observer for Fade-in Animations =====
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.glass-card, .problem-text, .hero h1, .hero p, .hero-cta-group');
+
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(el);
+    });
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // ===== Smooth Scroll for Anchor Links =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // ===== FAQ Accordion =====
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Close all other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                }
+            });
+
+            // Toggle current item
+            item.classList.toggle('active');
+            if (!isActive) {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                answer.style.maxHeight = null;
+            }
+        });
+    });
+
+    // ===== Theme Switcher Logic =====
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
+
+    function getPreferredTheme() {
+        try {
+            const savedTheme = localStorage.getItem('voicescribe-theme');
+            if (savedTheme) {
+                return savedTheme;
+            }
+        } catch (e) {
+            console.warn('LocalStorage access denied or failed', e);
+        }
+        return 'light';
+    }
+
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        try {
+            localStorage.setItem('voicescribe-theme', theme);
+        } catch (e) {
+            console.warn('Unable to save theme to LocalStorage', e);
+        }
+
+        // Update icon if it exists
+        if (themeIcon) {
+            if (theme === 'dark') {
+                themeIcon.classList.remove('ri-moon-line');
+                themeIcon.classList.add('ri-sun-line');
+            } else {
+                themeIcon.classList.remove('ri-sun-line');
+                themeIcon.classList.add('ri-moon-line');
+            }
+        }
+    }
+
+    // Initialize theme
+    const initialTheme = getPreferredTheme();
+    setTheme(initialTheme);
+
+    // Toggle event
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            console.log('Theme toggle clicked');
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        });
+    } else {
+        console.error('Theme toggle element not found');
+    }
+
+
+
+    console.log('VoiceScribe Landing Page Loaded');
+});

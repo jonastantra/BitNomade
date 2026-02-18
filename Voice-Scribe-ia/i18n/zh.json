@@ -1,0 +1,92 @@
+{
+    "meta": {
+        "title": "VoiceScribe - AI语音转文字 | 免费会议转录与智能摘要",
+        "description": "VoiceScribe：最好用的Chrome语音转文字扩展。实时转录Zoom、Google Meet会议和课堂内容，AI自动生成摘要，完全免费。",
+        "keywords": "语音转文字, 实时转录, AI摘要, 会议记录, Chrome扩展, 转录Zoom, 课堂笔记, 语音输入, 免费"
+    },
+    "nav": {
+        "cta": "免费添加到Chrome"
+    },
+    "hero": {
+        "badge": "✨ 全新1.4版：Chrome上最快的AI转录工具",
+        "title": "你正在流失80%的灵感。",
+        "titleGradient": "用AI记录下来。",
+        "subtitle": "即时捕获每一场 <strong>Zoom</strong> 会议、课堂或讲座。支持12种语言的<strong>实时语音转文字</strong>，无限<strong>AI智能摘要</strong>。",
+        "cta": "免费安装转录工具",
+        "subCta": "兼容 Google Meet、YouTube 和麦克风。",
+        "socialProof": "已被 <strong>10,000+ 学生和职场人</strong> 选择。",
+        "imgAlt": "VoiceScribe界面展示实时转录和AI摘要功能"
+    },
+    "problem": {
+        "title": "🚀 自动记录笔记，零打扰",
+        "text": "厌倦了在视频会议中漏掉细节？使用我们的<strong>侧边栏常驻模式</strong>，VoiceScribe可以在你继续浏览网页的同时，自动转录会议或在线课程。",
+        "link": "查看浮动笔记功能",
+        "cardTitle": "多任务侧边栏",
+        "cardText": "你的私人笔记助手，始终可见。"
+    },
+    "features": {
+        "f1Title": "支持12种语言",
+        "f1Text": "将中文、英语、法语、日语等音频精准转换为文字，准确率高达99%。",
+        "f2Title": "GPT-4o智能摘要",
+        "f2Text": "1小时的录音，5分钟读完。学生课堂笔记和会议纪要的理想之选。",
+        "f3Title": "100%安全私密",
+        "f3Text": "数据本地存储，不上传任何外部服务器。你的隐私，是我们的首要原则。"
+    },
+    "testimonials": {
+        "title": "用户评价",
+        "t1Quote": "\"我以为会很复杂，但侧边栏模式正是我一直需要的。开会再也不会漏掉重要内容了。\"",
+        "t1Name": "Ana M.",
+        "t1Role": "项目经理",
+        "t2Quote": "\"这是最好的在线课堂笔记扩展。自动生成摘要简直是魔法。\"",
+        "t2Name": "Carlos R.",
+        "t2Role": "医学生"
+    },
+    "pricing": {
+        "title": "上线特惠！",
+        "badge": "限时完全免费",
+        "planName": "全部功能",
+        "price": "$0",
+        "pricePeriod": "/月",
+        "planDesc": "零成本享受所有PRO功能。",
+        "item1": "无限转录",
+        "item2": "12种语言支持",
+        "item3": "弹窗和侧边栏模式",
+        "item4": "无限AI摘要",
+        "item5": "导出与完整隐私保护",
+        "cta": "立即免费获取全部功能"
+    },
+    "finalCta": {
+        "title": "今天就锁定你的免费使用权",
+        "text": "我们不确定这个优惠会持续多久。现在就行动吧。",
+        "cta": "免费安装扩展",
+        "note": "兼容 Chrome、Brave 和 Edge 浏览器。"
+    },
+    "faq": {
+        "title": "语音转文字常见问题",
+        "q1": "VoiceScribe 收费吗？",
+        "a1": "目前，<strong>VoiceScribe完全免费</strong>，限时开放。我们希望你零门槛体验这款工具。未来可能推出付费方案，但现在加入，你可以免费享受所有功能。",
+        "q2": "转录精度如何？",
+        "a2": "我们采用先进的 Web Speech API 技术，在清晰音频条件下准确率超过 <strong>95%</strong>。使用良好的麦克风效果更佳。",
+        "q3": "支持 Zoom、Google Meet 或 YouTube 吗？",
+        "a3": "支持。VoiceScribe 可以捕获麦克风音频。如果使用扬声器，也可以录制会议或视频音频。建议使用系统的\"立体声混音\"模式以获得最佳效果。",
+        "q4": "我的数据安全吗？",
+        "a4": "绝对安全。<strong>隐私保护是我们的第一原则。</strong>语音转文字处理完全在本地浏览器中完成。仅在你请求摘要时才会发送文字到OpenAI，且不存储在任何服务器上。",
+        "q5": "需要自己的OpenAI密钥吗？",
+        "a5": "不需要。VoiceScribe免费期间，你可以直接使用我们的AI。如果你希望使用自己的API密钥，可以在设置中配置。"
+    },
+    "support": {
+        "title": "帮助与支持",
+        "quickFixTitle": "快速修复",
+        "fix1Label": "麦克风权限：",
+        "fix1Text": "请确保在以下地址允许麦克风访问",
+        "fix2Label": "无网络连接：",
+        "fix2Text": "请检查网络。转录功能需要联网才能达到最佳精度。",
+        "contactTitle": "直接联系",
+        "contactText": "遇到问题或有建议？"
+    },
+    "footer": {
+        "copy": "© 2026 VoiceScribe. 保留所有权利。",
+        "privacy": "隐私政策",
+        "contact": "联系我们"
+    }
+}
