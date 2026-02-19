@@ -1,0 +1,426 @@
+{
+  "extName": {
+    "message": "Unakili wa Sauti + Muhtasari wa AI",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Badilisha sauti yako kuwa maandishi na unda muhtasari wa akili ya AI",
+    "description": "Extension description"
+  },
+  "extTitle": {
+    "message": "Unakili wa Sauti + AI",
+    "description": "Popup title"
+  },
+  "headerTitle": {
+    "message": "🎤 Unakili wa Sauti + AI",
+    "description": "Header title"
+  },
+  "headerSubtitle": {
+    "message": "Sauti hadi maandishi na muhtasari",
+    "description": "Header subtitle"
+  },
+  "sectionRecording": {
+    "message": "🎙️ Kurekodi Sauti",
+    "description": "Recording section title"
+  },
+  "btnStartRecording": {
+    "message": "Anza Kurekodi",
+    "description": "Start recording button"
+  },
+  "btnStopRecording": {
+    "message": "Acha Kurekodi",
+    "description": "Stop recording button"
+  },
+  "btnClearAll": {
+    "message": "Futa Yote",
+    "description": "Clear all button"
+  },
+  "statusReady": {
+    "message": "Tayari kurekodi",
+    "description": "Status: ready"
+  },
+  "statusRecording": {
+    "message": "Inarekodi...",
+    "description": "Status: recording"
+  },
+  "statusStopped": {
+    "message": "Urekodaji umesimamishwa",
+    "description": "Status: stopped"
+  },
+  "statusRequestingPermissions": {
+    "message": "Inaomba ruhusa...",
+    "description": "Status: requesting permissions"
+  },
+  "statusPermissionsGranted": {
+    "message": "Ruhusa zimetolewa kwa mafanikio",
+    "description": "Status: permissions granted"
+  },
+  "statusStarting": {
+    "message": "Inaanza kurekodi...",
+    "description": "Status: starting"
+  },
+  "sectionTranscription": {
+    "message": "📝 Maandishi Yaliyonakiliwa",
+    "description": "Transcription section title"
+  },
+  "realTimeIndicator": {
+    "message": "Inanakili kwa wakati halisi...",
+    "description": "Real-time transcription indicator"
+  },
+  "transcriptionPlaceholder": {
+    "message": "Maandishi yaliyonakiliwa yataonekana hapa kwa wakati halisi...",
+    "description": "Transcription area placeholder"
+  },
+  "wordCount": {
+    "message": "maneno $COUNT$",
+    "description": "Word counter",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "0"
+      }
+    }
+  },
+  "charCount": {
+    "message": "herufi $COUNT$",
+    "description": "Character counter",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "0"
+      }
+    }
+  },
+  "sectionSummary": {
+    "message": "🤖 Muhtasari wa AI",
+    "description": "Summary section title"
+  },
+  "summaryLengthShort": {
+    "message": "Fupi",
+    "description": "Length option: short"
+  },
+  "summaryLengthMedium": {
+    "message": "Wastani",
+    "description": "Length option: medium"
+  },
+  "summaryLengthLong": {
+    "message": "Ndefu",
+    "description": "Length option: long"
+  },
+  "summaryStyleGeneral": {
+    "message": "Jumla",
+    "description": "Summary style: general"
+  },
+  "summaryStyleBullet": {
+    "message": "Pointi Muhimu",
+    "description": "Summary style: bullet points"
+  },
+  "summaryStyleDetailed": {
+    "message": "Kwa Undani",
+    "description": "Summary style: detailed"
+  },
+  "btnGenerateSummary": {
+    "message": "Unda Muhtasari",
+    "description": "Generate summary button"
+  },
+  "summaryPlaceholder": {
+    "message": "Muhtasari ulioundwa na AI utaonekana hapa...",
+    "description": "Summary area placeholder"
+  },
+  "sectionExport": {
+    "message": "💾 Hamisha",
+    "description": "Export section title"
+  },
+  "btnSaveAsTxt": {
+    "message": "Hifadhi kama TXT",
+    "description": "Save as TXT button"
+  },
+  "btnCopyToClipboard": {
+    "message": "Nakili kwenye Ubao wa Kunakili",
+    "description": "Copy to clipboard button"
+  },
+  "footerText": {
+    "message": "✨ Unakili wa sauti wa wakati halisi na muhtasari wa akili",
+    "description": "Footer text"
+  },
+  "errorNoMicrophone": {
+    "message": "Hitilafu: Kivinjari chako hakitumii ufikiaji wa maikrofoni",
+    "description": "Error: browser doesn't support microphone"
+  },
+  "errorPermissionDenied": {
+    "message": "Hitilafu: Ruhusa za maikrofoni zimekataliwa. Tafadhali ruhusu ufikiaji wa maikrofoni.",
+    "description": "Error: permissions denied"
+  },
+  "errorNoSpeech": {
+    "message": "Hitilafu: Hakuna hotuba iliyogunduliwa. Jaribu kuzungumza karibu na maikrofoni.",
+    "description": "Error: no speech detected"
+  },
+  "errorAudioCapture": {
+    "message": "Hitilafu: Haiwezi kufikia maikrofoni. Angalia ikiwa inatumika na programu nyingine.",
+    "description": "Error: cannot access microphone"
+  },
+  "errorNetwork": {
+    "message": "Hitilafu: Tatizo la mtandao. Angalia muunganisho wako wa intaneti.",
+    "description": "Error: network problem"
+  },
+  "errorAborted": {
+    "message": "Urekodaji umekatizwa.",
+    "description": "Error: recording interrupted"
+  },
+  "errorNoDevice": {
+    "message": "Hitilafu: Hakuna kifaa cha maikrofoni kilichopatikana.",
+    "description": "Error: no device found"
+  },
+  "errorDeviceBusy": {
+    "message": "Hitilafu: Maikrofoni inatumika na programu nyingine.",
+    "description": "Error: device busy"
+  },
+  "errorNotSecure": {
+    "message": "Hitilafu: Muktadha si salama (tumia HTTPS).",
+    "description": "Error: context not secure"
+  },
+  "errorStartRecording": {
+    "message": "Hitilafu kuanza kurekodi",
+    "description": "Error: couldn't start recording"
+  },
+  "alertNoSupport": {
+    "message": "Kivinjari chako hakitumii utambuzi wa hotuba. Jaribu Chrome au Edge.",
+    "description": "Alert: browser not compatible"
+  },
+  "alertNotAvailable": {
+    "message": "Utambuzi wa hotuba haupatikani kwenye kivinjari chako.",
+    "description": "Alert: recognition not available"
+  },
+  "alertNoTextToSummarize": {
+    "message": "Hakuna maandishi ya kufupisha.",
+    "description": "Alert: no text to summarize"
+  },
+  "alertNoContentToSave": {
+    "message": "Hakuna maudhui ya kuhifadhi.",
+    "description": "Alert: no content to save"
+  },
+  "alertNoContentToCopy": {
+    "message": "Hakuna maudhui ya kunakili.",
+    "description": "Alert: no content to copy"
+  },
+  "alertCopiedToClipboard": {
+    "message": "Maudhui yamenakiliwa kwenye ubao wa kunakili.",
+    "description": "Alert: copied to clipboard"
+  },
+  "alertCopyError": {
+    "message": "Hitilafu kunakili kwenye ubao wa kunakili.",
+    "description": "Alert: copy error"
+  },
+  "alertSummaryError": {
+    "message": "Hitilafu ilitokea wakati wa kuunda muhtasari.",
+    "description": "Alert: summary generation error"
+  },
+  "alertPermissionRequest": {
+    "message": "Tafadhali ruhusu ufikiaji wa maikrofoni katika mipangilio ya kivinjari chako.",
+    "description": "Alert: permission request"
+  },
+  "statusPermissionWindow": {
+    "message": "Tunahitaji ruhusa. Dirisha litafunguka kutoa ufikiaji wa maikrofoni...",
+    "description": "Status: permission window"
+  },
+  "statusPermissionsGrantedFromWindow": {
+    "message": "Ruhusa zimetolewa. Inaanza...",
+    "description": "Status: permissions granted from window"
+  },
+  "statusPermissionsNotGranted": {
+    "message": "Ruhusa hazijatolewa.",
+    "description": "Status: permissions not granted"
+  },
+  "transcribedTextHeader": {
+    "message": "=== MAANDISHI YALIYONAKILIWA ===",
+    "description": "Transcribed text header in export"
+  },
+  "summaryHeader": {
+    "message": "=== MUHTASARI ===",
+    "description": "Summary header in export"
+  },
+  "generatedOn": {
+    "message": "Imeundwa tarehe:",
+    "description": "Text 'Generated on' in export"
+  },
+  "localSummaryKeyPoints": {
+    "message": "Pointi Muhimu:",
+    "description": "Text for local summary in key points"
+  },
+  "localSummaryDetailed": {
+    "message": "Muhtasari wa Kina:",
+    "description": "Text for local detailed summary"
+  },
+  "localSummaryGeneral": {
+    "message": "Muhtasari:",
+    "description": "Text for local general summary"
+  },
+  "localSummaryError": {
+    "message": "Haikuweza kuunda muhtasari kutoka kwa maandishi yaliyotolewa.",
+    "description": "Error in local summary"
+  },
+  "permissionsTitle": {
+    "message": "Ruhusu ufikiaji wa maikrofoni",
+    "description": "Permissions window title"
+  },
+  "permissionsDescription": {
+    "message": "Bonyeza \"Ruhusu\" wakati Chrome inaonyesha kidirisha cha ruhusa. Ikiwa haionekani, bonyeza kitufe hapa chini.",
+    "description": "Permissions window description"
+  },
+  "permissionsButton": {
+    "message": "Omba ruhusa",
+    "description": "Request permission button"
+  },
+  "backgroundInstalled": {
+    "message": "Kiendelezi cha Unakili wa Sauti + AI kimesakinishwa",
+    "description": "Installation message in background"
+  },
+  "backgroundRequestingPermission": {
+    "message": "Inaomba ruhusa za maikrofoni kutoka kwa hati ya usuli...",
+    "description": "Permission request message in background"
+  },
+  "voiceLanguageLabel": {
+    "message": "🗣️ Lugha ya Sauti:",
+    "description": "Voice language selector label"
+  },
+  "sectionRating": {
+    "message": "⭐ Rate us & Support",
+    "description": "Rating section title"
+  },
+  "rateUsTitle": {
+    "message": "Rate us:",
+    "description": "Rate us title"
+  },
+  "needHelpTitle": {
+    "message": "Need help?",
+    "description": "Need help title"
+  },
+  "copySupportEmail": {
+    "message": "Copy support email",
+    "description": "Copy support email button"
+  },
+  "shareApp": {
+    "message": "Share",
+    "description": "Share button"
+  },
+  "emailCopied": {
+    "message": "Support email copied to clipboard!",
+    "description": "Email copied confirmation"
+  },
+  "thankYouRating": {
+    "message": "Thank you for your rating!",
+    "description": "Thank you for rating message"
+  },
+  "ratingHelpText": {
+    "message": "Tathmini uzoefu wako",
+    "description": "Rating help text above stars"
+  },
+  "modePopup": {
+    "message": "Popup",
+    "description": "Popup floating mode"
+  },
+  "modeSidebar": {
+    "message": "Side Panel",
+    "description": "Side panel mode"
+  },
+  "btnCopyTranscription": {
+    "message": "Copy",
+    "description": "Button to copy only the transcription"
+  },
+  "alertTranscriptionCopied": {
+    "message": "Transcribed text copied to clipboard!",
+    "description": "Transcribed text copied confirmation"
+  },
+  "alertNoTranscriptionToCopy": {
+    "message": "No transcribed text to copy.",
+    "description": "Alert: no transcription to copy"
+  },
+  "welcomeTitle": {
+    "message": "Welcome to Voice Scribe!",
+    "description": "Welcome page title"
+  },
+  "welcomeSubtitle": {
+    "message": "Your new voice transcription assistant is ready. Follow these quick steps to get started.",
+    "description": "Welcome page subtitle"
+  },
+  "welcomeStep1Title": {
+    "message": "Pin the extension to your toolbar",
+    "description": "Welcome step 1 title"
+  },
+  "welcomeStep1Desc": {
+    "message": "Click the puzzle icon 🧩 in your browser toolbar and pin Voice Scribe for quick access.",
+    "description": "Welcome step 1 description"
+  },
+  "welcomeStep1Img": {
+    "message": "Image: How to pin the extension",
+    "description": "Welcome step 1 image alt text"
+  },
+  "welcomeStep2Title": {
+    "message": "Open Voice Scribe",
+    "description": "Welcome step 2 title"
+  },
+  "welcomeStep2Desc": {
+    "message": "Click the Voice Scribe icon in your toolbar to open the transcription side panel.",
+    "description": "Welcome step 2 description"
+  },
+  "welcomeStep2Img": {
+    "message": "Image: How to open the extension",
+    "description": "Welcome step 2 image alt text"
+  },
+  "welcomeStep3Title": {
+    "message": "Allow microphone access",
+    "description": "Welcome step 3 title"
+  },
+  "welcomeStep3Desc": {
+    "message": "Voice Scribe needs microphone access to transcribe your voice. This is a one-time setup.",
+    "description": "Welcome step 3 description"
+  },
+  "welcomeStep3a": {
+    "message": "Click the \"Open settings\" button below",
+    "description": "Welcome step 3 sub-step a"
+  },
+  "welcomeStep3b": {
+    "message": "In Chrome settings, find Voice Scribe and enable the Microphone permission",
+    "description": "Welcome step 3 sub-step b"
+  },
+  "welcomeStep3c": {
+    "message": "Return to the extension and press \"Done!\" to start recording",
+    "description": "Welcome step 3 sub-step c"
+  },
+  "welcomeStep3Img": {
+    "message": "Image: How to enable the microphone",
+    "description": "Welcome step 3 image alt text"
+  },
+  "welcomeOpenSettings": {
+    "message": "⚙️ Open microphone settings",
+    "description": "Welcome page open settings button"
+  },
+  "welcomeAllSet": {
+    "message": "All set!",
+    "description": "Welcome page all set title"
+  },
+  "welcomeAllSetDesc": {
+    "message": "Click the Voice Scribe icon to start transcribing.",
+    "description": "Welcome page all set description"
+  },
+  "welcomeStartBtn": {
+    "message": "🎙 Start using Voice Scribe",
+    "description": "Welcome page start button"
+  },
+  "welcomeFooter": {
+    "message": "Voice Scribe — Intelligent voice transcription",
+    "description": "Welcome page footer"
+  },
+  "welcomeNeedHelp": {
+    "message": "Need help?",
+    "description": "Welcome page need help link"
+  },
+  "welcomeRateTitle": {
+    "message": "How do you like Voice Scribe?",
+    "description": "Welcome rating title"
+  },
+  "welcomeRateThanks": {
+    "message": "Thanks for your feedback!",
+    "description": "Welcome rating thanks"
+  }
+}
