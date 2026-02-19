@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Force HTTPS -->
-    <script>if (location.protocol !== 'https:' && location.hostname !== 'localhost') { location.replace('https:' + location.href.substring(location.protocol.length)); }</script>
+    <!-- Force HTTPS removed for local testing -->
     <link rel="canonical" href="https://bitnomade.org/Voice-Scribe-ia/welcome.html">
-    <title>¡Bienvenido a VoiceScribe! - Configuración Inicial</title>
+    <title data-i18n="welcome.title">Welcome to VoiceScribe! - Initial Setup</title>
     <link rel="stylesheet" href="welcome.css">
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
@@ -24,17 +23,17 @@
 
         <!-- Header / Logo (Now Modular) -->
         <div id="header-container"></div>
-        <p class="tagline fade-in" style="text-align: center; margin-top: 80px; margin-bottom: -40px;">Tu segundo
-            cerebro ha sido instalado.</p>
+        <p class="tagline fade-in" style="text-align: center; margin-top: 80px; margin-bottom: -40px;"
+            data-i18n="welcome.tagline">Your second brain has been installed.</p>
 
 
         <!-- Main Content -->
         <main>
 
             <section class="hero-welcome fade-in-up">
-                <h1>Falta solo un paso...</h1>
-                <p>Para que VoiceScribe funcione correctamente, necesitas <strong class="highlight">fijarlo en tu barra
-                        de herramientas</strong>.</p>
+                <h1 data-i18n="welcome.heroH1">Just one step left...</h1>
+                <p data-i18n-html="welcome.heroP">For VoiceScribe to work correctly, you need to <strong
+                        class="highlight">pin it to your toolbar</strong>.</p>
             </section>
 
             <!-- Step-by-Step Pinning Guide -->
@@ -43,10 +42,11 @@
                 <!-- Step 1 -->
                 <div class="step-card glass-card">
                     <div class="step-number">1</div>
-                    <h3>Haz clic en el Puzzle 🧩</h3>
-                    <p>Busca el icono de "Extensiones" en la esquina superior derecha de Chrome.</p>
+                    <h3 data-i18n="welcome.step1Title">Click the Puzzle 🧩</h3>
+                    <p data-i18n="welcome.step1P">Find the "Extensions" icon in the top right corner of Chrome.</p>
                     <div class="image-placeholder">
-                        <img src="assets/welcome-step1.png" alt="Paso 1: Clic en icono de puzzle" class="tutorial-img">
+                        <img src="assets/welcome-step1.png" data-i18n-attr="alt" data-i18n="welcome.step1Alt"
+                            alt="Step 1: Click puzzle icon" class="tutorial-img">
                         <!-- Placeholder visual if image missing -->
                         <div class="placeholder-overlay"><i class="ri-puzzle-fill"></i></div>
                     </div>
@@ -55,12 +55,12 @@
                 <!-- Step 2 -->
                 <div class="step-card glass-card">
                     <div class="step-number">2</div>
-                    <h3>Fija VoiceScribe 📌</h3>
-                    <p>Encuentra <strong>VoiceScribe</strong> en la lista y haz clic en el icono de la
-                        <strong>chincheta</strong>.
-                    </p>
+                    <h3 data-i18n="welcome.step2Title">Pin VoiceScribe 📌</h3>
+                    <p data-i18n-html="welcome.step2P">Find <strong>VoiceScribe</strong> in the list and click the
+                        <strong>pin</strong> icon.</p>
                     <div class="image-placeholder">
-                        <img src="assets/welcome-step2.png" alt="Paso 2: Clic en icono de fijar" class="tutorial-img">
+                        <img src="assets/welcome-step2.png" data-i18n-attr="alt" data-i18n="welcome.step2Alt"
+                            alt="Step 2: Click pin icon" class="tutorial-img">
                         <div class="placeholder-overlay"><i class="ri-pushpin-fill"></i></div>
                     </div>
                 </div>
@@ -68,12 +68,12 @@
                 <!-- Step 3 -->
                 <div class="step-card glass-card">
                     <div class="step-number">3</div>
-                    <h3>¡Listo para usar! 🚀</h3>
-                    <p>Ahora verás el icono de VoiceScribe siempre visible. Haz clic para abrir el
-                        <strong>Sidebar</strong>.
-                    </p>
+                    <h3 data-i18n="welcome.step3Title">Ready to use! 🚀</h3>
+                    <p data-i18n-html="welcome.step3P">Now you'll see the VoiceScribe icon always visible. Click to open
+                        the <strong>Sidebar</strong>.</p>
                     <div class="image-placeholder">
-                        <img src="assets/welcome-step3.png" alt="Paso 3: Icono visible" class="tutorial-img">
+                        <img src="assets/welcome-step3.png" data-i18n-attr="alt" data-i18n="welcome.step3Alt"
+                            alt="Step 3: Icon visible" class="tutorial-img">
                         <div class="placeholder-overlay"><i class="ri-layout-right-2-fill"></i></div>
                     </div>
                 </div>
@@ -82,40 +82,40 @@
 
             <!-- Motivation / "Why" Recap -->
             <section class="motivation-box glass-card-glow fade-in-up delay-2">
-                <h2>¿Por qué fijarlo?</h2>
+                <h2 data-i18n="welcome.whyTitle">Why pin it?</h2>
                 <div class="benefits-list">
                     <div class="benefit">
                         <i class="ri-flashlight-fill"></i>
-                        <span>Acceso instantáneo cuando la idea llega.</span>
+                        <span data-i18n="welcome.why1">Instant access when an idea strikes.</span>
                     </div>
                     <div class="benefit">
                         <i class="ri-eye-off-fill"></i>
-                        <span>No pierdas de vista si está grabando.</span>
+                        <span data-i18n="welcome.why2">Don't lose sight of whether it's recording.</span>
                     </div>
                     <div class="benefit">
                         <i class="ri-layout-right-fill"></i>
-                        <span>Abre el Sidebar sin interrumpir tu navegación.</span>
+                        <span data-i18n="welcome.why3">Open the Sidebar without interrupting your browsing.</span>
                     </div>
                 </div>
             </section>
 
             <!-- Final CTA -->
             <section class="action-area fade-in-up delay-3">
-                <p>Una vez fijado, haz tu primera prueba:</p>
+                <p data-i18n="welcome.ctaP">Once pinned, do your first test:</p>
                 <div class="cta-box">
-                    <span>Haz clic en el icono <i class="ri-mic-ai-line"></i> y di:</span>
-                    <strong class="command">"Hola VoiceScribe"</strong>
+                    <span data-i18n-html="welcome.ctaCmd">Click the icon <i class="ri-mic-ai-line"></i> and say:</span>
+                    <strong class="command" data-i18n="welcome.ctaText">"Hello VoiceScribe"</strong>
                 </div>
                 <a href="https://youtu.be/example-tutorial" target="_blank" class="link-subtle">
-                    <i class="ri-play-circle-line"></i> Ver video tutorial rápido (30s)
+                    <i class="ri-play-circle-line"></i> <span data-i18n="welcome.videoLink">Watch quick tutorial video
+                        (30s)</span>
                 </a>
             </section>
 
         </main>
 
-        <footer>
-            <p>&copy; 2026 VoiceScribe. Privacidad Total.</p>
-        </footer>
+        <!-- Footer (Modular) -->
+        <div id="footer-container"></div>
 
     </div>
 

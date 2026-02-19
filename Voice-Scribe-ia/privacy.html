@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="privacy.title">Privacy Policy — VoiceScribe</title>
+    <meta name="description" data-i18n-attr="content" data-i18n="privacy.desc"
+        content="VoiceScribe Privacy Policy: what data is processed, for what purpose, with whom it is shared, and how to exercise your rights.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎙️</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header (Modular) -->
+    <div id="header-container"></div>
+
+    <main class="container legal-content">
+        <h1 data-i18n="privacy.h1">Privacy Policy</h1>
+        <p class="muted" data-i18n="privacy.lastUpdated">Last updated: Aug 13, 2025</p>
+
+        <div class="box">
+            <p data-i18n-html="privacy.intro">
+                VoiceScribe is an extension/app that transcribes your voice to text and optionally generates AI
+                summaries using your own OpenAI key. We prioritize your privacy: we do not operate our own servers to
+                process your audio or notes.
+            </p>
+        </div>
+
+        <h2 data-i18n="privacy.shortTitle">Short Summary</h2>
+        <ul>
+            <li data-i18n-html="privacy.shortL1">We do not collect personal data nor analyze your usage with third-party
+                tools.</li>
+            <li data-i18n-html="privacy.shortL2">Microphone audio is processed locally by your browser and is not
+                uploaded.</li>
+            <li data-i18n-html="privacy.shortL3">Transcribed text and summaries are stored locally on your device.</li>
+            <li data-i18n-html="privacy.shortL4">If you enable AI, text is sent to <code>api.openai.com</code>
+                exclusively to generate the summary, using your key and via HTTPS.</li>
+            <li data-i18n-html="privacy.shortL5">We do not sell data, transfer it for unrelated purposes, nor conduct
+                credit profiling activities.</li>
+        </ul>
+
+        <h2 data-i18n="privacy.catsTitle">User Data Categories</h2>
+        <p data-i18n="privacy.catsP">According to Google/Chrome Web Store categories:</p>
+        <ul>
+            <li data-i18n-html="privacy.catsL1"><strong>Personal info, health, financial, authentication, personal
+                    communications, location:</strong> we do not collect.</li>
+            <li data-i18n-html="privacy.catsL2"><strong>Web history, user activity:</strong> we do not collect or track.
+            </li>
+            <li data-i18n-html="privacy.catsL3"><strong>Website content:</strong> only the text you dictate or paste
+                into the app. It is stored locally and you can delete it at any time.</li>
+        </ul>
+
+        <h2 data-i18n="privacy.permsTitle">Permissions and Purpose</h2>
+        <ul>
+            <li data-i18n-html="privacy.permsL1"><strong>Microphone (getUserMedia):</strong> convert voice to text
+                locally via browser APIs.</li>
+            <li data-i18n-html="privacy.permsL2"><strong>Local storage (e.g., chrome.storage/local or
+                    localStorage):</strong> save your notes and summaries on your device.</li>
+            <li data-i18n-html="privacy.permsL3"><strong>Internet connection:</strong> only necessary if you activate
+                the optional AI summary feature.</li>
+        </ul>
+
+        <h2 data-i18n="privacy.transfersTitle">Transfers and Third Parties</h2>
+        <ul>
+            <li data-i18n-html="privacy.transfersL1">We do not share your data with third parties for marketing or
+                analytics.</li>
+            <li data-i18n-html="privacy.transfersL2">Optional provider: <strong>OpenAI</strong> for generating
+                summaries. The text you select is sent; we do not send audio. The key is yours and managed locally.</li>
+        </ul>
+
+        <h2 data-i18n="privacy.retentionTitle">Retention and Control</h2>
+        <ul>
+            <li data-i18n-html="privacy.retentionL1">You can delete all notes via the “Clear All” option.</li>
+            <li data-i18n-html="privacy.retentionL2">Uninstalling the app/extension deletes related local storage.</li>
+        </ul>
+
+        <h2 data-i18n="privacy.securityTitle">Security</h2>
+        <p data-i18n="privacy.securityP">Communications with external services (if used) occur over HTTPS. We do not
+            maintain our own servers with your data.</p>
+
+        <h2 data-i18n="privacy.certsTitle">Certifications for Publication</h2>
+        <ul>
+            <li data-i18n-html="privacy.certsL1">We do not sell or transfer user data to third parties, except as
+                strictly necessary for the optional AI feature described above.</li>
+            <li data-i18n-html="privacy.certsL2">We do not use or transfer data for purposes unrelated to the core
+                functionality.</li>
+            <li data-i18n-html="privacy.certsL3">We do not use or transfer data to determine creditworthiness or conduct
+                lending activities.</li>
+        </ul>
+
+        <h2 data-i18n="privacy.kidsTitle">Children</h2>
+        <p data-i18n="privacy.kidsP">The product is not specifically directed at children under 13, and we do not
+            knowingly collect data from children.</p>
+
+        <h2 data-i18n="privacy.changesTitle">Changes</h2>
+        <p data-i18n="privacy.changesP">We may update this policy. We will publish the new version at this same URL and
+            indicate the effective date.</p>
+
+        <h2 data-i18n="privacy.contactTitle">Contact</h2>
+        <p data-i18n-html="privacy.contactP">For privacy questions or requests, write to <a
+                href="mailto:soporte@example.com">soporte@example.com</a>.</p>
+
+        <p><a href="index.html" data-i18n="privacy.backLink">← Back to Home</a></p>
+    </main>
+
+    <!-- Footer (Modular) -->
+    <div id="footer-container"></div>
+
+    <script src="script.js?v=1.4.1"></script>
+</body>
+
+</html>

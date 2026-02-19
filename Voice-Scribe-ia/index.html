@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Force HTTPS -->
-    <script>if (location.protocol !== 'https:' && location.hostname !== 'localhost') { location.replace('https:' + location.href.substring(location.protocol.length)); }</script>
+    <!-- Force HTTPS removed for local testing -->
     <link rel="canonical" href="https://bitnomade.org/Voice-Scribe-ia/">
     <meta name="description" data-i18n-attr="content" data-i18n="meta.description"
         content="VoiceScribe: The best Chrome extension for AI-powered Speech to Text. Transcribe Zoom, Google Meet calls and lectures in real time. Free AI summaries.">
@@ -289,15 +288,8 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <p data-i18n="footer.copy">&copy; 2026 VoiceScribe. Smart Productivity.</p>
-            <div class="footer-links">
-                <a href="#" data-i18n="footer.privacy">Privacy</a>
-                <a href="#" data-i18n="footer.contact">Contact</a>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer -->
+    <div id="footer-container"></div>
 
     <script src="script.js?v=1.4.1"></script>
 </body>

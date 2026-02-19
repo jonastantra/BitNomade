@@ -1,0 +1,426 @@
+{
+  "extName": {
+    "message": "Transcriere Vocală + Rezumat AI",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Convertește-ți vocea în text și generează rezumate inteligente AI",
+    "description": "Extension description"
+  },
+  "extTitle": {
+    "message": "Transcriere Vocală + AI",
+    "description": "Popup title"
+  },
+  "headerTitle": {
+    "message": "🎤 Transcriere Vocală + AI",
+    "description": "Header title"
+  },
+  "headerSubtitle": {
+    "message": "Voce în text cu rezumat",
+    "description": "Header subtitle"
+  },
+  "sectionRecording": {
+    "message": "🎙️ Înregistrare Vocală",
+    "description": "Recording section title"
+  },
+  "btnStartRecording": {
+    "message": "Pornește Înregistrarea",
+    "description": "Start recording button"
+  },
+  "btnStopRecording": {
+    "message": "Oprește Înregistrarea",
+    "description": "Stop recording button"
+  },
+  "btnClearAll": {
+    "message": "Șterge Tot",
+    "description": "Clear all button"
+  },
+  "statusReady": {
+    "message": "Gata de înregistrare",
+    "description": "Status: ready"
+  },
+  "statusRecording": {
+    "message": "Se înregistrează...",
+    "description": "Status: recording"
+  },
+  "statusStopped": {
+    "message": "Înregistrarea s-a oprit",
+    "description": "Status: stopped"
+  },
+  "statusRequestingPermissions": {
+    "message": "Se solicită permisiuni...",
+    "description": "Status: requesting permissions"
+  },
+  "statusPermissionsGranted": {
+    "message": "Permisiuni acordate cu succes",
+    "description": "Status: permissions granted"
+  },
+  "statusStarting": {
+    "message": "Se pornește înregistrarea...",
+    "description": "Status: starting"
+  },
+  "sectionTranscription": {
+    "message": "📝 Text Transcris",
+    "description": "Transcription section title"
+  },
+  "realTimeIndicator": {
+    "message": "Se transcrie în timp real...",
+    "description": "Real-time transcription indicator"
+  },
+  "transcriptionPlaceholder": {
+    "message": "Textul transcris va apărea aici în timp real...",
+    "description": "Transcription area placeholder"
+  },
+  "wordCount": {
+    "message": "$COUNT$ cuvinte",
+    "description": "Word counter",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "0"
+      }
+    }
+  },
+  "charCount": {
+    "message": "$COUNT$ caractere",
+    "description": "Character counter",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "0"
+      }
+    }
+  },
+  "sectionSummary": {
+    "message": "🤖 Rezumat AI",
+    "description": "Summary section title"
+  },
+  "summaryLengthShort": {
+    "message": "Scurt",
+    "description": "Length option: short"
+  },
+  "summaryLengthMedium": {
+    "message": "Mediu",
+    "description": "Length option: medium"
+  },
+  "summaryLengthLong": {
+    "message": "Lung",
+    "description": "Length option: long"
+  },
+  "summaryStyleGeneral": {
+    "message": "General",
+    "description": "Summary style: general"
+  },
+  "summaryStyleBullet": {
+    "message": "Puncte Cheie",
+    "description": "Summary style: bullet points"
+  },
+  "summaryStyleDetailed": {
+    "message": "Detaliat",
+    "description": "Summary style: detailed"
+  },
+  "btnGenerateSummary": {
+    "message": "Generează Rezumat",
+    "description": "Generate summary button"
+  },
+  "summaryPlaceholder": {
+    "message": "Rezumatul generat de AI va apărea aici...",
+    "description": "Summary area placeholder"
+  },
+  "sectionExport": {
+    "message": "💾 Export",
+    "description": "Export section title"
+  },
+  "btnSaveAsTxt": {
+    "message": "Salvează ca TXT",
+    "description": "Save as TXT button"
+  },
+  "btnCopyToClipboard": {
+    "message": "Copiază în Clipboard",
+    "description": "Copy to clipboard button"
+  },
+  "footerText": {
+    "message": "✨ Transcriere vocală în timp real cu rezumat inteligent",
+    "description": "Footer text"
+  },
+  "errorNoMicrophone": {
+    "message": "Eroare: Browserul tău nu suportă accesul la microfon",
+    "description": "Error: browser doesn't support microphone"
+  },
+  "errorPermissionDenied": {
+    "message": "Eroare: Permisiunile pentru microfon au fost refuzate. Te rugăm să permiți accesul la microfon.",
+    "description": "Error: permissions denied"
+  },
+  "errorNoSpeech": {
+    "message": "Eroare: Nu s-a detectat vorbire. Încearcă să vorbești mai aproape de microfon.",
+    "description": "Error: no speech detected"
+  },
+  "errorAudioCapture": {
+    "message": "Eroare: Nu se poate accesa microfonul. Verifică dacă este folosit de o altă aplicație.",
+    "description": "Error: cannot access microphone"
+  },
+  "errorNetwork": {
+    "message": "Eroare: Problemă de rețea. Verifică conexiunea la internet.",
+    "description": "Error: network problem"
+  },
+  "errorAborted": {
+    "message": "Înregistrarea a fost întreruptă.",
+    "description": "Error: recording interrupted"
+  },
+  "errorNoDevice": {
+    "message": "Eroare: Nu s-a găsit niciun dispozitiv microfon.",
+    "description": "Error: no device found"
+  },
+  "errorDeviceBusy": {
+    "message": "Eroare: Microfonul este folosit de o altă aplicație.",
+    "description": "Error: device busy"
+  },
+  "errorNotSecure": {
+    "message": "Eroare: Contextul nu este securizat (folosește HTTPS).",
+    "description": "Error: context not secure"
+  },
+  "errorStartRecording": {
+    "message": "Eroare la pornirea înregistrării",
+    "description": "Error: couldn't start recording"
+  },
+  "alertNoSupport": {
+    "message": "Browserul tău nu suportă recunoașterea vocală. Încearcă Chrome sau Edge.",
+    "description": "Alert: browser not compatible"
+  },
+  "alertNotAvailable": {
+    "message": "Recunoașterea vocală nu este disponibilă în browserul tău.",
+    "description": "Alert: recognition not available"
+  },
+  "alertNoTextToSummarize": {
+    "message": "Nu există text de rezumat.",
+    "description": "Alert: no text to summarize"
+  },
+  "alertNoContentToSave": {
+    "message": "Nu există conținut de salvat.",
+    "description": "Alert: no content to save"
+  },
+  "alertNoContentToCopy": {
+    "message": "Nu există conținut de copiat.",
+    "description": "Alert: no content to copy"
+  },
+  "alertCopiedToClipboard": {
+    "message": "Conținut copiat în clipboard.",
+    "description": "Alert: copied to clipboard"
+  },
+  "alertCopyError": {
+    "message": "Eroare la copierea în clipboard.",
+    "description": "Alert: copy error"
+  },
+  "alertSummaryError": {
+    "message": "A apărut o eroare la generarea rezumatului.",
+    "description": "Alert: summary generation error"
+  },
+  "alertPermissionRequest": {
+    "message": "Te rugăm să permiți accesul la microfon în setările browserului.",
+    "description": "Alert: permission request"
+  },
+  "statusPermissionWindow": {
+    "message": "Avem nevoie de permisiuni. Se va deschide o fereastră pentru a acorda acces la microfon...",
+    "description": "Status: permission window"
+  },
+  "statusPermissionsGrantedFromWindow": {
+    "message": "Permisiuni acordate. Se pornește...",
+    "description": "Status: permissions granted from window"
+  },
+  "statusPermissionsNotGranted": {
+    "message": "Permisiunile nu au fost acordate.",
+    "description": "Status: permissions not granted"
+  },
+  "transcribedTextHeader": {
+    "message": "=== TEXT TRANSCRIS ===",
+    "description": "Transcribed text header in export"
+  },
+  "summaryHeader": {
+    "message": "=== REZUMAT ===",
+    "description": "Summary header in export"
+  },
+  "generatedOn": {
+    "message": "Generat pe:",
+    "description": "Text 'Generated on' in export"
+  },
+  "localSummaryKeyPoints": {
+    "message": "Puncte Cheie:",
+    "description": "Text for local summary in key points"
+  },
+  "localSummaryDetailed": {
+    "message": "Rezumat Detaliat:",
+    "description": "Text for local detailed summary"
+  },
+  "localSummaryGeneral": {
+    "message": "Rezumat:",
+    "description": "Text for local general summary"
+  },
+  "localSummaryError": {
+    "message": "Nu s-a putut genera un rezumat din textul furnizat.",
+    "description": "Error in local summary"
+  },
+  "permissionsTitle": {
+    "message": "Permite accesul la microfon",
+    "description": "Permissions window title"
+  },
+  "permissionsDescription": {
+    "message": "Dă clic pe \"Permite\" când Chrome afișează dialogul de permisiuni. Dacă nu apare, apasă butonul de mai jos.",
+    "description": "Permissions window description"
+  },
+  "permissionsButton": {
+    "message": "Solicită permisiune",
+    "description": "Request permission button"
+  },
+  "backgroundInstalled": {
+    "message": "Extensia Transcriere Vocală + AI a fost instalată",
+    "description": "Installation message in background"
+  },
+  "backgroundRequestingPermission": {
+    "message": "Se solicită permisiuni pentru microfon din scriptul de fundal...",
+    "description": "Permission request message in background"
+  },
+  "voiceLanguageLabel": {
+    "message": "🗣️ Limba Vocii:",
+    "description": "Voice language selector label"
+  },
+  "sectionRating": {
+    "message": "⭐ Rate us & Support",
+    "description": "Rating section title"
+  },
+  "rateUsTitle": {
+    "message": "Rate us:",
+    "description": "Rate us title"
+  },
+  "needHelpTitle": {
+    "message": "Need help?",
+    "description": "Need help title"
+  },
+  "copySupportEmail": {
+    "message": "Copy support email",
+    "description": "Copy support email button"
+  },
+  "shareApp": {
+    "message": "Share",
+    "description": "Share button"
+  },
+  "emailCopied": {
+    "message": "Support email copied to clipboard!",
+    "description": "Email copied confirmation"
+  },
+  "thankYouRating": {
+    "message": "Thank you for your rating!",
+    "description": "Thank you for rating message"
+  },
+  "ratingHelpText": {
+    "message": "Evaluează-ți experiența",
+    "description": "Rating help text above stars"
+  },
+  "modePopup": {
+    "message": "Popup",
+    "description": "Popup floating mode"
+  },
+  "modeSidebar": {
+    "message": "Side Panel",
+    "description": "Side panel mode"
+  },
+  "btnCopyTranscription": {
+    "message": "Copy",
+    "description": "Button to copy only the transcription"
+  },
+  "alertTranscriptionCopied": {
+    "message": "Transcribed text copied to clipboard!",
+    "description": "Transcribed text copied confirmation"
+  },
+  "alertNoTranscriptionToCopy": {
+    "message": "No transcribed text to copy.",
+    "description": "Alert: no transcription to copy"
+  },
+  "welcomeTitle": {
+    "message": "Welcome to Voice Scribe!",
+    "description": "Welcome page title"
+  },
+  "welcomeSubtitle": {
+    "message": "Your new voice transcription assistant is ready. Follow these quick steps to get started.",
+    "description": "Welcome page subtitle"
+  },
+  "welcomeStep1Title": {
+    "message": "Pin the extension to your toolbar",
+    "description": "Welcome step 1 title"
+  },
+  "welcomeStep1Desc": {
+    "message": "Click the puzzle icon 🧩 in your browser toolbar and pin Voice Scribe for quick access.",
+    "description": "Welcome step 1 description"
+  },
+  "welcomeStep1Img": {
+    "message": "Image: How to pin the extension",
+    "description": "Welcome step 1 image alt text"
+  },
+  "welcomeStep2Title": {
+    "message": "Open Voice Scribe",
+    "description": "Welcome step 2 title"
+  },
+  "welcomeStep2Desc": {
+    "message": "Click the Voice Scribe icon in your toolbar to open the transcription side panel.",
+    "description": "Welcome step 2 description"
+  },
+  "welcomeStep2Img": {
+    "message": "Image: How to open the extension",
+    "description": "Welcome step 2 image alt text"
+  },
+  "welcomeStep3Title": {
+    "message": "Allow microphone access",
+    "description": "Welcome step 3 title"
+  },
+  "welcomeStep3Desc": {
+    "message": "Voice Scribe needs microphone access to transcribe your voice. This is a one-time setup.",
+    "description": "Welcome step 3 description"
+  },
+  "welcomeStep3a": {
+    "message": "Click the \"Open settings\" button below",
+    "description": "Welcome step 3 sub-step a"
+  },
+  "welcomeStep3b": {
+    "message": "In Chrome settings, find Voice Scribe and enable the Microphone permission",
+    "description": "Welcome step 3 sub-step b"
+  },
+  "welcomeStep3c": {
+    "message": "Return to the extension and press \"Done!\" to start recording",
+    "description": "Welcome step 3 sub-step c"
+  },
+  "welcomeStep3Img": {
+    "message": "Image: How to enable the microphone",
+    "description": "Welcome step 3 image alt text"
+  },
+  "welcomeOpenSettings": {
+    "message": "⚙️ Open microphone settings",
+    "description": "Welcome page open settings button"
+  },
+  "welcomeAllSet": {
+    "message": "All set!",
+    "description": "Welcome page all set title"
+  },
+  "welcomeAllSetDesc": {
+    "message": "Click the Voice Scribe icon to start transcribing.",
+    "description": "Welcome page all set description"
+  },
+  "welcomeStartBtn": {
+    "message": "🎙 Start using Voice Scribe",
+    "description": "Welcome page start button"
+  },
+  "welcomeFooter": {
+    "message": "Voice Scribe — Intelligent voice transcription",
+    "description": "Welcome page footer"
+  },
+  "welcomeNeedHelp": {
+    "message": "Need help?",
+    "description": "Welcome page need help link"
+  },
+  "welcomeRateTitle": {
+    "message": "How do you like Voice Scribe?",
+    "description": "Welcome rating title"
+  },
+  "welcomeRateThanks": {
+    "message": "Thanks for your feedback!",
+    "description": "Welcome rating thanks"
+  }
+}

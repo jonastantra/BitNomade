@@ -1,0 +1,426 @@
+{
+  "extName": {
+    "message": "Transcrição de Voz + Resumo IA",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Converta sua voz em texto e gere resumos inteligentes com IA",
+    "description": "Extension description"
+  },
+  "extTitle": {
+    "message": "Transcrição de Voz + IA",
+    "description": "Popup title"
+  },
+  "headerTitle": {
+    "message": "🎤 Transcrição de Voz + IA",
+    "description": "Header title"
+  },
+  "headerSubtitle": {
+    "message": "Voz para texto com resumo",
+    "description": "Header subtitle"
+  },
+  "sectionRecording": {
+    "message": "🎙️ Gravação de Voz",
+    "description": "Recording section title"
+  },
+  "btnStartRecording": {
+    "message": "Iniciar Gravação",
+    "description": "Start recording button"
+  },
+  "btnStopRecording": {
+    "message": "Parar Gravação",
+    "description": "Stop recording button"
+  },
+  "btnClearAll": {
+    "message": "Limpar Tudo",
+    "description": "Clear all button"
+  },
+  "statusReady": {
+    "message": "Pronto para gravar",
+    "description": "Status: ready"
+  },
+  "statusRecording": {
+    "message": "Gravando...",
+    "description": "Status: recording"
+  },
+  "statusStopped": {
+    "message": "Gravação parada",
+    "description": "Status: stopped"
+  },
+  "statusRequestingPermissions": {
+    "message": "Solicitando permissões...",
+    "description": "Status: requesting permissions"
+  },
+  "statusPermissionsGranted": {
+    "message": "Permissões concedidas com sucesso",
+    "description": "Status: permissions granted"
+  },
+  "statusStarting": {
+    "message": "Iniciando gravação...",
+    "description": "Status: starting"
+  },
+  "sectionTranscription": {
+    "message": "📝 Texto Transcrito",
+    "description": "Transcription section title"
+  },
+  "realTimeIndicator": {
+    "message": "Transcrevendo em tempo real...",
+    "description": "Real-time transcription indicator"
+  },
+  "transcriptionPlaceholder": {
+    "message": "O texto transcrito aparecerá aqui em tempo real...",
+    "description": "Transcription area placeholder"
+  },
+  "wordCount": {
+    "message": "$COUNT$ palavras",
+    "description": "Word counter",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "0"
+      }
+    }
+  },
+  "charCount": {
+    "message": "$COUNT$ caracteres",
+    "description": "Character counter",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "0"
+      }
+    }
+  },
+  "sectionSummary": {
+    "message": "🤖 Resumo com IA",
+    "description": "Summary section title"
+  },
+  "summaryLengthShort": {
+    "message": "Curto",
+    "description": "Length option: short"
+  },
+  "summaryLengthMedium": {
+    "message": "Médio",
+    "description": "Length option: medium"
+  },
+  "summaryLengthLong": {
+    "message": "Longo",
+    "description": "Length option: long"
+  },
+  "summaryStyleGeneral": {
+    "message": "Geral",
+    "description": "Summary style: general"
+  },
+  "summaryStyleBullet": {
+    "message": "Pontos-chave",
+    "description": "Summary style: bullet points"
+  },
+  "summaryStyleDetailed": {
+    "message": "Detalhado",
+    "description": "Summary style: detailed"
+  },
+  "btnGenerateSummary": {
+    "message": "Gerar Resumo",
+    "description": "Generate summary button"
+  },
+  "summaryPlaceholder": {
+    "message": "O resumo gerado pela IA aparecerá aqui...",
+    "description": "Summary area placeholder"
+  },
+  "sectionExport": {
+    "message": "💾 Exportar",
+    "description": "Export section title"
+  },
+  "btnSaveAsTxt": {
+    "message": "Salvar como TXT",
+    "description": "Save as TXT button"
+  },
+  "btnCopyToClipboard": {
+    "message": "Copiar para a Área de Transferência",
+    "description": "Copy to clipboard button"
+  },
+  "footerText": {
+    "message": "✨ Transcrição de voz em tempo real com resumo inteligente",
+    "description": "Footer text"
+  },
+  "errorNoMicrophone": {
+    "message": "Erro: Seu navegador não suporta acesso ao microfone",
+    "description": "Error: browser doesn't support microphone"
+  },
+  "errorPermissionDenied": {
+    "message": "Erro: Permissões de microfone negadas. Por favor, permita o acesso ao microfone.",
+    "description": "Error: permissions denied"
+  },
+  "errorNoSpeech": {
+    "message": "Erro: Nenhuma fala detectada. Tente falar mais perto do microfone.",
+    "description": "Error: no speech detected"
+  },
+  "errorAudioCapture": {
+    "message": "Erro: Não é possível acessar o microfone. Verifique se não está sendo usado por outro aplicativo.",
+    "description": "Error: cannot access microphone"
+  },
+  "errorNetwork": {
+    "message": "Erro: Problema de rede. Verifique sua conexão com a internet.",
+    "description": "Error: network problem"
+  },
+  "errorAborted": {
+    "message": "Gravação interrompida.",
+    "description": "Error: recording interrupted"
+  },
+  "errorNoDevice": {
+    "message": "Erro: Nenhum dispositivo de microfone encontrado.",
+    "description": "Error: no device found"
+  },
+  "errorDeviceBusy": {
+    "message": "Erro: O microfone está sendo usado por outro aplicativo.",
+    "description": "Error: device busy"
+  },
+  "errorNotSecure": {
+    "message": "Erro: Contexto não é seguro (use HTTPS).",
+    "description": "Error: context not secure"
+  },
+  "errorStartRecording": {
+    "message": "Erro ao iniciar a gravação",
+    "description": "Error: couldn't start recording"
+  },
+  "alertNoSupport": {
+    "message": "Seu navegador não suporta reconhecimento de fala. Tente Chrome ou Edge.",
+    "description": "Alert: browser not compatible"
+  },
+  "alertNotAvailable": {
+    "message": "O reconhecimento de fala não está disponível no seu navegador.",
+    "description": "Alert: recognition not available"
+  },
+  "alertNoTextToSummarize": {
+    "message": "Não há texto para resumir.",
+    "description": "Alert: no text to summarize"
+  },
+  "alertNoContentToSave": {
+    "message": "Não há conteúdo para salvar.",
+    "description": "Alert: no content to save"
+  },
+  "alertNoContentToCopy": {
+    "message": "Não há conteúdo para copiar.",
+    "description": "Alert: no content to copy"
+  },
+  "alertCopiedToClipboard": {
+    "message": "Conteúdo copiado para a área de transferência.",
+    "description": "Alert: copied to clipboard"
+  },
+  "alertCopyError": {
+    "message": "Erro ao copiar para a área de transferência.",
+    "description": "Alert: copy error"
+  },
+  "alertSummaryError": {
+    "message": "Ocorreu um erro ao gerar o resumo.",
+    "description": "Alert: summary generation error"
+  },
+  "alertPermissionRequest": {
+    "message": "Por favor, permita o acesso ao microfone nas configurações do navegador.",
+    "description": "Alert: permission request"
+  },
+  "statusPermissionWindow": {
+    "message": "Precisamos de permissões. Uma janela será aberta para conceder acesso ao microfone...",
+    "description": "Status: permission window"
+  },
+  "statusPermissionsGrantedFromWindow": {
+    "message": "Permissões concedidas. Iniciando...",
+    "description": "Status: permissions granted from window"
+  },
+  "statusPermissionsNotGranted": {
+    "message": "Permissões não concedidas.",
+    "description": "Status: permissions not granted"
+  },
+  "transcribedTextHeader": {
+    "message": "=== TEXTO TRANSCRITO ===",
+    "description": "Transcribed text header in export"
+  },
+  "summaryHeader": {
+    "message": "=== RESUMO ===",
+    "description": "Summary header in export"
+  },
+  "generatedOn": {
+    "message": "Gerado em:",
+    "description": "Text 'Generated on' in export"
+  },
+  "localSummaryKeyPoints": {
+    "message": "Pontos-chave:",
+    "description": "Text for local summary in key points"
+  },
+  "localSummaryDetailed": {
+    "message": "Resumo detalhado:",
+    "description": "Text for local detailed summary"
+  },
+  "localSummaryGeneral": {
+    "message": "Resumo:",
+    "description": "Text for local general summary"
+  },
+  "localSummaryError": {
+    "message": "Não foi possível gerar um resumo do texto fornecido.",
+    "description": "Error in local summary"
+  },
+  "permissionsTitle": {
+    "message": "Permitir acesso ao microfone",
+    "description": "Permissions window title"
+  },
+  "permissionsDescription": {
+    "message": "Clique em \"Permitir\" quando o Chrome mostrar a caixa de diálogo de permissões. Se não aparecer, pressione o botão abaixo.",
+    "description": "Permissions window description"
+  },
+  "permissionsButton": {
+    "message": "Solicitar permissão",
+    "description": "Request permission button"
+  },
+  "backgroundInstalled": {
+    "message": "Extensão Transcrição de Voz + IA instalada",
+    "description": "Installation message in background"
+  },
+  "backgroundRequestingPermission": {
+    "message": "Solicitando permissões de microfone do script em segundo plano...",
+    "description": "Permission request message in background"
+  },
+  "voiceLanguageLabel": {
+    "message": "🗣️ Idioma da voz:",
+    "description": "Voice language selector label"
+  },
+  "sectionRating": {
+    "message": "⭐ Avalie-nos & Suporte",
+    "description": "Rating section title"
+  },
+  "rateUsTitle": {
+    "message": "Avalie-nos:",
+    "description": "Rate us title"
+  },
+  "needHelpTitle": {
+    "message": "Precisa de ajuda?",
+    "description": "Need help title"
+  },
+  "copySupportEmail": {
+    "message": "Copiar e-mail de suporte",
+    "description": "Copy support email button"
+  },
+  "shareApp": {
+    "message": "Compartilhar",
+    "description": "Share button"
+  },
+  "emailCopied": {
+    "message": "E-mail de suporte copiado para a área de transferência!",
+    "description": "Email copied confirmation"
+  },
+  "thankYouRating": {
+    "message": "Obrigado pela sua avaliação!",
+    "description": "Thank you for rating message"
+  },
+  "ratingHelpText": {
+    "message": "Avalie sua experiência",
+    "description": "Rating help text above stars"
+  },
+  "modePopup": {
+    "message": "Flutuante",
+    "description": "Popup floating mode"
+  },
+  "modeSidebar": {
+    "message": "Painel Lateral",
+    "description": "Side panel mode"
+  },
+  "btnCopyTranscription": {
+    "message": "Copiar",
+    "description": "Button to copy only the transcription"
+  },
+  "alertTranscriptionCopied": {
+    "message": "Texto transcrito copiado para a área de transferência!",
+    "description": "Transcribed text copied confirmation"
+  },
+  "alertNoTranscriptionToCopy": {
+    "message": "Não há texto transcrito para copiar.",
+    "description": "Alert: no transcription to copy"
+  },
+  "welcomeTitle": {
+    "message": "Bem-vindo ao Voice Scribe!",
+    "description": "Welcome page title"
+  },
+  "welcomeSubtitle": {
+    "message": "Seu novo assistente de transcrição de voz está pronto. Siga estes passos rápidos para começar.",
+    "description": "Welcome page subtitle"
+  },
+  "welcomeStep1Title": {
+    "message": "Fixe a extensão na barra de ferramentas",
+    "description": "Welcome step 1 title"
+  },
+  "welcomeStep1Desc": {
+    "message": "Clique no ícone do quebra-cabeça 🧩 na barra do navegador e fixe o Voice Scribe para acesso rápido.",
+    "description": "Welcome step 1 description"
+  },
+  "welcomeStep1Img": {
+    "message": "Imagem: Como fixar a extensão",
+    "description": "Welcome step 1 image alt text"
+  },
+  "welcomeStep2Title": {
+    "message": "Abra o Voice Scribe",
+    "description": "Welcome step 2 title"
+  },
+  "welcomeStep2Desc": {
+    "message": "Clique no ícone do Voice Scribe na barra de ferramentas para abrir o painel lateral de transcrição.",
+    "description": "Welcome step 2 description"
+  },
+  "welcomeStep2Img": {
+    "message": "Imagem: Como abrir a extensão",
+    "description": "Welcome step 2 image alt text"
+  },
+  "welcomeStep3Title": {
+    "message": "Permita o acesso ao microfone",
+    "description": "Welcome step 3 title"
+  },
+  "welcomeStep3Desc": {
+    "message": "O Voice Scribe precisa de acesso ao microfone para transcrever sua voz. É uma configuração única.",
+    "description": "Welcome step 3 description"
+  },
+  "welcomeStep3a": {
+    "message": "Clique no botão \"Abrir configurações\" abaixo",
+    "description": "Welcome step 3 sub-step a"
+  },
+  "welcomeStep3b": {
+    "message": "Nas configurações do Chrome, encontre Voice Scribe e ative a permissão do Microfone",
+    "description": "Welcome step 3 sub-step b"
+  },
+  "welcomeStep3c": {
+    "message": "Volte para a extensão e pressione \"Pronto!\" para começar a gravar",
+    "description": "Welcome step 3 sub-step c"
+  },
+  "welcomeStep3Img": {
+    "message": "Imagem: Como ativar o microfone",
+    "description": "Welcome step 3 image alt text"
+  },
+  "welcomeOpenSettings": {
+    "message": "⚙️ Abrir configurações do microfone",
+    "description": "Welcome page open settings button"
+  },
+  "welcomeAllSet": {
+    "message": "Tudo pronto!",
+    "description": "Welcome page all set title"
+  },
+  "welcomeAllSetDesc": {
+    "message": "Clique no ícone do Voice Scribe para começar a transcrever.",
+    "description": "Welcome page all set description"
+  },
+  "welcomeStartBtn": {
+    "message": "🎙 Começar a usar o Voice Scribe",
+    "description": "Welcome page start button"
+  },
+  "welcomeFooter": {
+    "message": "Voice Scribe — Transcrição de voz inteligente",
+    "description": "Welcome page footer"
+  },
+  "welcomeNeedHelp": {
+    "message": "Precisa de ajuda?",
+    "description": "Welcome page need help link"
+  },
+  "welcomeRateTitle": {
+    "message": "O que acha do Voice Scribe?",
+    "description": "Welcome rating title"
+  },
+  "welcomeRateThanks": {
+    "message": "Obrigado pelo feedback!",
+    "description": "Welcome rating thanks"
+  }
+}

@@ -29,8 +29,28 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
+    function renderFooter() {
+        const footerContainer = document.getElementById('footer-container');
+        if (!footerContainer) return;
+
+        footerContainer.innerHTML = `
+    <footer>
+        <div class="container footer-content">
+            <p data-i18n="footer.copy">&copy; 2026 VoiceScribe. Smart Productivity.</p>
+            <div class="footer-links">
+                <a href="help.html" data-i18n="footer.help">Help</a>
+                <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+                <a href="terms.html" data-i18n="footer.terms">Terms</a>
+                <a href="mailto:jonastantra@gmail.com" data-i18n="footer.contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+        `;
+    }
+
     // Render components immediately
     renderHeader();
+    renderFooter();
 
     // ===== i18n (Internationalization) System =====
     const translations = {
@@ -122,7 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             "footer": {
                 "copy": "© 2026 VoiceScribe. Productividad Inteligente.",
+                "help": "Ayuda",
                 "privacy": "Privacidad",
+                "terms": "Términos",
                 "contact": "Contacto"
             },
             "help": {
@@ -169,6 +191,90 @@ document.addEventListener('DOMContentLoaded', () => {
                 "tip1": "<strong>Habla claro y a un ritmo normal.</strong> No necesitas gritar.",
                 "tip2": "<strong>Usa un buen micrófono.</strong> Si usas el micrófono integrado de una laptop antigua, el ruido ambiental puede afectar la calidad. Unos auriculares sencillos mejoran mucho el resultado.",
                 "tip3": "<strong>Si se detiene solo:</strong> El navegador a veces detiene la escucha si hay mucho silencio para ahorrar recursos. Solo vuelve a pulsar el botón de grabar."
+            },
+            "privacy": {
+                "title": "Política de Privacidad — VoiceScribe",
+                "desc": "Política de privacidad de VoiceScribe: qué datos se procesan, para qué, con quién se comparten y cómo ejercer tus derechos.",
+                "h1": "Política de Privacidad",
+                "lastUpdated": "Última actualización: 13 ago 2025",
+                "intro": "VoiceScribe es una extensión/aplicación que transcribe tu voz a texto y, de forma opcional, genera resúmenes con IA usando tu propia clave de OpenAI. Priorizamos tu privacidad: no operamos servidores propios para procesar tu audio ni tus notas.",
+                "shortTitle": "Resumen corto",
+                "shortL1": "No recopilamos datos personales ni analizamos tu uso con herramientas de terceros.",
+                "shortL2": "El audio del micrófono se procesa localmente por tu navegador y no se sube.",
+                "shortL3": "El texto transcrito y los resúmenes se guardan localmente en tu dispositivo.",
+                "shortL4": "Si habilitas la IA, el texto se envía a <code>api.openai.com</code> exclusivamente para generar el resumen, usando tu clave y vía HTTPS.",
+                "shortL5": "No vendemos datos, no los transferimos para fines no relacionados y no realizamos actividades de perfilado crediticio.",
+                "catsTitle": "Categorías de datos de usuario",
+                "catsP": "Según las categorías de Google/Chrome Web Store:",
+                "catsL1": "<strong>Información personal, salud, financiera, autenticación, comunicaciones personales, ubicación:</strong> no recopilamos.",
+                "catsL2": "<strong>Historial web, actividad del usuario:</strong> no recopilamos ni rastreamos.",
+                "catsL3": "<strong>Contenido de sitios web:</strong> solo el texto que tú dictas o pegas dentro de la app. Se almacena localmente y puedes borrarlo en cualquier momento.",
+                "permsTitle": "Permisos y finalidad",
+                "permsL1": "<strong>Micrófono (getUserMedia):</strong> convertir voz a texto localmente mediante APIs del navegador.",
+                "permsL2": "<strong>Almacenamiento local (por ejemplo, chrome.storage/local o localStorage):</strong> guardar tus notas y resúmenes en tu dispositivo.",
+                "permsL3": "<strong>Conexión a Internet:</strong> únicamente necesaria si activas la función opcional de resumen con IA.",
+                "transfersTitle": "Transferencias y terceros",
+                "transfersL1": "No compartimos tus datos con terceros para marketing ni analítica.",
+                "transfersL2": "Proveedor opcional: <strong>OpenAI</strong> para generar resúmenes. Se envía el texto que selecciones; no enviamos audio. La clave es tuya y se gestiona localmente.",
+                "retentionTitle": "Retención y control",
+                "retentionL1": "Puedes eliminar todas las notas desde la opción “Limpiar Todo”.",
+                "retentionL2": "Al desinstalar la app/extensión, el almacenamiento local relacionado se elimina.",
+                "securityTitle": "Seguridad",
+                "securityP": "Las comunicaciones con servicios externos (si se usan) ocurren sobre HTTPS. No mantenemos servidores propios con tus datos.",
+                "certsTitle": "Certificaciones para la publicación",
+                "certsL1": "No vendemos ni transferimos datos de usuarios a terceros, excepto lo estrictamente necesario para la función opcional de IA descrita arriba.",
+                "certsL2": "No usamos ni transferimos datos para propósitos no relacionados con la funcionalidad principal.",
+                "certsL3": "No usamos ni transferimos datos para determinar solvencia ni realizar actividades crediticias.",
+                "kidsTitle": "Menores",
+                "kidsP": "El producto no está dirigido específicamente a menores de 13 años y no recopilamos conscientemente datos de menores.",
+                "changesTitle": "Cambios",
+                "changesP": "Podemos actualizar esta política. Publicaremos la nueva versión en esta misma URL e indicaremos la fecha de vigencia.",
+                "contactTitle": "Contacto",
+                "contactP": "Para preguntas o solicitudes de privacidad, escribe a <a href=\"mailto:soporte@example.com\">soporte@example.com</a>.",
+                "backLink": "← Volver a la página principal"
+            },
+            "terms": {
+                "title": "Términos de Servicio — VoiceScribe",
+                "desc": "Términos de servicio de VoiceScribe.",
+                "h1": "Términos de Servicio",
+                "intro": "Al usar VoiceScribe aceptas estos términos. Si no estás de acuerdo, no uses la aplicación.",
+                "licenseTitle": "Licencia",
+                "licenseP": "Te concedemos una licencia personal, no transferible y revocable para usar la app con su funcionalidad actual.",
+                "usageTitle": "Uso aceptable",
+                "usageL1": "No intentes descompilar ni eludir medidas de seguridad.",
+                "usageL2": "No uses la app para infringir derechos de terceros o leyes aplicables.",
+                "funcTitle": "Funcionalidad y disponibilidad",
+                "funcP": "La app se ofrece “tal cual”. Podríamos actualizar o interrumpir funciones sin previo aviso.",
+                "thirdPartyTitle": "Servicios de terceros",
+                "thirdPartyP": "La función opcional de IA puede usar OpenAI. Tu uso se rige también por los términos del proveedor correspondiente.",
+                "liabTitle": "Limitación de responsabilidad",
+                "liabP": "En la medida permitida por ley, no seremos responsables por pérdidas indirectas, incidentales o consecuentes derivadas del uso de la app.",
+                "contactTitle": "Contacto",
+                "contactP": "soporte@example.com",
+                "backLink": "← Volver a la página principal"
+            },
+            "welcome": {
+                "title": "¡Bienvenido a VoiceScribe! - Configuración Inicial",
+                "tagline": "Tu segundo cerebro ha sido instalado.",
+                "heroH1": "Falta solo un paso...",
+                "heroP": "Para que VoiceScribe funcione correctamente, necesitas <strong class=\"highlight\">fijarlo en tu barra de herramientas</strong>.",
+                "step1Title": "Haz clic en el Puzzle 🧩",
+                "step1P": "Busca el icono de \"Extensiones\" en la esquina superior derecha de Chrome.",
+                "step1Alt": "Paso 1: Clic en icono de puzzle",
+                "step2Title": "Fija VoiceScribe 📌",
+                "step2P": "Encuentra <strong>VoiceScribe</strong> en la lista y haz clic en el icono de la <strong>chincheta</strong>.",
+                "step2Alt": "Paso 2: Clic en icono de fijar",
+                "step3Title": "¡Listo para usar! 🚀",
+                "step3P": "Ahora verás el icono de VoiceScribe siempre visible. Haz clic para abrir el <strong>Sidebar</strong>.",
+                "step3Alt": "Paso 3: Icono visible",
+                "whyTitle": "¿Por qué fijarlo?",
+                "why1": "Acceso instantáneo cuando la idea llega.",
+                "why2": "No pierdas de vista si está grabando.",
+                "why3": "Abre el Sidebar sin interrumpir tu navegación.",
+                "ctaP": "Una vez fijado, haz tu primera prueba:",
+                "ctaCmd": "Haz clic en el icono <i class=\"ri-mic-ai-line\"></i> y di:",
+                "ctaText": "\"Hola VoiceScribe\"",
+                "videoLink": " Ver video tutorial rápido (30s)"
             }
         },
         en: {
@@ -259,7 +365,9 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             "footer": {
                 "copy": "© 2026 VoiceScribe. Smart Productivity.",
+                "help": "Help",
                 "privacy": "Privacy",
+                "terms": "Terms",
                 "contact": "Contact"
             },
             "help": {
@@ -306,6 +414,90 @@ document.addEventListener('DOMContentLoaded', () => {
                 "tip1": "<strong>Speak clearly and at a normal pace.</strong> You don't need to shout.",
                 "tip2": "<strong>Use a good microphone.</strong> If you use the built-in microphone of an old laptop, ambient noise can affect quality. Simple headphones improve the result significantly.",
                 "tip3": "<strong>If it stops alone:</strong> The browser sometimes stops listening if there is a lot of silence to save resources. Just press the record button again."
+            },
+            "privacy": {
+                "title": "Privacy Policy — VoiceScribe",
+                "desc": "VoiceScribe Privacy Policy: what data is processed, for what purpose, with whom it is shared, and how to exercise your rights.",
+                "h1": "Privacy Policy",
+                "lastUpdated": "Last updated: Aug 13, 2025",
+                "intro": "VoiceScribe is an extension/app that transcribes your voice to text and optionally generates AI summaries using your own OpenAI key. We prioritize your privacy: we do not operate our own servers to process your audio or notes.",
+                "shortTitle": "Short Summary",
+                "shortL1": "We do not collect personal data nor analyze your usage with third-party tools.",
+                "shortL2": "Microphone audio is processed locally by your browser and is not uploaded.",
+                "shortL3": "Transcribed text and summaries are stored locally on your device.",
+                "shortL4": "If you enable AI, text is sent to <code>api.openai.com</code> exclusively to generate the summary, using your key and via HTTPS.",
+                "shortL5": "We do not sell data, transfer it for unrelated purposes, nor conduct credit profiling activities.",
+                "catsTitle": "User Data Categories",
+                "catsP": "According to Google/Chrome Web Store categories:",
+                "catsL1": "<strong>Personal info, health, financial, authentication, personal communications, location:</strong> we do not collect.",
+                "catsL2": "<strong>Web history, user activity:</strong> we do not collect or track.",
+                "catsL3": "<strong>Website content:</strong> only the text you dictate or paste into the app. It is stored locally and you can delete it at any time.",
+                "permsTitle": "Permissions and Purpose",
+                "permsL1": "<strong>Microphone (getUserMedia):</strong> convert voice to text locally via browser APIs.",
+                "permsL2": "<strong>Local storage (e.g., chrome.storage/local or localStorage):</strong> save your notes and summaries on your device.",
+                "permsL3": "<strong>Internet connection:</strong> only necessary if you activate the optional AI summary feature.",
+                "transfersTitle": "Transfers and Third Parties",
+                "transfersL1": "We do not share your data with third parties for marketing or analytics.",
+                "transfersL2": "Optional provider: <strong>OpenAI</strong> for generating summaries. The text you select is sent; we do not send audio. The key is yours and managed locally.",
+                "retentionTitle": "Retention and Control",
+                "retentionL1": "You can delete all notes via the “Clear All” option.",
+                "retentionL2": "Uninstalling the app/extension deletes related local storage.",
+                "securityTitle": "Security",
+                "securityP": "Communications with external services (if used) occur over HTTPS. We do not maintain our own servers with your data.",
+                "certsTitle": "Certifications for Publication",
+                "certsL1": "We do not sell or transfer user data to third parties, except as strictly necessary for the optional AI feature described above.",
+                "certsL2": "We do not use or transfer data for purposes unrelated to the core functionality.",
+                "certsL3": "We do not use or transfer data to determine creditworthiness or conduct lending activities.",
+                "kidsTitle": "Children",
+                "kidsP": "The product is not specifically directed at children under 13, and we do not knowingly collect data from children.",
+                "changesTitle": "Changes",
+                "changesP": "We may update this policy. We will publish the new version at this same URL and indicate the effective date.",
+                "contactTitle": "Contact",
+                "contactP": "For privacy questions or requests, write to <a href=\"mailto:soporte@example.com\">soporte@example.com</a>.",
+                "backLink": "← Back to Home"
+            },
+            "terms": {
+                "title": "Terms of Service — VoiceScribe",
+                "desc": "VoiceScribe Terms of Service.",
+                "h1": "Terms of Service",
+                "intro": "By using VoiceScribe you accept these terms. If you do not agree, do not use the application.",
+                "licenseTitle": "License",
+                "licenseP": "We grant you a personal, non-transferable, and revocable license to use the app with its current functionality.",
+                "usageTitle": "Acceptable Use",
+                "usageL1": "Do not attempt to decompile or circumvent security measures.",
+                "usageL2": "Do not use the app to infringe third-party rights or applicable laws.",
+                "funcTitle": "Functionality and Availability",
+                "funcP": "The app is offered “as is”. We may update or discontinue features without prior notice.",
+                "thirdPartyTitle": "Third-Party Services",
+                "thirdPartyP": "The optional AI function may use OpenAI. Your use is also governed by the respective provider's terms.",
+                "liabTitle": "Limitation of Liability",
+                "liabP": "To the extent permitted by law, we shall not be liable for indirect, incidental, or consequential losses derived from the use of the app.",
+                "contactTitle": "Contact",
+                "contactP": "soporte@example.com",
+                "backLink": "← Back to Home"
+            },
+            "welcome": {
+                "title": "Welcome to VoiceScribe! - Initial Setup",
+                "tagline": "Your second brain has been installed.",
+                "heroH1": "Just one step left...",
+                "heroP": "For VoiceScribe to work correctly, you need to <strong class=\"highlight\">pin it to your toolbar</strong>.",
+                "step1Title": "Click the Puzzle 🧩",
+                "step1P": "Find the \"Extensions\" icon in the top right corner of Chrome.",
+                "step1Alt": "Step 1: Click puzzle icon",
+                "step2Title": "Pin VoiceScribe 📌",
+                "step2P": "Find <strong>VoiceScribe</strong> in the list and click the <strong>pin</strong> icon.",
+                "step2Alt": "Step 2: Click pin icon",
+                "step3Title": "Ready to use! 🚀",
+                "step3P": "Now you'll see the VoiceScribe icon always visible. Click to open the <strong>Sidebar</strong>.",
+                "step3Alt": "Step 3: Icon visible",
+                "whyTitle": "Why pin it?",
+                "why1": "Instant access when an idea strikes.",
+                "why2": "Don't lose sight of whether it's recording.",
+                "why3": "Open the Sidebar without interrupting your browsing.",
+                "ctaP": "Once pinned, do your first test:",
+                "ctaCmd": "Click the icon <i class=\"ri-mic-ai-line\"></i> and say:",
+                "ctaText": "\"Hello VoiceScribe\"",
+                "videoLink": " Watch quick tutorial video (30s)"
             }
         },
         zh: {
@@ -396,7 +588,9 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             "footer": {
                 "copy": "© 2026 VoiceScribe. 智能生产力。",
+                "help": "帮助",
                 "privacy": "隐私",
+                "terms": "条款",
                 "contact": "联系"
             },
             "help": {
@@ -443,6 +637,90 @@ document.addEventListener('DOMContentLoaded', () => {
                 "tip1": "<strong>说话清晰，语速正常。</strong> 不需要大喊大叫。",
                 "tip2": "<strong>使用好的麦克风。</strong> 如果您使用旧笔记本电脑的内置麦克风，环境噪音可能会影响质量。简单的耳机可以显著改善结果。",
                 "tip3": "<strong>如果它自动停止：</strong> 如果长时间静音，浏览器有时会停止监听以节省资源。只需再次按下录音按钮即可。"
+            },
+            "privacy": {
+                "title": "隐私政策 — VoiceScribe",
+                "desc": "VoiceScribe 隐私政策：处理哪些数据，目的为何，与谁共享以及如何行使您的权利。",
+                "h1": "隐私政策",
+                "lastUpdated": "最后更新：2025年8月13日",
+                "intro": "VoiceScribe 是一个扩展/应用程序，可将您的语音转录为文本，并可选择使用您自己的 OpenAI 密钥生成 AI 摘要。我们优先考虑您的隐私：我们不通过自己的服务器处理您的音频或笔记。",
+                "shortTitle": "简短摘要",
+                "shortL1": "我们不收集个人数据，也不使用第三方工具分析您的使用情况。",
+                "shortL2": "麦克风音频由您的浏览器本地处理，且不上传。",
+                "shortL3": "转录文本和摘要本地存储在您的设备上。",
+                "shortL4": "如果您启用 AI，文本将仅发送到 <code>api.openai.com</code> 以生成摘要，使用您的密钥并通过 HTTPS 传输。",
+                "shortL5": "我们不出售数据，不为无关目的传输数据，也不进行信用剖析活动。",
+                "catsTitle": "用户数据类别",
+                "catsP": "根据 Google/Chrome 网上应用店类别：",
+                "catsL1": "<strong>个人信息、健康、财务、身份验证、个人通信、位置：</strong>我们不收集。",
+                "catsL2": "<strong>网络历史记录、用户活动：</strong>我们不收集或跟踪。",
+                "catsL3": "<strong>网站内容：</strong>仅限您口述或粘贴到应用中的文本。它存储在本地，您可以随时删除。",
+                "permsTitle": "权限和目的",
+                "permsL1": "<strong>麦克风 (getUserMedia)：</strong>通过浏览器 API 在本地将语音转换为文本。",
+                "permsL2": "<strong>本地存储（例如 chrome.storage/local 或 localStorage）：</strong>在您的设备上保存您的笔记和摘要。",
+                "permsL3": "<strong>互联网连接：</strong>仅在您激活可选的 AI 摘要功能时才需要。",
+                "transfersTitle": "传输和第三方",
+                "transfersL1": "我们不与第三方共享您的数据用于营销或分析。",
+                "transfersL2": "可选提供商：<strong>OpenAI</strong> 用于生成摘要。仅发送您选择的文本；我们不发送音频。密钥属于您并在本地管理。",
+                "retentionTitle": "保留和控制",
+                "retentionL1": "您可以通过“清除所有”选项删除所有笔记。",
+                "retentionL2": "卸载应用程序/扩展程序会删除相关的本地存储。",
+                "securityTitle": "安全性",
+                "securityP": "与外部服务（如果使用）的通信通过 HTTPS 进行。我们不维护自己的服务器来存储您的数据。",
+                "certsTitle": "发布认证",
+                "certsL1": "我们不出售或向第三方传输用户数据，除了上述可选 AI 功能严格需要的之外。",
+                "certsL2": "我们不使用或传输数据用于与核心功能无关的目的。",
+                "certsL3": "我们不使用或传输数据来确定信用度或进行借贷活动。",
+                "kidsTitle": "儿童",
+                "kidsP": "该产品并非专门针对 13 岁以下儿童，我们不会有意收集儿童数据。",
+                "changesTitle": "变更",
+                "changesP": "我们也可能会更新此政策。我们将在同一 URL 发布新版本并注明生效日期。",
+                "contactTitle": "联系",
+                "contactP": "有关隐私问题或请求，请致信 <a href=\"mailto:soporte@example.com\">soporte@example.com</a>。",
+                "backLink": "← 返回首页"
+            },
+            "terms": {
+                "title": "服务条款 — VoiceScribe",
+                "desc": "VoiceScribe 服务条款。",
+                "h1": "服务条款",
+                "intro": "使用 VoiceScribe 即表示您接受这些条款。如果您不同意，请勿使用该应用程序。",
+                "licenseTitle": "许可",
+                "licenseP": "我们授予您个人的、不可转让的、可撤销的许可，以使用该应用程序及其当前功能。",
+                "usageTitle": "可接受的使用",
+                "usageL1": "请勿尝试反编译或规避安全措施。",
+                "usageL2": "请勿使用该应用程序侵犯第三方权利或适用法律。",
+                "funcTitle": "功能和可用性",
+                "funcP": "该应用程序按“原样”提供。我们可能会更新或中断功能，恕不另行通知。",
+                "thirdPartyTitle": "第三方服务",
+                "thirdPartyP": "可选的 AI 功能可能会使用 OpenAI。您的使用也受相应提供商的条款管辖。",
+                "liabTitle": "责任限制",
+                "liabP": "在法律允许的范围内，我们不对因使用该应用程序而产生的间接、附带或后果性损失承担责任。",
+                "contactTitle": "联系",
+                "contactP": "soporte@example.com",
+                "backLink": "← 返回首页"
+            },
+            "welcome": {
+                "title": "欢迎使用 VoiceScribe！- 初始设置",
+                "tagline": "您的第二个大脑已安装。",
+                "heroH1": "只差这一步...",
+                "heroP": "为了让 VoiceScribe 正常工作，您需要<strong class=\"highlight\">将其固定到工具栏</strong>。",
+                "step1Title": "点击拼图 🧩",
+                "step1P": "在 Chrome 右上角找到“扩展程序”图标。",
+                "step1Alt": "步骤 1：点击拼图图标",
+                "step2Title": "固定 VoiceScribe 📌",
+                "step2P": "在列表中找到 <strong>VoiceScribe</strong> 并点击<strong>图钉</strong>图标。",
+                "step2Alt": "步骤 2：点击图钉图标",
+                "step3Title": "可以使用了！🚀",
+                "step3P": "现在您将看到 VoiceScribe 图标始终可见。点击打开<strong>侧边栏</strong>。",
+                "step3Alt": "步骤 3：图标可见",
+                "whyTitle": "为什么要固定？",
+                "why1": "灵感来袭时即时访问。",
+                "why2": "随时掌握是否正在录音。",
+                "why3": "打开侧边栏而不中断浏览。",
+                "ctaP": "固定后，进行第一次测试：",
+                "ctaCmd": "点击图标 <i class=\"ri-mic-ai-line\"></i> 并说：",
+                "ctaText": "“你好 VoiceScribe”",
+                "videoLink": " 观看快速教程视频（30秒）"
             }
         }
     };
