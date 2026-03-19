@@ -61,8 +61,20 @@
         "cta": "Install Extension Free",
         "note": "Compatible with Chrome, Brave and Edge."
     },
+    "install": {
+        "title": "📦 Install & Setup in 2 Minutes",
+        "subtitle": "Get started with VoiceScribe in three simple steps",
+        "step1Title": "Add to Chrome",
+        "step1Text": "Click 'Add to Chrome' button on the Chrome Web Store page",
+        "step2Title": "Pin to Toolbar",
+        "step2Text": "Click the puzzle icon 🧩 and pin VoiceScribe for quick access",
+        "step3Title": "Allow Microphone",
+        "step3Text": "Click the extension icon and allow microphone access when prompted",
+        "tip": "💡 Pro Tip: Keep the extension pinned so you never lose access when inspiration strikes!"
+    },
     "faq": {
-        "title": "Voice Transcription FAQ",
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know about VoiceScribe",
         "q1": "How much does VoiceScribe cost?",
         "a1": "Right now, <strong>VoiceScribe is 100% FREE</strong> for a limited time. We want you to try the tool with zero barriers. We may introduce paid plans later, but if you join now you'll enjoy everything at no cost.",
         "q2": "How accurate is the transcription?",
@@ -72,7 +84,13 @@
         "q4": "Is my data safe?",
         "a4": "Absolutely. <strong>Privacy is our #1 priority.</strong> Transcriptions are processed locally in your browser. We only send text to OpenAI when you explicitly request a summary, and nothing is stored on our servers.",
         "q5": "Do I need my own OpenAI key?",
-        "a5": "No. Since VoiceScribe is free, you can use our AI directly. If you prefer to use your own API key for more control, we offer that option in settings."
+        "a5": "No. Since VoiceScribe is free, you can use our AI directly. If you prefer to use your own API key for more control, we offer that option in settings.",
+        "q6": "Which languages are supported?",
+        "a6": "VoiceScribe supports <strong>12 languages</strong> including English, Spanish, French, German, Japanese, Korean, Chinese, Portuguese, Italian, Russian, and Arabic. More languages coming soon!",
+        "q7": "Can I export my transcriptions?",
+        "a7": "Yes! You can export your transcriptions as <strong>TXT or PDF files</strong>, or copy them directly to your clipboard. Perfect for sharing meeting notes or saving for later.",
+        "q8": "Does it work offline?",
+        "a8": "The transcription feature requires an internet connection for maximum accuracy. However, your transcriptions are stored locally in your browser, so you can access them anytime."
     },
     "support": {
         "title": "Help & Support",

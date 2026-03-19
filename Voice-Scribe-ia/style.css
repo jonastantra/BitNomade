@@ -606,6 +606,27 @@ footer {
     .glass-card-hero:hover {
         transform: none;
     }
+
+    .install-steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .install-step-card {
+        padding: 30px 20px;
+    }
+
+    .step-number {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 0 auto 16px;
+    }
+
+    .install-tip-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px;
+    }
 }
 
 /* FAQ Section */
@@ -658,6 +679,94 @@ footer {
     padding: 20px;
     color: var(--faq-text);
     font-size: 0.95rem;
+}
+
+/* Installation Section */
+.section-install {
+    padding: 80px 0;
+    background: rgba(106, 17, 203, 0.03);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.install-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.install-step-card {
+    text-align: center;
+    padding: 40px 30px;
+    position: relative;
+}
+
+.install-step-card:hover {
+    transform: translateY(-8px);
+}
+
+.step-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.25);
+}
+
+.step-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.install-step-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-color);
+}
+
+.install-step-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.install-tip-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(91, 213, 192, 0.07);
+    border-left: 4px solid #5BD5C0;
+    padding: 16px 24px;
+    border-radius: 0 10px 10px 0;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 0.97rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.install-tip-box i {
+    font-size: 1.2rem;
+    color: #5BD5C0;
+    flex-shrink: 0;
 }
 
 /* Support Section */

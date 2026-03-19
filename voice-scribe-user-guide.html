@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎙️ Voice Scribe — Complete User Guide & Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary: #ec4899;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1c1c1e;
+            --dark-light: #2c2c2e;
+            --gray-900: #111827;
+            --gray-800: #1f2937;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--gray-900);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            background: var(--gray-100);
+            color: var(--gray-700);
+        }
+
+        .badge-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            padding: 40px 0;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sidebar-title {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray-500);
+            margin-bottom: 16px;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            background: var(--gray-100);
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+        }
+
+        .nav-icon {
+            font-size: 1.125rem;
+        }
+
+        /* Content Area */
+        .content {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-icon {
+            font-size: 2.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 24px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, var(--gray-50), var(--white));
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            color: var(--gray-600);
+            font-size: 0.9375rem;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 24px 0;
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+        }
+
+        th {
+            background: var(--gray-50);
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray-700);
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--gray-200);
+            font-size: 0.9375rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: var(--gray-50);
+        }
+
+        /* FAQ Accordion */
+        .accordion {
+            margin: 24px 0;
+        }
+
+        .accordion-item {
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 20px 24px;
+            background: var(--white);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            transition: all 0.2s;
+        }
+
+        .accordion-header:hover {
+            background: var(--gray-50);
+        }
+
+        .accordion-header.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+        }
+
+        .accordion-icon {
+            font-size: 1.25rem;
+            transition: transform 0.3s;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: var(--gray-50);
+        }
+
+        .accordion-body {
+            padding: 24px;
+            line-height: 1.8;
+        }
+
+        .accordion-body p {
+            margin-bottom: 16px;
+        }
+
+        .accordion-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Step Process */
+        .steps {
+            counter-reset: step;
+            margin: 24px 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.125rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .step-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.0625rem;
+        }
+
+        /* Pro Tips */
+        .pro-tip {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid var(--warning);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .pro-tip-title {
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pro-tip-content {
+            color: #78350f;
+            font-size: 0.9375rem;
+        }
+
+        /* Warning Box */
+        .warning {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            border-left: 4px solid var(--danger);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .warning-title {
+            font-weight: 700;
+            color: #991b1b;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .warning-content {
+            color: #7f1d1d;
+            font-size: 0.9375rem;
+        }
+
+        /* Success Box */
+        .success {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            border-left: 4px solid var(--success);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .success-title {
+            font-weight: 700;
+            color: #065f46;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .success-content {
+            color: #064e3b;
+            font-size: 0.9375rem;
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: var(--gray-900);
+            color: var(--gray-100);
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9375rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--gray-700);
+            border: 1px solid var(--gray-300);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-50);
+        }
+
+        /* Scenario Cards */
+        .scenario {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            padding: 32px;
+            color: var(--white);
+            margin: 32px 0;
+        }
+
+        .scenario-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .scenario-steps {
+            margin-top: 20px;
+        }
+
+        .scenario-step {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .scenario-step-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--gray-300);
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-section a {
+            color: var(--gray-400);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid var(--gray-700);
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 24px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .sidebar, header, footer {
+                display: none;
+            }
+
+            .content {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .accordion-content {
+                max-height: none !important;
+            }
+        }
+
+        /* Search Box */
+        .search-box {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            font-size: 0.9375rem;
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-400);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🎙️</span>
+                    <span>Voice Scribe</span>
+                </div>
+                <div class="header-meta">
+                    <span>📦 v1.8.0</span>
+                    <span>📅 March 2026</span>
+                    <span>✍️ Jonas Tantra</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Complete User Guide & Documentation</h1>
+            <p class="hero-subtitle">
+                Transform your voice into text in real-time with Voice Scribe — the Chrome extension 
+                designed for content creators, students, professionals, and anyone who prefers speaking over typing.
+            </p>
+            <div class="hero-badges">
+                <span class="badge badge-primary">✨ Real-time Transcription</span>
+                <span class="badge badge-primary">🌍 11 Languages</span>
+                <span class="badge badge-primary">💾 Auto-save</span>
+                <span class="badge">📤 Export to PDF/TXT</span>
+                <span class="badge">🎨 Dark/Light Themes</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-title">Table of Contents</div>
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search guide..." id="searchInput">
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#what-is" class="nav-link active">
+                            <span class="nav-icon">🌟</span>
+                            <span>What is Voice Scribe?</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#quick-start" class="nav-link">
+                            <span class="nav-icon">🚀</span>
+                            <span>Quick Start</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link">
+                            <span class="nav-icon">📚</span>
+                            <span>Features</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#how-to-use" class="nav-link">
+                            <span class="nav-icon">📖</span>
+                            <span>How to Use</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#faq" class="nav-link">
+                            <span class="nav-icon">❓</span>
+                            <span>FAQ</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#troubleshooting" class="nav-link">
+                            <span class="nav-icon">🔧</span>
+                            <span>Troubleshooting</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#privacy" class="nav-link">
+                            <span class="nav-icon">🔒</span>
+                            <span>Privacy</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#specs" class="nav-link">
+                            <span class="nav-icon">📊</span>
+                            <span>Specifications</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#support" class="nav-link">
+                            <span class="nav-icon">📞</span>
+                            <span>Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Content -->
+            <main class="content">
+                <!-- What is Voice Scribe -->
+                <section id="what-is" class="section">
+                    <h2 class="section-title">
+                        <span class="section-icon">🌟</span>
+                        What is Voice Scribe?
+                    </h2>
+                    <p class="section-subtitle">
+                        Voice Scribe is a Chrome extension that transforms your voice into text in real-time using advanced speech recognition technology.
+                    </p>
+
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">✍️</div>
+                            <div class="feature-title">Content Creators</div>
+                            <div class="feature-desc">Draft articles, blog posts, and scripts by simply speaking your ideas</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📝</div>
+                            <div class="feature-title">Students</div>
+                            <div class="feature-desc">Take lecture notes hands-free and focus on understanding the material</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💼</div>
+                            <div class="feature-title">Professionals</div>
+                            <div class="feature-desc">Transcribe meetings, interviews, and conference calls effortlessly</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <div class="feature-title">Everyone</div>
+                            <div class="feature-desc">Anyone who prefers speaking over typing for faster content creation</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">🎁 Key Benefits</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Benefit</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>🚀 <strong>Real-time</strong></td>
+                                        <td>See your words appear instantly as you speak</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🌍 <strong>11 Languages</strong></td>
+                                        <td>Support for major world languages with full UI translation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>📱 <strong>Side Panel</strong></td>
+                                        <td>Works alongside your browsing in Chrome's side panel</td>
+                                    </tr>
+                                    <tr>
+                                        <td>💾 <strong>Auto-save</strong></td>
+                                        <td>Never lose your work — everything saves automatically</td>
+                                    </tr>
+                                    <tr>
+                                        <td>📤 <strong>Export Ready</strong></td>
+                                        <td>Download as TXT or print-ready PDF instantly</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🎨 <strong>Beautiful UI</strong></td>
+                                        <td>Modern, clean interface with dark/light themes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Start -->
+                <section id="quick-start" class="section">
+                    <h2 class="section-title">
+                        <span class="section-icon">🚀</span>
+                        Quick Start Guide
+                    </h2>
+                    <p class="section-subtitle">Get up and running with Voice Scribe in under 2 minutes</p>
+
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-content">
+                                <div class="step-title">Install the Extension</div>
+                                <ol>
+                                    <li>Open <strong>Chrome Web Store</strong></li>
+                                    <li>Search for <strong>"Voice Transcription + AI"</strong> or <a href="https://chromewebstore.google.com/detail/voice-transcription-+-ai/pcklabcphhbkoghekdbpcplmjbdkfnbi" target="_blank">visit the extension page</a></li>
+                                    <li>Click <strong>"Add to Chrome"</strong></li>
+                                    <li>Wait for installation to complete</li>
+                                    <li>The Voice Scribe icon 🎙️ appears in your Chrome toolbar</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-content">
+                                <div class="step-title">Open Voice Scribe</div>
+                                <ol>
+                                    <li>Click the Voice Scribe icon in your toolbar</li>
+                                    <li>The <strong>Side Panel</strong> opens on the right side of Chrome</li>
+                                    <li><strong>First-time users</strong> will see a 3-step onboarding tour (you can skip it)</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-content">
+                                <div class="step-title">Grant Microphone Permission</div>
+                                <ol>
+                                    <li>Click the <strong>Settings gear (⚙️)</strong> in the top-right</li>
+                                    <li>Select your preferred language from the dropdown</li>
+                                    <li>Click the <strong>microphone button</strong> 🎙️</li>
+                                    <li>When Chrome asks, click <strong>"Allow"</strong> to grant microphone access</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-content">
+                                <div class="step-title">Start Transcribing</div>
+                                <ol>
+                                    <li>Click the <strong>large microphone button</strong> in the center</li>
+                                    <li>Start speaking clearly into your microphone</li>
+                                    <li>Watch your words appear in real-time</li>
+                                    <li>Click the button again to <strong>stop recording</strong></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-content">
+                                <div class="step-title">Export Your Text</div>
+                                <ol>
+                                    <li>Click <strong>"Export PDF"</strong> to open a print-ready version</li>
+                                    <li>Or click the dropdown and select <strong>"Guardar .TXT"</strong> to download</li>
+                                    <li>Use <strong>"Copiar"</strong> to copy everything to clipboard instantly</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="success">
+                        <div class="success-title">✅ You're Ready!</div>
+                        <div class="success-content">
+                            Voice Scribe is now set up and ready to use. Start transcribing your voice into text instantly!
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features -->
+                <section id="features" class="section">
+                    <h2 class="section-title">
+                        <span class="section-icon">📚</span>
+                        Complete Feature Guide
+                    </h2>
+                    <p class="section-subtitle">Discover all the powerful features Voice Scribe has to offer</p>
+
+                    <!-- Feature 1 -->
+                    <div class="card">
+                        <h3 class="card-title">🎙️ Voice Transcription</h3>
+                        <p><strong>What it does:</strong> Converts your speech to text using Chrome's built-in Web Speech API.</p>
+                        
+                        <h4 style="margin: 16px 0 12px; font-weight: 700;">How to use:</h4>
+                        <ol style="margin-left: 20px; margin-bottom: 16px;">
+                            <li>Click the microphone button (center of screen)</li>
+                            <li>Speak clearly and naturally</li>
+                            <li>Watch the waveform animate as you speak</li>
+                            <li>Click again to stop</li>
+                        </ol>
+
+                        <div class="pro-tip">
+                            <div class="pro-tip-title">💡 Pro Tips</div>
+                            <div class="pro-tip-content">
+                                <ul style="margin-left: 20px;">
+                                    <li>Speak at a normal pace — don't rush</li>
+                                    <li>Minimize background noise for better accuracy</li>
+                                    <li>The timer shows your recording duration</li>
+                                    <li>Transcription continues even if you switch tabs</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h4 style="margin: 16px 0 12px; font-weight: 700;">Supported Languages:</h4>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Language</th>
+                                        <th>Code</th>
+                                        <th>Flag</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>English</td><td>en-US</td><td>🇺🇸</td></tr>
+                                    <tr><td>Español</td><td>es-ES</td><td>🇪🇸</td></tr>
+                                    <tr><td>中文 (Simplified)</td><td>zh-CN</td><td>🇨🇳</td></tr>
+                                    <tr><td>Français</td><td>fr-FR</td><td>🇫🇷</td></tr>
+                                    <tr><td>Português</td><td>pt-BR</td><td>🇧🇷</td></tr>
+                                    <tr><td>Deutsch</td><td>de-DE</td><td>🇩🇪</td></tr>
+                                    <tr><td>日本語</td><td>ja-JP</td><td>🇯🇵</td></tr>
+                                    <tr><td>한국어</td><td>ko-KR</td><td>🇰🇷</td></tr>
+                                    <tr><td>Italiano</td><td>it-IT</td><td>🇮🇹</td></tr>
+                                    <tr><td>Русский</td><td>ru-RU</td><td>🇷🇺</td></tr>
+                                    <tr><td>العربية</td><td>ar-SA</td><td>🇸🇦</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="card">
+                        <h3 class="card-title">⚙️ Settings Panel</h3>
+                        <p><strong>What it does:</strong> Customize your Voice Scribe experience.</p>
+                        <p><strong>How to access:</strong> Click the <strong>gear icon (⚙️)</strong> in the header.</p>
+
+                        <h4 style="margin: 16px 0 12px; font-weight: 700;">Settings Options:</h4>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Setting</th>
+                                        <th>Description</th>
+                                        <th>Options</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Idioma / Language</strong></td>
+                                        <td>Change transcription language</td>
+                                        <td>11 languages available</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Modo Oscuro / Claro</strong></td>
+                                        <td>Toggle dark/light theme</td>
+                                        <td>Switch toggle</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Auto-stop del Micrófono</strong></td>
+                                        <td>Auto-stop after silence</td>
+                                        <td>Off, 1min, 3min, 5min</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Tamaño de Fuente</strong></td>
+                                        <td>Adjust text size</td>
+                                        <td>Small, Normal, Large</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="warning">
+                            <div class="warning-title">⚠️ Auto-Stop Feature</div>
+                            <div class="warning-content">
+                                When enabled, recording stops automatically after X minutes of <strong>silence</strong>. 
+                                Perfect for preventing runaway recordings. Timer resets whenever you speak. Default: <strong>Off</strong> (manual control).
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="card">
+                        <h3 class="card-title">📤 Export Options</h3>
+                        <p><strong>What it does:</strong> Save or share your transcriptions.</p>
+
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Method</th>
+                                        <th>How to Use</th>
+                                        <th>Output</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Copiar</strong></td>
+                                        <td>Click "Copiar" button</td>
+                                        <td>Copies to clipboard</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Guardar .TXT</strong></td>
+                                        <td>Click Export → TXT</td>
+                                        <td>Downloads <code>.txt</code> file</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Guardar .PDF</strong></td>
+                                        <td>Click Export → PDF</td>
+                                        <td>Opens print-ready page</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="section">
+                    <h2 class="section-title">
+                        <span class="section-icon">❓</span>
+                        Frequently Asked Questions
+                    </h2>
+                    <p class="section-subtitle">Find answers to common questions about Voice Scribe</p>
+
+                    <div class="accordion">
+                        <!-- General Questions -->
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>🌐 Is Voice Scribe free?</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Yes!</strong> Voice Scribe is 100% free with no hidden fees, subscriptions, or in-app purchases.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>📶 Does it work offline?</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>No.</strong> Voice Scribe uses Chrome's Web Speech API, which requires an internet connection to process speech recognition. You need an active internet connection for transcription to work.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>🌍 Which browsers are supported?</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>Voice Scribe is designed specifically for <strong>Google Chrome</strong> (desktop). It uses the Chrome Side Panel API, which is exclusive to Chrome.</p>
+                                    <p><strong>It does NOT work on:</strong></p>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Firefox</li>
+                                        <li>Safari</li>
+                                        <li>Edge (may work but not tested)</li>
+                                        <li>Mobile browsers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>💾 Where is my data stored?</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>Your transcripts are stored locally in <code>chrome.storage.local</code> on your device. They are:</p>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>✅ Stored only on your computer</li>
+                                        <li>✅ Never sent to external servers</li>
+                                        <li>✅ Preserved when you close Chrome</li>
+                                        <li>❌ Lost if you clear browser data</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>🎤 Why isn't the microphone working?</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Common causes:</strong></p>
+                                    <ol style="margin-left: 20px; margin-top: 8px;">
+                                        <li><strong>Permission denied:</strong> Click the 🔒 icon in Chrome's address bar → Enable microphone</li>
+                                        <li><strong>No microphone connected:</strong> Check if a mic is plugged in or built-in</li>
+                                        <li><strong>Another app is using it:</strong> Close other apps using the mic</li>
+                                        <li><strong>Hardware issue:</strong> Test mic in another app</li>
+                                    </ol>
+                                    
+                                    <div class="success" style="margin-top: 16px;">
+                                        <div class="success-title">✅ Solution</div>
+                                        <div class="success-content">
+                                            <ol style="margin-left: 20px; margin-top: 8px;">
+                                                <li>Go to <code>chrome://settings/content/microphone</code></li>
+                                                <li>Find Voice Scribe in the list</li>
+                                                <li>Set to "Allow"</li>
+                                                <li>Reload the extension</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>⏹️ Why did recording stop by itself?</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Possible reasons:</strong></p>
+                                    <ol style="margin-left: 20px; margin-top: 8px;">
+                                        <li><strong>Auto-stop enabled:</strong> Check Settings → Auto-stop (may be set to 1/3/5 min)</li>
+                                        <li><strong>Network issue:</strong> Web Speech API lost connection</li>
+                                        <li><strong>Browser sleep:</strong> Chrome went to sleep or suspended</li>
+                                        <li><strong>Permission revoked:</strong> Mic permission was removed</li>
+                                    </ol>
+                                    <p style="margin-top: 12px;"><strong>Solution:</strong> Disable auto-stop in Settings if you want manual control.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>📝 The transcription has errors or wrong words</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>Speech recognition accuracy depends on:</p>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li><strong>Microphone quality:</strong> Better mic = better accuracy</li>
+                                        <li><strong>Background noise:</strong> Quiet environment helps</li>
+                                        <li><strong>Clarity of speech:</strong> Speak clearly and at normal pace</li>
+                                        <li><strong>Language match:</strong> Ensure selected language matches what you're speaking</li>
+                                        <li><strong>Internet connection:</strong> Stable connection improves accuracy</li>
+                                    </ul>
+                                    
+                                    <div class="pro-tip" style="margin-top: 16px;">
+                                        <div class="pro-tip-title">💡 Tips for better accuracy</div>
+                                        <div class="pro-tip-content">
+                                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                                <li>Use a quality microphone (headset preferred)</li>
+                                                <li>Reduce background noise</li>
+                                                <li>Speak clearly at moderate pace</li>
+                                                <li>Avoid mumbling or speaking too fast</li>
+                                                <li>Test different languages if bilingual</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>🗣️ Can I transcribe multiple speakers?</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>Voice Scribe transcribes all audio it hears, but it <strong>cannot distinguish</strong> between different speakers. All voices merge into one continuous transcript.</p>
+                                    <p><strong>For multi-speaker scenarios:</strong></p>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>All voices appear in same text</li>
+                                        <li>No speaker labels (Speaker 1, Speaker 2)</li>
+                                        <li>Manual editing needed to separate speakers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>📤 How do I save my transcript?</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Three options:</strong></p>
+                                    <ol style="margin-left: 20px; margin-top: 8px;">
+                                        <li><strong>TXT:</strong> Click Export → "Guardar .TXT" → Downloads file</li>
+                                        <li><strong>PDF:</strong> Click Export → "Guardar .PDF" → Opens print page → Save as PDF</li>
+                                        <li><strong>Clipboard:</strong> Click "Copiar" → Paste anywhere</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>💾 Is my transcript saved automatically?</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Yes!</strong> Every word saves automatically to <code>chrome.storage.local</code> as you speak. You don't need to press any save button.</p>
+                                    <p>If you:</p>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Close the side panel → Text is saved</li>
+                                        <li>Close Chrome → Text is saved</li>
+                                        <li>Restart computer → Text is still there</li>
+                                    </ul>
+                                    
+                                    <div class="warning" style="margin-top: 16px;">
+                                        <div class="warning-title">⚠️ Warning</div>
+                                        <div class="warning-content">
+                                            Clearing browser data (cookies/storage) will delete saved transcripts.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Troubleshooting -->
+                <section id="troubleshooting" class="section">
+                    <h2 class="section-title">
+                        <span class="section-icon">🔧</span>
+                        Troubleshooting & Solutions
+                    </h2>
+                    <p class="section-subtitle">Common problems and how to fix them</p>
+
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>🎤 Problem: Microphone Permission Denied</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Symptoms:</strong></p>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Microphone button doesn't work</li>
+                                        <li>No permission prompt appears</li>
+                                        <li>Error message about permissions</li>
+                                    </ul>
+
+                                    <h4 style="margin: 16px 0 12px; font-weight: 700;">Solutions:</h4>
+                                    
+                                    <p><strong>Method 1: Chrome Settings</strong></p>
+                                    <ol style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Click the <strong>🔒 lock icon</strong> in Chrome's address bar</li>
+                                        <li>Find "Microphone" in the list</li>
+                                        <li>Toggle to <strong>"Allow"</strong></li>
+                                        <li>Reload Voice Scribe (close and reopen side panel)</li>
+                                    </ol>
+
+                                    <p style="margin-top: 16px;"><strong>Method 2: Chrome Content Settings</strong></p>
+                                    <ol style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Go to <code>chrome://settings/content/microphone</code></li>
+                                        <li>Scroll to "Not allowed to use your microphone"</li>
+                                        <li>Find Voice Scribe in the list</li>
+                                        <li>Click the trash icon to remove the block</li>
+                                        <li>Reload Voice Scribe</li>
+                                    </ol>
+
+                                    <p style="margin-top: 16px;"><strong>Method 3: System Permissions (macOS)</strong></p>
+                                    <ol style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Open <strong>System Preferences</strong> → <strong>Security & Privacy</strong></li>
+                                        <li>Go to <strong>Privacy</strong> tab</li>
+                                        <li>Select <strong>Microphone</strong></li>
+                                        <li>Ensure Chrome is checked</li>
+                                        <li>Restart Chrome</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>🔇 Problem: No Sound / Not Transcribing</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Symptoms:</strong></p>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Microphone button shows recording</li>
+                                        <li>Waveform animates</li>
+                                        <li>But no text appears</li>
+                                    </ul>
+
+                                    <h4 style="margin: 16px 0 12px; font-weight: 700;">Possible Causes & Solutions:</h4>
+                                    
+                                    <p><strong>Cause 1: Wrong Input Device Selected</strong></p>
+                                    <ol style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Click system volume icon (taskbar/menu bar)</li>
+                                        <li>Open sound settings</li>
+                                        <li>Ensure correct microphone is selected as input</li>
+                                        <li>Test mic in system settings</li>
+                                    </ol>
+
+                                    <p style="margin-top: 16px;"><strong>Cause 2: Microphone Muted</strong></p>
+                                    <ol style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Check if mic has physical mute switch</li>
+                                        <li>Check system volume mixer</li>
+                                        <li>Ensure mic isn't muted in Chrome</li>
+                                    </ol>
+
+                                    <p style="margin-top: 16px;"><strong>Cause 3: Web Speech API Issue</strong></p>
+                                    <ol style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Close and reopen side panel</li>
+                                        <li>Refresh Chrome completely</li>
+                                        <li>Check internet connection</li>
+                                        <li>Try a different language temporarily</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>📝 Problem: Poor Transcription Accuracy</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Symptoms:</strong></p>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Many wrong words</li>
+                                        <li>Gibberish text</li>
+                                        <li>Missing words</li>
+                                    </ul>
+
+                                    <h4 style="margin: 16px 0 12px; font-weight: 700;">Solutions:</h4>
+                                    
+                                    <p><strong>Improve Microphone Quality:</strong></p>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Use a headset microphone (best option)</li>
+                                        <li>Position mic 2-4 inches from mouth</li>
+                                        <li>Avoid laptop built-in mic if possible</li>
+                                        <li>Test mic quality in another app</li>
+                                    </ul>
+
+                                    <p style="margin-top: 16px;"><strong>Reduce Background Noise:</strong></p>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Close windows (street noise)</li>
+                                        <li>Turn off fans/AC</li>
+                                        <li>Move to quieter room</li>
+                                        <li>Use noise-cancelling microphone</li>
+                                    </ul>
+
+                                    <p style="margin-top: 16px;"><strong>Speak Clearly:</strong></p>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Normal pace (not too fast)</li>
+                                        <li>Enunciate words clearly</li>
+                                        <li>Don't mumble</li>
+                                        <li>Pause between sentences</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Privacy -->
+                <section id="privacy" class="section">
+                    <h2 class="section-title">
+                        <span class="section-icon">🔒</span>
+                        Privacy & Permissions
+                    </h2>
+                    <p class="section-subtitle">Your privacy is our top priority</p>
+
+                    <div class="card">
+                        <h3 class="card-title">What Permissions Does Voice Scribe Need?</h3>
+                        <p>Voice Scribe requests only <strong>2 permissions</strong>:</p>
+
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Permission</th>
+                                        <th>Why It's Needed</th>
+                                        <th>What It Does</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>storage</code></td>
+                                        <td>Save your data locally</td>
+                                        <td>Stores transcripts, settings, preferences in <code>chrome.storage.local</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>sidePanel</code></td>
+                                        <td>Display the interface</td>
+                                        <td>Opens Voice Scribe in Chrome's Side Panel instead of popup</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">What Voice Scribe Does NOT Do</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>❌ Never Does</th>
+                                        <th>Explanation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Collect audio</strong></td>
+                                        <td>Your voice is processed by Web Speech API, not sent to Voice Scribe servers</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Transmit transcripts</strong></td>
+                                        <td>Your text stays 100% on your device</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Track browsing</strong></td>
+                                        <td>No analytics, no tracking, no cookies</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Access other tabs</strong></td>
+                                        <td>Cannot see or access your other browser tabs</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Read personal data</strong></td>
+                                        <td>No access to emails, passwords, or personal info</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Show ads</strong></td>
+                                        <td>No advertisements, ever</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="success">
+                        <div class="success-title">🛡️ Your Data Stays Private</div>
+                        <div class="success-content">
+                            Voice Scribe has <strong>no backend server</strong>. All data stays in <code>chrome.storage.local</code>. 
+                            Only you can access your transcripts. Uninstalling deletes all data automatically.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Specifications -->
+                <section id="specs" class="section">
+                    <h2 class="section-title">
+                        <span class="section-icon">📊</span>
+                        Technical Specifications
+                    </h2>
+                    <p class="section-subtitle">System requirements and technical details</p>
+
+                    <div class="card">
+                        <h3 class="card-title">System Requirements</div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Requirement</th>
+                                        <th>Specification</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Operating System</strong></td>
+                                        <td>Windows 10+, macOS 10.15+, Linux, ChromeOS</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Browser</strong></td>
+                                        <td>Google Chrome 88+ (latest recommended)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Internet</strong></td>
+                                        <td>Required for speech recognition</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Microphone</strong></td>
+                                        <td>Built-in or external (required)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Storage</strong></td>
+                                        <td>Minimal (&lt;1 MB for extension + text storage)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>RAM</strong></td>
+                                        <td>Minimal impact (~50-100 MB while active)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Browser Compatibility</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Browser</th>
+                                        <th>Supported</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Chrome (Desktop)</td>
+                                        <td>✅ Yes</td>
+                                        <td>Fully supported</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chrome (Mobile)</td>
+                                        <td>❌ No</td>
+                                        <td>Side Panel API not available</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Firefox</td>
+                                        <td>❌ No</td>
+                                        <td>Different extension system</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Safari</td>
+                                        <td>❌ No</td>
+                                        <td>Different extension system</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Edge</td>
+                                        <td>⚠️ Maybe</td>
+                                        <td>Chromium-based, not tested</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Opera</td>
+                                        <td>⚠️ Maybe</td>
+                                        <td>Chromium-based, not tested</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Support -->
+                <section id="support" class="section">
+                    <h2 class="section-title">
+                        <span class="section-icon">📞</span>
+                        Support & Resources
+                    </h2>
+                    <p class="section-subtitle">Get help and stay connected</p>
+
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📧</div>
+                            <div class="feature-title">Email Support</div>
+                            <div class="feature-desc">
+                                <a href="mailto:jonastantra@gmail.com">jonastantra@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💻</div>
+                            <div class="feature-title">GitHub</div>
+                            <div class="feature-desc">
+                                <a href="https://github.com/jonastantra/Voice-Scribe-SitioWeb" target="_blank">View Source Code</a>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🛒</div>
+                            <div class="feature-title">Chrome Web Store</div>
+                            <div class="feature-desc">
+                                <a href="https://chromewebstore.google.com/detail/voice-transcription-+-ai/pcklabcphhbkoghekdbpcplmjbdkfnbi" target="_blank">Extension Page</a>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📝</div>
+                            <div class="feature-title">Feedback Form</div>
+                            <div class="feature-desc">
+                                <a href="https://docs.google.com/forms/d/1a6QcieACElUbpuE5vDwCvM-wisbyEqCYv9ORQWPkt6A/edit" target="_blank">Share Your Thoughts</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scenario">
+                        <div class="scenario-title">🐛 Reporting Bugs</div>
+                        <p>When reporting a bug, please include:</p>
+                        <div class="scenario-steps">
+                            <div class="scenario-step">
+                                <div class="scenario-step-title">1. Chrome Version</div>
+                                <div>Visit <code>chrome://version/</code> and copy the version number</div>
+                            </div>
+                            <div class="scenario-step">
+                                <div class="scenario-step-title">2. Operating System</div>
+                                <div>Windows/macOS/Linux + version</div>
+                            </div>
+                            <div class="scenario-step">
+                                <div class="scenario-step-title">3. Steps to Reproduce</div>
+                                <div>What you did before the bug appeared</div>
+                            </div>
+                            <div class="scenario-step">
+                                <div class="scenario-step-title">4. Expected vs Actual Behavior</div>
+                                <div>What should have happened vs what actually happened</div>
+                            </div>
+                            <div class="scenario-step">
+                                <div class="scenario-step-title">5. Screenshots</div>
+                                <div>If applicable, attach screenshots</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Voice Scribe</h4>
+                    <p>Transform your voice into text in real-time with the most intuitive Chrome extension for transcription.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#what-is">What is Voice Scribe?</a>
+                    <a href="#quick-start">Quick Start</a>
+                    <a href="#features">Features</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="https://www.bitnomade.org/Voice-Scribe-ia/welcome/index.html" target="_blank">Welcome Page</a>
+                    <a href="https://bitnomade.org/Voice-Scribe-ia/help.html" target="_blank">Help Center</a>
+                    <a href="https://github.com/jonastantra/Voice-Scribe-SitioWeb" target="_blank">GitHub</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="mailto:jonastantra@gmail.com">jonastantra@gmail.com</a>
+                    <p style="margin-top: 16px; font-size: 0.875rem;">Version 1.8.0<br>Last Updated: March 2026</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Voice Scribe. All rights reserved. | Built with ❤️ by Jonas Tantra</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // Accordion functionality
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+            
+            // Close all accordions
+            document.querySelectorAll('.accordion-header').forEach(h => {
+                h.classList.remove('active');
+                h.nextElementSibling.style.maxHeight = null;
+            });
+            
+            // Open clicked accordion if it wasn't active
+            if (!isActive) {
+                header.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        }
+
+        // Expand all accordions in FAQ section by default
+        document.querySelectorAll('#faq .accordion-header').forEach((header, index) => {
+            if (index < 3) { // Expand first 3 by default
+                header.classList.add('active');
+                header.nextElementSibling.style.maxHeight = header.nextElementSibling.scrollHeight + 'px';
+            }
+        });
+
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function highlightNavigation() {
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 150;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            highlightNavigation();
+            
+            // Back to top button visibility
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            if (searchTerm.length < 2) {
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    item.style.display = 'block';
+                });
+                return;
+            }
+
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                const header = item.querySelector('.accordion-header span:first-child');
+                const content = item.querySelector('.accordion-body');
+                
+                if (header && content) {
+                    const headerText = header.textContent.toLowerCase();
+                    const contentText = content.textContent.toLowerCase();
+                    
+                    if (headerText.includes(searchTerm) || contentText.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Copy code blocks
+        document.querySelectorAll('.code-block').forEach(block => {
+            const copyButton = document.createElement('button');
+            copyButton.textContent = '📋 Copy';
+            copyButton.className = 'btn btn-secondary';
+            copyButton.style.cssText = 'margin-top: 8px; font-size: 0.75rem; padding: 6px 12px;';
+            
+            copyButton.onclick = () => {
+                navigator.clipboard.writeText(block.textContent);
+                copyButton.textContent = '✓ Copied!';
+                setTimeout(() => {
+                    copyButton.textContent = '📋 Copy';
+                }, 2000);
+            };
+            
+            block.parentNode.insertBefore(copyButton, block.nextSibling);
+        });
+    </script>
+</body>
+</html>

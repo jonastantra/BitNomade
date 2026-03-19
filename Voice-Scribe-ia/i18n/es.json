@@ -61,8 +61,20 @@
     "cta": "Instalar Extensión Gratis",
     "note": "Compatible con Chrome, Brave y Edge."
   },
+  "install": {
+    "title": "📦 Instala y Configura en 2 Minutos",
+    "subtitle": "Comienza a usar VoiceScribe en tres pasos simples",
+    "step1Title": "Añadir a Chrome",
+    "step1Text": "Haz clic en 'Añadir a Chrome' en la Chrome Web Store",
+    "step2Title": "Fijar en la Barra",
+    "step2Text": "Haz clic en el icono de rompecabezas 🧩 y fija VoiceScribe para acceso rápido",
+    "step3Title": "Permitir Micrófono",
+    "step3Text": "Haz clic en el icono de la extensión y permite el acceso al micrófono cuando se solicite",
+    "tip": "💡 Consejo: Mantén la extensión fijada para nunca perder el acceso cuando llegue la inspiración!"
+  },
   "faq": {
-    "title": "Preguntas Frecuentes sobre Transcripción de Voz",
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Todo lo que necesitas saber sobre VoiceScribe",
     "q1": "¿Cuánto cuesta VoiceScribe?",
     "a1": "Actualmente, <strong>VoiceScribe es 100% GRATUITO</strong> por tiempo limitado. Queremos que pruebes la herramienta sin barreras. Eventualmente introduciremos planes de pago, pero si te unes ahora, podrás disfrutar de todo sin costo.",
     "q2": "¿Qué tan precisa es la transcripción?",
@@ -72,7 +84,13 @@
     "q4": "¿Mis datos están seguros?",
     "a4": "Absolutamente. <strong>La privacidad es nuestra prioridad.</strong> Las transcripciones se procesan localmente en tu navegador. Solo enviamos texto a OpenAI cuando solicitas un resumen explícitamente, y no se guardan en nuestros servidores.",
     "q5": "¿Necesito mi propia clave de OpenAI?",
-    "a5": "No. Al ser gratuito, puedes usar nuestra IA directamente. Si prefieres usar tu propia clave API para mayor control, ofrecemos esa opción en la configuración."
+    "a5": "No. Al ser gratuito, puedes usar nuestra IA directamente. Si prefieres usar tu propia clave API para mayor control, ofrecemos esa opción en la configuración.",
+    "q6": "¿Qué idiomas son compatibles?",
+    "a6": "VoiceScribe soporta <strong>12 idiomas</strong> incluyendo Inglés, Español, Francés, Alemán, Japonés, Coreano, Chino, Portugués, Italiano, Ruso y Árabe. ¡Más idiomas próximamente!",
+    "q7": "¿Puedo exportar mis transcripciones?",
+    "a7": "¡Sí! Puedes exportar tus transcripciones como archivos <strong>TXT o PDF</strong>, o copiarlas directamente al portapapeles. Perfecto para compartir notas de reuniones o guardar para después.",
+    "q8": "¿Funciona sin conexión a internet?",
+    "a8": "La función de transcripción requiere conexión a internet para máxima precisión. Sin embargo, tus transcripciones se guardan localmente en tu navegador, así que puedes acceder a ellas en cualquier momento."
   },
   "support": {
     "title": "Soporte y Ayuda",

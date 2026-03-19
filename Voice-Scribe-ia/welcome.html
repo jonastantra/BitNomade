@@ -4,81 +4,733 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Force HTTPS removed for local testing -->
     <link rel="canonical" href="https://bitnomade.org/Voice-Scribe-ia/welcome.html">
     <title data-i18n="welcome.title">Welcome to VoiceScribe! - Initial Setup</title>
     <link rel="stylesheet" href="welcome.css">
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <style>
+        /* Header styles for welcome page */
+        .welcome-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+
+        .welcome-header .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .welcome-header .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .welcome-header .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .welcome-header .theme-toggle {
+            background: var(--control-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 9px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .welcome-header .theme-toggle:hover {
+            background: var(--control-hover);
+            transform: rotate(15deg);
+        }
+
+        .welcome-header .lang-switcher {
+            display: flex;
+            gap: 4px;
+            background: var(--control-bg);
+            border: 1px solid var(--control-border);
+            border-radius: 12px;
+            padding: 3px;
+        }
+
+        .welcome-header .lang-btn {
+            background: transparent;
+            border: none;
+            border-radius: 9px;
+            padding: 5px 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            line-height: 1;
+            opacity: 0.6;
+        }
+
+        .welcome-header .lang-btn:hover {
+            opacity: 0.9;
+            background: var(--control-hover);
+        }
+
+        .welcome-header .lang-btn.active {
+            opacity: 1;
+            background: var(--control-active);
+            box-shadow: 0 0 8px rgba(106, 17, 203, 0.2);
+        }
+
+        /* ─── Tutorial carousel — standalone styles ─── */
+
+        .tutorial-section {
+            padding: 60px 0 80px;
+        }
+
+        .tutorial-section>.container {
+            max-width: 900px;
+        }
+
+        /* Language switcher */
+        .lang-switcher {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-bottom: 20px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            padding: 5px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            backdrop-filter: blur(8px);
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 18px;
+            border-radius: 50px;
+            border: none;
+            background: transparent;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--heading-gradient);
+            color: white;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.25);
+        }
+
+        .lang-btn:not(.active):hover {
+            color: var(--text-color);
+            background: var(--glass-border);
+        }
+
+        /* Hint */
+        .swipe-hint {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+            opacity: 0.75;
+        }
+
+        .hint-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            animation: nudge 1.6s ease-in-out infinite;
+        }
+
+        .hint-arrow svg {
+            width: 13px;
+            height: 13px;
+            stroke: #8B7EC8;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @keyframes nudge {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(4px);
+            }
+        }
+
+        /* Slider card */
+        .slider-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.10);
+        }
+
+        .progress-bar {
+            height: 3px;
+            background: var(--glass-border);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--heading-gradient);
+            border-radius: 2px;
+            transition: width 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Slide layout */
+        .slides-container {
+            display: grid;
+            grid-template-columns: 1.75fr 1fr;
+            min-height: 420px;
+        }
+
+        /* Image panel */
+        .slide-image-panel {
+            padding: 24px 18px;
+            background: linear-gradient(145deg, rgba(139, 126, 200, 0.08), rgba(91, 213, 192, 0.06));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-img-wrap {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 360px;
+        }
+
+        .slide-img {
+            max-width: 100%;
+            max-height: 380px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 10px 32px rgba(0, 0, 0, 0.18);
+            position: absolute;
+            opacity: 0;
+            transform: scale(0.96) translateX(10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            pointer-events: none;
+        }
+
+        .slide-img.visible {
+            opacity: 1;
+            transform: scale(1) translateX(0);
+            pointer-events: auto;
+            position: relative;
+        }
+
+        /* Text panel */
+        .slide-text-panel {
+            padding: 32px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            min-height: 420px;
+        }
+
+        .slide-text {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: absolute;
+            inset: 32px 28px;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            pointer-events: none;
+        }
+
+        .slide-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            position: relative;
+            inset: auto;
+        }
+
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #8B7EC8;
+            background: rgba(139, 126, 200, 0.12);
+            padding: 4px 12px;
+            border-radius: 50px;
+            width: fit-content;
+        }
+
+        .step-badge .dot {
+            width: 6px;
+            height: 6px;
+            background: #8B7EC8;
+            border-radius: 50%;
+        }
+
+        .step-title {
+            font-size: 19px;
+            font-weight: 800;
+            line-height: 1.3;
+            letter-spacing: -0.3px;
+            color: var(--text-color);
+        }
+
+        .step-desc {
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .step-desc strong {
+            color: var(--text-color);
+            font-weight: 700;
+        }
+
+        .step-tip {
+            background: rgba(91, 213, 192, 0.09);
+            border-left: 3px solid #5BD5C0;
+            padding: 10px 13px;
+            border-radius: 0 9px 9px 0;
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .step-tip strong {
+            color: var(--text-color);
+        }
+
+        .step-tip-warn {
+            background: rgba(245, 166, 35, 0.08);
+            border-left: 3px solid #f5a623;
+            padding: 10px 13px;
+            border-radius: 0 9px 9px 0;
+            font-size: 12px;
+            color: #7a4f00;
+            line-height: 1.5;
+        }
+
+        .step-tip-warn strong {
+            color: #5c3900;
+        }
+
+        /* Navigation */
+        .nav-area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            border-top: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .step-dots {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .dot-btn {
+            height: 7px;
+            width: 7px;
+            border-radius: 4px;
+            border: none;
+            background: var(--glass-border);
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .dot-btn.active {
+            width: 26px;
+            background: var(--heading-gradient);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0 16px;
+            height: 36px;
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-color);
+            transition: all 0.2s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .nav-btn svg {
+            width: 15px;
+            height: 15px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background: var(--glass-border-hover);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        #nextBtn {
+            background: var(--heading-gradient);
+            border-color: transparent;
+            color: white;
+        }
+
+        #nextBtn:hover:not(:disabled) {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        #nextBtn:disabled {
+            background: var(--glass-border);
+            border-color: transparent;
+        }
+
+        /* Autoplay stripe */
+        .autoplay-bar {
+            height: 2px;
+        }
+
+        .autoplay-fill {
+            height: 100%;
+            background: var(--heading-gradient);
+            width: 0%;
+            transition: width linear;
+            border-radius: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 680px) {
+            .slides-container {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .slide-image-panel {
+                min-height: 210px;
+                padding: 18px;
+            }
+
+            .slide-img-wrap {
+                min-height: 180px;
+            }
+
+            .slide-img {
+                max-height: 180px;
+            }
+
+            .slide-text-panel {
+                min-height: auto;
+                padding: 22px 18px;
+            }
+
+            .slide-text {
+                position: relative;
+                inset: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- Header -->
+    <header class="welcome-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="ri-mic-ai-line"></i> VoiceScribe
+            </a>
+            <div class="nav-right">
+                <button class="theme-toggle" id="theme-toggle" title="Switch theme" type="button">
+                    <i class="ri-moon-line"></i>
+                </button>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="es" title="Español">🇪🇸</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇺🇸</button>
+                    <button class="lang-btn" data-lang="zh" title="中文">🇨🇳</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <div class="welcome-container">
 
-        <!-- Header / Logo (Now Modular) -->
-        <div id="header-container"></div>
-        <p class="tagline fade-in" style="text-align: center; margin-top: 80px; margin-bottom: -40px;"
+        <p class="tagline fade-in" style="text-align: center; margin-top: 100px; margin-bottom: 20px;"
             data-i18n="welcome.tagline">Your second brain has been installed.</p>
-
 
         <!-- Main Content -->
         <main>
 
             <section class="hero-welcome fade-in-up">
                 <h1 data-i18n="welcome.heroH1">Just one step left...</h1>
-                <p data-i18n-html="welcome.heroP">For VoiceScribe to work correctly, you need to <strong
-                        class="highlight">pin it to your toolbar</strong>.</p>
+                <p data-i18n-html="welcome.heroP">For VoiceScribe to work correctly, you need to
+                    <strong class="highlight">activate your microphone</strong> and pin it to your toolbar.
+                </p>
             </section>
 
-            <!-- Step-by-Step Pinning Guide -->
-            <section class="steps-grid fade-in-up delay-1">
+            <!-- ────────────────────────────────────────── -->
+            <!-- Tutorial carousel (from welcome/index.html) -->
+            <!-- ────────────────────────────────────────── -->
+            <section class="tutorial-section fade-in-up delay-1">
+                <div class="container">
 
-                <!-- Step 1 -->
-                <div class="step-card glass-card">
-                    <div class="step-number">1</div>
-                    <h3 data-i18n="welcome.step1Title">Click the Puzzle 🧩</h3>
-                    <p data-i18n="welcome.step1P">Find the "Extensions" icon in the top right corner of Chrome.</p>
-                    <div class="image-placeholder">
-                        <img src="assets/welcome-step1.png" data-i18n-attr="alt" data-i18n="welcome.step1Alt"
-                            alt="Step 1: Click puzzle icon" class="tutorial-img">
-                        <!-- Placeholder visual if image missing -->
-                        <div class="placeholder-overlay"><i class="ri-puzzle-fill"></i></div>
+                    <!-- Language switcher -->
+                    <div class="lang-switcher">
+                        <button class="lang-btn" data-lang="en" onclick="switchLanguage('en')">&#127482;&#127480; English</button>
+                        <button class="lang-btn" data-lang="es" onclick="switchLanguage('es')">&#127474;&#127485;
+                            Espa&#241;ol</button>
+                        <button class="lang-btn" data-lang="zh" onclick="switchLanguage('zh')">&#127479;&#127465; 中文</button>
                     </div>
-                </div>
 
-                <!-- Step 2 -->
-                <div class="step-card glass-card">
-                    <div class="step-number">2</div>
-                    <h3 data-i18n="welcome.step2Title">Pin VoiceScribe 📌</h3>
-                    <p data-i18n-html="welcome.step2P">Find <strong>VoiceScribe</strong> in the list and click the
-                        <strong>pin</strong> icon.</p>
-                    <div class="image-placeholder">
-                        <img src="assets/welcome-step2.png" data-i18n-attr="alt" data-i18n="welcome.step2Alt"
-                            alt="Step 2: Click pin icon" class="tutorial-img">
-                        <div class="placeholder-overlay"><i class="ri-pushpin-fill"></i></div>
+                    <!-- Hint -->
+                    <div class="swipe-hint" id="swipeHint">
+                        <span id="hintText">Click &ldquo;Next&rdquo; to start the tutorial</span>
+                        <div class="hint-arrow">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Step 3 -->
-                <div class="step-card glass-card">
-                    <div class="step-number">3</div>
-                    <h3 data-i18n="welcome.step3Title">Ready to use! 🚀</h3>
-                    <p data-i18n-html="welcome.step3P">Now you'll see the VoiceScribe icon always visible. Click to open
-                        the <strong>Sidebar</strong>.</p>
-                    <div class="image-placeholder">
-                        <img src="assets/welcome-step3.png" data-i18n-attr="alt" data-i18n="welcome.step3Alt"
-                            alt="Step 3: Icon visible" class="tutorial-img">
-                        <div class="placeholder-overlay"><i class="ri-layout-right-2-fill"></i></div>
-                    </div>
-                </div>
+                    <!-- Slider card -->
+                    <div class="slider-card" id="sliderCard">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill" style="width:25%"></div>
+                        </div>
 
+                        <div class="slides-container">
+
+                            <!-- IMAGE PANEL -->
+                            <div class="slide-image-panel">
+                                <div class="slide-img-wrap">
+                                    <!-- ES -->
+                                    <img class="slide-img visible" data-lang="es" data-step="0"
+                                        src="welcome/images/es/1.jfif" alt="Paso 1">
+                                    <img class="slide-img" data-lang="es" data-step="1" src="welcome/images/es/2.jfif"
+                                        alt="Paso 2">
+                                    <img class="slide-img" data-lang="es" data-step="2" src="welcome/images/es/3.jfif"
+                                        alt="Paso 3">
+                                    <img class="slide-img" data-lang="es" data-step="3" src="welcome/images/es/4.jfif"
+                                        alt="Paso 4">
+                                    <!-- EN -->
+                                    <img class="slide-img" data-lang="en" data-step="0" src="welcome/images/en/1.jfif"
+                                        alt="Step 1">
+                                    <img class="slide-img" data-lang="en" data-step="1" src="welcome/images/en/2.jfif"
+                                        alt="Step 2">
+                                    <img class="slide-img" data-lang="en" data-step="2" src="welcome/images/en/3.jfif"
+                                        alt="Step 3">
+                                    <img class="slide-img" data-lang="en" data-step="3" src="welcome/images/en/4.jfif"
+                                        alt="Step 4">
+                                    <!-- ZH (fallback to EN) -->
+                                    <img class="slide-img" data-lang="zh" data-step="0" src="welcome/images/en/1.jfif"
+                                        alt="步骤 1">
+                                    <img class="slide-img" data-lang="zh" data-step="1" src="welcome/images/en/2.jfif"
+                                        alt="步骤 2">
+                                    <img class="slide-img" data-lang="zh" data-step="2" src="welcome/images/en/3.jfif"
+                                        alt="步骤 3">
+                                    <img class="slide-img" data-lang="zh" data-step="3" src="welcome/images/en/4.jfif"
+                                        alt="步骤 4">
+                                </div>
+                            </div>
+
+                            <!-- TEXT PANEL -->
+                            <div class="slide-text-panel">
+
+                                <!-- ENGLISH -->
+                                <div class="slide-text" data-lang="en" data-step="0">
+                                    <span class="step-badge"><span class="dot"></span>Step 1 of 4</span>
+                                    <h2 class="step-title">Open the extension<br>in Chrome</h2>
+                                    <p class="step-desc">Click the <strong>VoiceScribe</strong> icon in your browser
+                                        toolbar to open it.</p>
+                                    <div class="step-tip">&#128161; Don&#8217;t see it? Click the &#129513; puzzle icon
+                                        and pin the extension.</div>
+                                </div>
+
+                                <div class="slide-text" data-lang="en" data-step="1">
+                                    <span class="step-badge"><span class="dot"></span>Step 2 of 4</span>
+                                    <h2 class="step-title">A permissions popup<br>will appear</h2>
+                                    <p class="step-desc">Chrome will ask for <strong>microphone</strong> access through
+                                        a popup window.</p>
+                                    <div class="step-tip">&#9889; Click <strong>&#8220;Allow&#8221;</strong> and the mic
+                                        will be activated right away.</div>
+                                </div>
+
+                                <div class="slide-text" data-lang="en" data-step="2">
+                                    <span class="step-badge"><span class="dot"></span>Step 3 of 4</span>
+                                    <h2 class="step-title">If the popup didn&#8217;t<br>appear&#8230;</h2>
+                                    <p class="step-desc">Go to the extension settings and find the
+                                        <strong>Microphone</strong> permission.</p>
+                                    <div class="step-tip">&#128295; Manually change it to
+                                        <strong>&#8220;Allow&#8221;</strong>.</div>
+                                </div>
+
+                                <div class="slide-text" data-lang="en" data-step="3">
+                                    <span class="step-badge"><span class="dot"></span>Step 4 of 4</span>
+                                    <h2 class="step-title">Enable the mic<br>from permissions</h2>
+                                    <p class="step-desc"><strong>Right-click</strong> the VoiceScribe icon and select
+                                        <strong>&#8220;View web permissions&#8221;</strong>.</p>
+                                    <div class="step-tip">&#127897; Turn on <strong>Microphone</strong> in that screen
+                                        and you&#8217;re ready to record!</div>
+                                    <div class="step-tip-warn">&#9888; Still not working? Try <strong>removing and
+                                            reinstalling</strong> the extension, or open a new tab and relaunch Chrome.
+                                    </div>
+                                </div>
+
+                                <!-- ESPA&#209;OL -->
+                                <div class="slide-text" data-lang="es" data-step="0">
+                                    <span class="step-badge"><span class="dot"></span>Paso 1 de 4</span>
+                                    <h2 class="step-title">Abre la extensi&#243;n<br>en Chrome</h2>
+                                    <p class="step-desc">Haz clic en el &#237;cono de <strong>VoiceScribe</strong> en la
+                                        barra de herramientas de tu navegador.</p>
+                                    <div class="step-tip">&#128161; Si no ves el &#237;cono, haz clic en &#129513; y
+                                        fija la extensi&#243;n.</div>
+                                </div>
+
+                                <div class="slide-text" data-lang="es" data-step="1">
+                                    <span class="step-badge"><span class="dot"></span>Paso 2 de 4</span>
+                                    <h2 class="step-title">Aparece la ventana<br>de permisos</h2>
+                                    <p class="step-desc">Chrome te pedir&#225; permiso para usar el
+                                        <strong>micr&#243;fono</strong> mediante una ventana emergente.</p>
+                                    <div class="step-tip">&#9889; Haz clic en <strong>&#8220;Permitir&#8221;</strong> y
+                                        quedar&#225; activado de inmediato.</div>
+                                </div>
+
+                                <div class="slide-text" data-lang="es" data-step="2">
+                                    <span class="step-badge"><span class="dot"></span>Paso 3 de 4</span>
+                                    <h2 class="step-title">Si no apareci&#243;<br>la ventana&#8230;</h2>
+                                    <p class="step-desc">Entra a la configuraci&#243;n de la extensi&#243;n y busca el
+                                        permiso de <strong>Micr&#243;fono</strong>.</p>
+                                    <div class="step-tip">&#128295; C&#225;mbialo a
+                                        <strong>&#8220;Permitir&#8221;</strong> manualmente.</div>
+                                </div>
+
+                                <div class="slide-text" data-lang="es" data-step="3">
+                                    <span class="step-badge"><span class="dot"></span>Paso 4 de 4</span>
+                                    <h2 class="step-title">Activa el micr&#243;fono<br>desde los permisos</h2>
+                                    <p class="step-desc">Haz clic <strong>derecho</strong> en el &#237;cono de
+                                        VoiceScribe y selecciona <strong>&#8220;Ver permisos web&#8221;</strong>.</p>
+                                    <div class="step-tip">&#127897; Activa el <strong>Micr&#243;fono</strong> en esa
+                                        pantalla y &#161;ya puedes grabar!</div>
+                                    <div class="step-tip-warn">&#9888; &#191;Sigue sin funcionar? Intenta
+                                        <strong>desinstalar y reinstalar</strong> la extensi&#243;n, o abre una
+                                        pesta&#241;a nueva.</div>
+                                </div>
+
+                            </div><!-- /slide-text-panel -->
+                        </div><!-- /slides-container -->
+
+                        <!-- Navigation -->
+                        <div class="nav-area">
+                            <div class="step-dots">
+                                <button class="dot-btn active" data-step="0"></button>
+                                <button class="dot-btn" data-step="1"></button>
+                                <button class="dot-btn" data-step="2"></button>
+                                <button class="dot-btn" data-step="3"></button>
+                            </div>
+                            <div class="nav-buttons">
+                                <button class="nav-btn" id="prevBtn" disabled>
+                                    <svg viewBox="0 0 24 24">
+                                        <polyline points="15 18 9 12 15 6"></polyline>
+                                    </svg>
+                                    <span id="prevLabel">Back</span>
+                                </button>
+                                <button class="nav-btn" id="nextBtn">
+                                    <span id="nextLabel">Next</span>
+                                    <svg viewBox="0 0 24 24">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="autoplay-bar">
+                            <div class="autoplay-fill" id="autoplayFill"></div>
+                        </div>
+                    </div><!-- /slider-card -->
+
+                </div>
             </section>
+            <!-- ────────────────────────────────────────── -->
 
             <!-- Motivation / "Why" Recap -->
             <section class="motivation-box glass-card-glow fade-in-up delay-2">
@@ -90,7 +742,7 @@
                     </div>
                     <div class="benefit">
                         <i class="ri-eye-off-fill"></i>
-                        <span data-i18n="welcome.why2">Don't lose sight of whether it's recording.</span>
+                        <span data-i18n="welcome.why2">Don&#39;t lose sight of whether it&#39;s recording.</span>
                     </div>
                     <div class="benefit">
                         <i class="ri-layout-right-fill"></i>
@@ -101,25 +753,234 @@
 
             <!-- Final CTA -->
             <section class="action-area fade-in-up delay-3">
-                <p data-i18n="welcome.ctaP">Once pinned, do your first test:</p>
+                <p data-i18n="welcome.ctaP">Once the mic is active, do your first test:</p>
                 <div class="cta-box">
                     <span data-i18n-html="welcome.ctaCmd">Click the icon <i class="ri-mic-ai-line"></i> and say:</span>
                     <strong class="command" data-i18n="welcome.ctaText">"Hello VoiceScribe"</strong>
                 </div>
-                <a href="https://youtu.be/example-tutorial" target="_blank" class="link-subtle">
-                    <i class="ri-play-circle-line"></i> <span data-i18n="welcome.videoLink">Watch quick tutorial video
-                        (30s)</span>
-                </a>
             </section>
 
         </main>
 
-        <!-- Footer (Modular) -->
-        <div id="footer-container"></div>
-
     </div>
 
+    <!-- Site script -->
     <script src="script.js"></script>
+
+    <!-- Carousel and i18n script -->
+    <script>
+        // ===== i18n System for Welcome Page =====
+        const translations = {};
+        let currentLang = 'en';
+        let activeLang = 'en';
+
+        async function loadTranslations(lang) {
+            try {
+                const response = await fetch(`i18n/${lang}.json`);
+                if (!response.ok) throw new Error(`Failed to load ${lang} translations`);
+                const data = await response.json();
+                translations[lang] = data;
+                return true;
+            } catch (error) {
+                console.error(`Error loading ${lang} translations:`, error);
+                return false;
+            }
+        }
+
+        async function initializeTranslations() {
+            const languages = ['en', 'es', 'zh'];
+            for (const lang of languages) {
+                await loadTranslations(lang);
+            }
+            const detectedLang = detectBrowserLanguage();
+            switchLanguage(detectedLang);
+        }
+
+        function detectBrowserLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            const langCode = browserLang.split('-')[0].toLowerCase();
+            if (translations[langCode]) return langCode;
+            const savedLang = localStorage.getItem('voicescribe-lang');
+            if (savedLang && translations[savedLang]) return savedLang;
+            return 'en';
+        }
+
+        function getNestedValue(obj, path) {
+            return path.split('.').reduce((acc, key) => acc && acc[key], obj);
+        }
+
+        function applyTranslations(data) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const value = getNestedValue(data, key);
+                if (value) {
+                    if (el.hasAttribute('data-i18n-attr')) {
+                        const attr = el.getAttribute('data-i18n-attr');
+                        el.setAttribute(attr, value);
+                    } else if (el.tagName === 'TITLE') {
+                        document.title = value;
+                    } else {
+                        el.textContent = value;
+                    }
+                }
+            });
+            document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                const key = el.getAttribute('data-i18n-html');
+                const value = getNestedValue(data, key);
+                if (value) el.innerHTML = value;
+            });
+            document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : currentLang;
+            if (currentLang === 'zh') {
+                document.body.classList.add('lang-zh');
+            } else {
+                document.body.classList.remove('lang-zh');
+            }
+        }
+
+        function switchLanguage(lang) {
+            const data = translations[lang];
+            if (data) {
+                currentLang = lang;
+                activeLang = lang; // Sync with carousel
+                applyTranslations(data);
+                updateLangButtons();
+                localStorage.setItem('voicescribe-lang', lang);
+                applyState(); // Update carousel texts
+            }
+        }
+
+        function updateLangButtons() {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === currentLang);
+            });
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.lang;
+                if (lang !== currentLang) {
+                    switchLanguage(lang); // This will update both main UI and carousel
+                }
+            });
+        });
+
+        // ===== Carousel Translations =====
+        const carouselTexts = {
+            en: {
+                hint: 'Click "Next" to start the tutorial',
+                prev: 'Back',
+                next: 'Next',
+                steps: [
+                    { title: 'Open the extension<br>in Chrome', desc: 'Click the <strong>VoiceScribe</strong> icon in your browser toolbar to open it.', tip: '💡 Don\'t see it? Click the 🧩 puzzle icon and pin the extension.' },
+                    { title: 'A permissions popup<br>will appear', desc: 'Chrome will ask for <strong>microphone</strong> access through a popup window.', tip: '⚡ Click <strong>"Allow"</strong> and the mic will be activated right away.' },
+                    { title: 'If the popup didn\'t<br>appear…', desc: 'Go to the extension settings and find the <strong>Microphone</strong> permission.', tip: '🔧 Manually change it to <strong>"Allow"</strong>.' },
+                    { title: 'Enable the mic<br>from permissions', desc: '<strong>Right-click</strong> the VoiceScribe icon and select <strong>"View web permissions"</strong>.', tip: '🎉 Turn on <strong>Microphone</strong> in that screen and you\'re ready to record!', tipWarn: '⚠️ Still not working? Try <strong>removing and reinstalling</strong> the extension, or open a new tab and relaunch Chrome.' }
+                ]
+            },
+            es: {
+                hint: 'Haz clic en "Siguiente" para iniciar el tutorial',
+                prev: 'Atrás',
+                next: 'Siguiente',
+                steps: [
+                    { title: 'Abre la extensión<br>en Chrome', desc: 'Haz clic en el <strong>icono de VoiceScribe</strong> en la barra de herramientas de tu navegador.', tip: '💡 ¿No ves el icono? Haz clic en 🧩 y fija la extensión.' },
+                    { title: 'Aparece la ventana<br>de permisos', desc: 'Chrome te pedirá permiso para usar el <strong>micrófono</strong> mediante una ventana emergente.', tip: '⚡ Haz clic en <strong>"Permitir"</strong> y quedará activado de inmediato.' },
+                    { title: 'Si no apareció<br>la ventana…', desc: 'Entra a la configuración de la extensión y busca el permiso de <strong>Micrófono</strong>.', tip: '🔧 Cámbialo a <strong>"Permitir"</strong> manualmente.' },
+                    { title: 'Activa el micrófono<br>desde los permisos', desc: 'Haz clic <strong>derecho</strong> en el icono de VoiceScribe y selecciona <strong>"Ver permisos web"</strong>.', tip: '🎉 ¡Activa el <strong>Micrófono</strong> en esa pantalla y ya puedes grabar!', tipWarn: '⚠️ ¿Sigue sin funcionar? Intenta <strong>desinstalar y reinstalar</strong> la extensión, o abre una pestaña nueva.' }
+                ]
+            },
+            zh: {
+                hint: '点击"下一步"开始教程',
+                prev: '返回',
+                next: '下一步',
+                steps: [
+                    { title: '在 Chrome 中打开<br>扩展程序', desc: '点击浏览器工具栏中的 <strong>VoiceScribe 图标</strong>打开它。', tip: '💡 没看到？点击 🧩 拼图图标并固定扩展程序。' },
+                    { title: '权限弹窗<br>将出现', desc: 'Chrome 会通过弹窗请求<strong>麦克风</strong>访问权限。', tip: '⚡ 点击 <strong>"允许"</strong>，麦克风将立即激活。' },
+                    { title: '如果弹窗<br>没有出现…', desc: '进入扩展程序设置，找到 <strong>麦克风</strong>权限。', tip: '🔧 手动将其更改为 <strong>"允许"</strong>。' },
+                    { title: '从权限设置<br>启用麦克风', desc: '<strong>右键点击</strong>VoiceScribe 图标，选择 <strong>"查看网络权限"</strong>。', tip: '🎉 在该屏幕中开启 <strong>麦克风</strong>，你就可以开始录音了！', tipWarn: '⚠️ 仍然不起作用？尝试<strong>卸载并重新安装</strong>扩展程序，或打开新标签页重新启动 Chrome。' }
+                ]
+            }
+        };
+
+        // ===== Carousel Logic =====
+        const TOTAL = 4;
+        const AUTO_DELAY = 4000;
+        let current = 0;
+        let isPaused = false;
+        let autoTimer = null;
+
+        function applyState() {
+            const texts = carouselTexts[activeLang];
+            document.getElementById('prevLabel').textContent = texts.prev;
+            document.getElementById('nextLabel').textContent = texts.next;
+            document.getElementById('hintText').textContent = texts.hint;
+            
+            // Update carousel lang buttons
+            document.querySelectorAll('.lang-switcher .lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === activeLang);
+            });
+            
+            document.getElementById('progressFill').style.width = ((current + 1) / TOTAL * 100) + '%';
+            document.querySelectorAll('.dot-btn').forEach((d, i) => d.classList.toggle('active', i === current));
+            document.getElementById('prevBtn').disabled = current === 0;
+            document.getElementById('nextBtn').disabled = current === TOTAL - 1;
+            document.querySelectorAll('.slide-img').forEach(img => {
+                const match = img.dataset.lang === activeLang && +img.dataset.step === current;
+                img.classList.toggle('visible', match);
+            });
+            document.querySelectorAll('.slide-text').forEach(el => {
+                const match = el.dataset.lang === activeLang && +el.dataset.step === current;
+                el.classList.toggle('visible', match);
+            });
+            if (current > 0) {
+                const h = document.getElementById('swipeHint');
+                h.style.opacity = '0'; h.style.pointerEvents = 'none';
+            }
+        }
+
+        function goTo(index) {
+            current = Math.max(0, Math.min(TOTAL - 1, index));
+            applyState();
+            resetAutoplay();
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            if (isPaused) return;
+            const fill = document.getElementById('autoplayFill');
+            fill.style.transition = 'none'; fill.style.width = '0%';
+            void fill.offsetWidth;
+            fill.style.transition = `width ${AUTO_DELAY}ms linear`; fill.style.width = '100%';
+            autoTimer = setTimeout(() => {
+                if (!isPaused && current < TOTAL - 1) goTo(current + 1);
+                else stopAutoplay();
+            }, AUTO_DELAY);
+        }
+
+        function stopAutoplay() {
+            clearTimeout(autoTimer);
+            const fill = document.getElementById('autoplayFill');
+            fill.style.transition = 'none'; fill.style.width = '0%';
+        }
+
+        function resetAutoplay() { stopAutoplay(); startAutoplay(); }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeTranslations();
+            applyState();
+            document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+            document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+            document.querySelectorAll('.dot-btn').forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+            document.addEventListener('keydown', e => {
+                if (e.key === 'ArrowRight') goTo(current + 1);
+                if (e.key === 'ArrowLeft') goTo(current - 1);
+            });
+            const card = document.getElementById('sliderCard');
+            card.addEventListener('mouseenter', () => { isPaused = true; stopAutoplay(); });
+            card.addEventListener('mouseleave', () => { isPaused = false; startAutoplay(); });
+            startAutoplay();
+        });
+    </script>
+
 </body>
 
 </html>
